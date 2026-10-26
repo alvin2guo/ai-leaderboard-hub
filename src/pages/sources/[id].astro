@@ -1,0 +1,312 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getSources, getRankingBySourceId } from '../../utils/data';
+import type { Source, RankingSnapshot } from '../../utils/types';
+
+export async function getStaticPaths() {
+  const sources = getSources();
+  return sources.map((source) => {
+    const snapshot = getRankingBySourceId(source.id);
+    return {
+      params: { id: source.id },
+      props: { source, snapshot },
+    };
+  });
+}
+
+interface Props {
+  source: Source;
+  snapshot?: RankingSnapshot;
+}
+
+const { source, snapshot } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const categoryLabels: Record<string, string> = {
+  arena: '竞技场对决 (Arena)',
+  comprehensive: '综合性能与选型',
+  chinese: '中文/国内评测',
+  specialized: '垂直专项评测',
+  directory: '评测目录与索引',
+};
+
+const modalityLabels: Record<string, string> = {
+  text: '文本 (Text)',
+  multimodal: '多模态 (Multimodal)',
+  code: '代码 (Code)',
+  embedding: '文本嵌入 (Embedding)',
+  audio: '语音 (Audio)',
+  all: '全模态 (All)',
+};
+
+const models = snapshot?.models || [];
+---
+
+<Layout
+  title={`${source.name} 排名快照与指标详解 | AI Leaderboard Hub`}
+  description={`${source.name}（${source.url}）最新 AI 大模型排名快照，包含机构、指标分值、快照时间与官方来源对照。`}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-xs text-slate-500 mb-6" aria-label="Breadcrumb">
+      <a href={`${baseUrl}/`} class="hover:text-slate-800 dark:hover:text-slate-200">首页</a>
+      <span>/</span>
+      <a href={`${baseUrl}/#sources-section`} class="hover:text-slate-800 dark:hover:text-slate-200">榜单来源</a>
+      <span>/</span>
+      <span class="text-slate-800 dark:text-slate-200 font-medium">{source.name}</span>
+    </nav>
+
+    <!-- Source Header Card -->
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-xs">
+      <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+        <div class="space-y-3 max-w-3xl">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="rounded-md bg-sky-50 dark:bg-sky-950/60 border border-sky-200 dark:border-sky-800/80 px-2.5 py-1 text-xs font-semibold text-sky-700 dark:text-sky-300">
+              {categoryLabels[source.category] || source.category}
+            </span>
+            <span class="rounded-md bg-slate-100 dark:bg-slate-800 px-2.5 py-1 text-xs font-medium text-slate-600 dark:text-slate-300">
+              模态: {modalityLabels[source.modality] || source.modality}
+            </span>
+            <span class="rounded-md bg-slate-100 dark:bg-slate-800 px-2.5 py-1 text-xs font-medium text-slate-600 dark:text-slate-300">
+              更新频率: {source.update_frequency}
+            </span>
+            {source.auto_fetch_supported ? (
+              <span class="rounded-md bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-300">
+                ● 自动定时拉取
+              </span>
+            ) : (
+              <span class="rounded-md bg-slate-100 dark:bg-slate-800 px-2.5 py-1 text-xs font-medium text-slate-500">
+                ○ 社区人工快照
+              </span>
+            )}
+          </div>
+
+          <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+            {source.name}
+          </h1>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            {source.description}
+          </p>
+
+          {source.notes && (
+            <div class="text-xs text-slate-500 bg-slate-50 dark:bg-slate-800/50 rounded-lg p-3 border border-slate-100 dark:border-slate-800">
+              💡 <strong>评测口径提示：</strong> {source.notes}
+            </div>
+          )}
+        </div>
+
+        <!-- External link & Metadata actions -->
+        <div class="flex flex-col sm:flex-row lg:flex-col gap-2.5 shrink-0">
+          <a
+            href={source.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 rounded-xl bg-sky-600 px-4 py-2.5 text-xs font-semibold text-white shadow-sm hover:bg-sky-500 transition-colors"
+          >
+            <span>访问官方原榜单</span>
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+          <a
+            href={source.license_or_terms_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-1.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2.5 text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+          >
+            <span>许可与服务条款</span>
+            <svg class="h-3.5 w-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </a>
+          {snapshot && (
+            <button
+              type="button"
+              id="export-json-btn"
+              class="inline-flex items-center justify-center gap-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 px-4 py-2 text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 transition-colors"
+            >
+              <span>导出 JSON 快照</span>
+            </button>
+          )}
+        </div>
+      </div>
+
+      <!-- Snapshot Notice Alert -->
+      <div class="mt-6 border-t border-slate-100 dark:border-slate-800 pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-slate-500">
+        <div class="flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+          <span>快照日期：<strong class="text-slate-700 dark:text-slate-300">{snapshot ? snapshot.snapshot_date : source.last_checked_at}</strong></span>
+          <span>•</span>
+          <span>快照采纳链接：<a href={snapshot ? snapshot.source_url : source.url} target="_blank" rel="noopener noreferrer" class="text-sky-600 hover:underline">{snapshot ? snapshot.source_url : source.url}</a></span>
+        </div>
+        <div>
+          <span>最后核验：{source.last_checked_at}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ranking Table Section -->
+    <div class="mt-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-xs">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200 dark:border-slate-800">
+        <div>
+          <h2 class="text-lg font-bold text-slate-900 dark:text-white">
+            模型最新排名快照
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">
+            共收录 {models.length} 款模型。数据均保留原榜单给出的分数与分项维度。
+          </p>
+        </div>
+
+        <!-- Filter within table -->
+        <div class="flex items-center gap-3">
+          <input
+            type="text"
+            id="table-model-filter"
+            placeholder="在当前榜单中过滤模型或机构..."
+            class="rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-1.5 text-xs text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500/20"
+          />
+        </div>
+      </div>
+
+      {models.length > 0 ? (
+        <div class="overflow-x-auto mt-4">
+          <table id="ranking-models-table" class="min-w-full divide-y divide-slate-200 dark:divide-slate-800 text-left text-xs">
+            <thead class="bg-slate-50 dark:bg-slate-800/60 font-semibold text-slate-700 dark:text-slate-300">
+              <tr>
+                <th scope="col" class="py-3 px-4 w-16">名次</th>
+                <th scope="col" class="py-3 px-4">模型名称</th>
+                <th scope="col" class="py-3 px-4">统一标识</th>
+                <th scope="col" class="py-3 px-4">机构</th>
+                <th scope="col" class="py-3 px-4 font-mono">核心分值</th>
+                <th scope="col" class="py-3 px-4">分项指标明细</th>
+                <th scope="col" class="py-3 px-4">备注说明</th>
+                <th scope="col" class="py-3 px-4 text-right">跨榜对比</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 dark:divide-slate-800/60 text-slate-600 dark:text-slate-300">
+              {models.map((m) => (
+                <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition-colors">
+                  <td class="py-3.5 px-4 font-bold font-mono">
+                    <span class={`inline-flex h-6 w-6 items-center justify-center rounded-md ${
+                      m.rank === 1 ? 'bg-amber-400/20 text-amber-700 dark:text-amber-300' :
+                      m.rank === 2 ? 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200' :
+                      m.rank === 3 ? 'bg-orange-300/20 text-orange-700 dark:text-orange-300' :
+                      'text-slate-500'
+                    }`}>
+                      {m.rank}
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 font-semibold text-slate-900 dark:text-white">
+                    {m.model_name}
+                  </td>
+                  <td class="py-3.5 px-4 font-mono text-[11px] text-slate-500">
+                    {m.normalized_model_name}
+                  </td>
+                  <td class="py-3.5 px-4">
+                    <span class="inline-block rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[11px] font-medium text-slate-700 dark:text-slate-300">
+                      {m.organization}
+                    </span>
+                  </td>
+                  <td class="py-3.5 px-4 font-mono font-bold text-sky-600 dark:text-sky-400 text-sm">
+                    {m.score}
+                  </td>
+                  <td class="py-3.5 px-4">
+                    {m.metrics && (
+                      <div class="flex flex-wrap gap-1 max-w-sm">
+                        {Object.entries(m.metrics).map(([k, v]) => (
+                          <span class="inline-block rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-1.5 py-0.5 text-[10px] text-slate-600 dark:text-slate-300">
+                            <span class="text-slate-400">{k}:</span> <strong class="font-mono text-slate-700 dark:text-slate-200">{v}</strong>
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </td>
+                  <td class="py-3.5 px-4 text-[11px] text-slate-500 max-w-xs">
+                    {m.notes || '-'}
+                  </td>
+                  <td class="py-3.5 px-4 text-right">
+                    <a
+                      href={`${baseUrl}/compare?model=${m.normalized_model_name}`}
+                      class="inline-flex items-center text-sky-600 dark:text-sky-400 hover:underline font-medium"
+                      title="查看该模型在其它榜单中的位置"
+                    >
+                      对比 &rarr;
+                    </a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <div class="py-12 text-center text-slate-500 text-sm">
+          本来源暂无结构化模型跑分快照（如目录索引或正在录入中），请直接点击上方访问官方原站。
+        </div>
+      )}
+
+      <!-- Raw Notes from Snapshot -->
+      {snapshot?.raw_notes && (
+        <div class="mt-6 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-3.5 text-xs text-slate-600 dark:text-slate-400 border border-slate-200/60 dark:border-slate-800">
+          <span class="font-semibold text-slate-700 dark:text-slate-300">快照采集说明：</span> {snapshot.raw_notes}
+        </div>
+      )}
+    </div>
+
+    <!-- Metrics Explanation Section -->
+    <div class="mt-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-xs">
+      <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">
+        📊 本榜单指标与评价方法说明
+      </h3>
+      <p class="text-xs text-slate-500 mb-4">
+        选型决策建议：结合具体应用场景（如代码辅助、企业知识库检索、对话推理）参考专有指标，切勿以单一数值判定模型整体优劣。
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {source.metrics.map((metricName) => (
+          <div class="rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 p-4">
+            <h4 class="text-xs font-mono font-bold text-sky-600 dark:text-sky-400 mb-1">
+              {metricName}
+            </h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              对应 {source.name} 评测基准中的测量项目。具体测试集构建、评测提示词与评分规则详见
+              <a href={source.url} target="_blank" rel="noopener noreferrer" class="text-sky-600 dark:text-sky-400 underline ml-0.5">
+                官方文档
+              </a>。
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script define:vars={{ snapshot, source }}>
+  // Filter models within current table
+  const filterInput = document.getElementById('table-model-filter');
+  const table = document.getElementById('ranking-models-table');
+  const rows = table ? Array.from(table.querySelectorAll('tbody tr')) : [];
+
+  if (filterInput) {
+    filterInput.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      rows.forEach((row) => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+  }
+
+  // Export JSON snapshot action
+  const exportBtn = document.getElementById('export-json-btn');
+  if (exportBtn && snapshot) {
+    exportBtn.addEventListener('click', () => {
+      const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(snapshot, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute('href', dataStr);
+      downloadAnchor.setAttribute('download', `${source.id}-${snapshot.snapshot_date}.json`);
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+    });
+  }
+</script>

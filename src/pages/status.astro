@@ -1,0 +1,166 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getAllSourcesWithRankings } from '../utils/data';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+const sources = getAllSourcesWithRankings();
+
+const totalSources = sources.length;
+const validSnapshots = sources.filter((s) => s.snapshot).length;
+const autoFetchCount = sources.filter((s) => s.auto_fetch_supported).length;
+const totalModelsTracked = sources.reduce((acc, s) => acc + (s.modelCount || 0), 0);
+---
+
+<Layout
+  title="数据状态与快照监控 | AI Leaderboard Hub"
+  description="AI Leaderboard Hub 榜单数据源抓取状态、最后快照时间、更新频率与 Schema 校验状态透明公示。"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-xs text-slate-500 mb-6" aria-label="Breadcrumb">
+      <a href={`${baseUrl}/`} class="hover:text-slate-800 dark:hover:text-slate-200">首页</a>
+      <span>/</span>
+      <span class="text-slate-800 dark:text-slate-200 font-medium">数据状态与快照监控</span>
+    </nav>
+
+    <!-- Header -->
+    <div class="mb-8">
+      <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 px-3 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-300 mb-3">
+        <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+        数据健康状态：全量通过 Schema 校验
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+        榜单数据源与快照健康状态
+      </h1>
+      <p class="text-sm text-slate-600 dark:text-slate-300 mt-1 max-w-3xl">
+        本项目坚持数据透明与可复现原则。所有数据均由 GitHub Actions 在构建时执行强类型 JSON Schema 校验，自动定时任务仅对允许且支持的来源进行拉取，失败时严格保留历史快照。
+      </p>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+      <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
+        <div class="text-2xl font-bold text-slate-900 dark:text-white">{totalSources}</div>
+        <div class="text-xs text-slate-500">收录榜单总数</div>
+      </div>
+      <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
+        <div class="text-2xl font-bold text-sky-600 dark:text-sky-400">{validSnapshots} / {totalSources}</div>
+        <div class="text-xs text-slate-500">有效结构化快照</div>
+      </div>
+      <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
+        <div class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">{autoFetchCount}</div>
+        <div class="text-xs text-slate-500">自动化同步源</div>
+      </div>
+      <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
+        <div class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">{totalModelsTracked}</div>
+        <div class="text-xs text-slate-500">跨榜条目总快照量</div>
+      </div>
+    </div>
+
+    <!-- Status Table -->
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-xs">
+      <h2 class="text-base font-bold text-slate-900 dark:text-white mb-4">
+        数据源监控细表
+      </h2>
+
+      <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-800 text-left text-xs">
+          <thead class="bg-slate-50 dark:bg-slate-800/60 font-semibold text-slate-700 dark:text-slate-300">
+            <tr>
+              <th scope="col" class="py-3 px-4">数据源标识</th>
+              <th scope="col" class="py-3 px-4">来源名称</th>
+              <th scope="col" class="py-3 px-4">更新策略</th>
+              <th scope="col" class="py-3 px-4">快照日期</th>
+              <th scope="col" class="py-3 px-4">最后人工核验</th>
+              <th scope="col" class="py-3 px-4">模型条目</th>
+              <th scope="col" class="py-3 px-4 text-center">快照完整度</th>
+              <th scope="col" class="py-3 px-4 text-right">详情</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 dark:divide-slate-800/60 text-slate-600 dark:text-slate-300">
+            {sources.map((s) => {
+              const hasSnapshot = !!s.snapshot;
+              return (
+                <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition-colors">
+                  <td class="py-3 px-4 font-mono text-slate-500">
+                    {s.id}
+                  </td>
+                  <td class="py-3 px-4 font-semibold text-slate-900 dark:text-white">
+                    {s.name}
+                  </td>
+                  <td class="py-3 px-4">
+                    {s.auto_fetch_supported ? (
+                      <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
+                        <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                        定时抓取 ({s.update_frequency})
+                      </span>
+                    ) : (
+                      <span class="inline-flex items-center gap-1 text-[11px] text-slate-500">
+                        <span>快照人工 ({s.update_frequency})</span>
+                      </span>
+                    )}
+                  </td>
+                  <td class="py-3 px-4 font-mono text-slate-700 dark:text-slate-300">
+                    {s.snapshot ? s.snapshot.snapshot_date : '目录无排名'}
+                  </td>
+                  <td class="py-3 px-4 font-mono text-slate-500">
+                    {s.last_checked_at}
+                  </td>
+                  <td class="py-3 px-4 font-mono font-medium">
+                    {s.modelCount || 0}
+                  </td>
+                  <td class="py-3 px-4 text-center">
+                    {hasSnapshot ? (
+                      <span class="inline-flex items-center rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:text-emerald-300">
+                        ✓ 正常有效
+                      </span>
+                    ) : (
+                      <span class="inline-flex items-center rounded-full bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-800 px-2 py-0.5 text-[10px] font-semibold text-amber-700 dark:text-amber-300">
+                        ○ 资源目录
+                      </span>
+                    )}
+                  </td>
+                  <td class="py-3 px-4 text-right">
+                    <a
+                      href={`${baseUrl}/sources/${s.id}`}
+                      class="text-sky-600 dark:text-sky-400 hover:underline font-medium"
+                    >
+                      查看 &rarr;
+                    </a>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Data Update Workflow Strategy -->
+    <div class="mt-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-xs">
+      <h2 class="text-base font-bold text-slate-900 dark:text-white mb-2">
+        🛠️ 自动化数据更新与容灾策略
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+        <div class="rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 p-4">
+          <h3 class="font-bold text-slate-900 dark:text-white mb-1.5">1. 定时触发与隔离</h3>
+          <p>
+            通过 GitHub Actions 定时触发（Cron），在独立运行器中调用适配器脚本拉取允许自动更新的官方 API 或公开快照。
+          </p>
+        </div>
+        <div class="rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 p-4">
+          <h3 class="font-bold text-slate-900 dark:text-white mb-1.5">2. 故障软降级保护</h3>
+          <p>
+            若网络波动或第三方接口结构发生变更，更新任务将输出告警日志并触发失败提醒，<strong>严格保留上一期有效快照，绝不静默写入畸变数据或阻断站点发布</strong>。
+          </p>
+        </div>
+        <div class="rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 p-4">
+          <h3 class="font-bold text-slate-900 dark:text-white mb-1.5">3. 严谨人工审核</h3>
+          <p>
+            对于设置反爬防御、反爬验证码或条款未明确授权自动爬取的权威榜单，我们采取开源 Pull Request 方式人工核验快照，确保数据可信与合规。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

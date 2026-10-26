@@ -1,0 +1,265 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getAllUniqueModels, getAllSourcesWithRankings } from '../utils/data';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+const uniqueModels = getAllUniqueModels();
+const sources = getAllSourcesWithRankings();
+
+// Prepare serialized data for client-side interactive matrix
+const clientModels = uniqueModels.map((m) => ({
+  id: m.normalized_model_name,
+  name: m.model_name,
+  org: m.organization,
+  appearances: m.appearances,
+}));
+
+const clientSources = sources.map((s) => ({
+  id: s.id,
+  name: s.name,
+  category: s.category,
+  ranking_type: s.ranking_type,
+  metrics: s.metrics,
+}));
+---
+
+<Layout
+  title="AI 大模型跨榜表现对照 | AI Leaderboard Hub"
+  description="客观对比主流 AI 模型（GPT-4o, Claude 3.5, Gemini 1.5, Qwen 2.5, Llama 3.1 等）在不同权威榜单中的位置与分值快照。"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-xs text-slate-500 mb-6" aria-label="Breadcrumb">
+      <a href={`${baseUrl}/`} class="hover:text-slate-800 dark:hover:text-slate-200">首页</a>
+      <span>/</span>
+      <span class="text-slate-800 dark:text-slate-200 font-medium">模型跨榜对照</span>
+    </nav>
+
+    <!-- Header & Compliance Warning -->
+    <div class="space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+            模型跨榜表现客观对照
+          </h1>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">
+            横向查看同一模型在人类盲测偏好、综合基准、中文评测及专项幻觉/检索榜中的名次快照。
+          </p>
+        </div>
+      </div>
+
+      <!-- Compliance alert banner -->
+      <div class="rounded-xl border border-rose-200 dark:border-rose-900/60 bg-rose-50/70 dark:bg-rose-950/30 p-4 text-xs text-rose-900 dark:text-rose-200">
+        <div class="flex items-start gap-2.5">
+          <span class="text-base shrink-0">⚠️</span>
+          <div class="space-y-1">
+            <h2 class="font-bold text-rose-950 dark:text-rose-100">
+              重要声明：跨榜单不可直接比较分值或计算加权总分
+            </h2>
+            <p class="leading-relaxed">
+              每个榜单测试目的、数据集构成（例如：LMArena 的众包真实对话盲测 vs OpenCompass 的多学科选择题基准 vs Vectara 的幻觉率测量）均完全不同。本页面仅供对照模型在各体系中的独立名次，<strong>严禁跨榜把 Elo 分与百分制分数混合平均</strong>。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Model Selector Bar -->
+    <div class="mt-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-xs">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+        <div>
+          <h2 class="text-sm font-bold text-slate-900 dark:text-white">
+            选择要对比的模型（最多 4 款）
+          </h2>
+          <p class="text-xs text-slate-500">点击下方标签添加或移除模型：</p>
+        </div>
+        <div id="selected-badge-count" class="text-xs font-semibold text-sky-600 dark:text-sky-400">
+          已选择 3 款模型
+        </div>
+      </div>
+
+      <!-- Quick chips of available models -->
+      <div class="flex flex-wrap gap-2" id="model-chips-container">
+        {uniqueModels.map((m) => (
+          <button
+            type="button"
+            data-model-id={m.normalized_model_name}
+            class="model-chip inline-flex items-center gap-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-300 transition-all hover:border-sky-400 hover:bg-sky-50 dark:hover:bg-slate-700 cursor-pointer"
+          >
+            <span class="font-semibold">{m.normalized_model_name}</span>
+            <span class="text-[10px] text-slate-400">({m.organization})</span>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <!-- Comparison Matrix Display -->
+    <div class="mt-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-xs">
+      <h2 class="text-base font-bold text-slate-900 dark:text-white mb-4">
+        各权威榜单排名与分值横向对照表
+      </h2>
+
+      <div class="overflow-x-auto">
+        <table id="comparison-table" class="min-w-full divide-y divide-slate-200 dark:divide-slate-800 text-left text-xs">
+          <thead class="bg-slate-50 dark:bg-slate-800/60 font-semibold text-slate-700 dark:text-slate-300">
+            <tr id="table-header-row">
+              <th scope="col" class="py-3 px-4 w-60">评测榜单来源</th>
+              <th scope="col" class="py-3 px-4 w-28">评测机制</th>
+              <th scope="col" class="py-3 px-4 w-36">核心指标口径</th>
+              <!-- Dynamically populated model header cells -->
+            </tr>
+          </thead>
+          <tbody id="table-body-rows" class="divide-y divide-slate-100 dark:divide-slate-800/60 text-slate-600 dark:text-slate-300">
+            <!-- Dynamically populated rows per source -->
+          </tbody>
+        </table>
+      </div>
+
+      <div id="no-comparison-selection" class="hidden py-12 text-center text-slate-500 text-sm">
+        请在上方至少选择 1 款模型进行对照。
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script define:vars={{ clientModels, clientSources, baseUrl }}>
+  // Interactive client-side comparison logic
+  const defaultSelected = ['gpt-4o', 'claude-3-5-sonnet', 'qwen2.5-72b-instruct'];
+
+  // Check URL params
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramModel = urlParams.get('model');
+  let selectedModels = [...defaultSelected];
+
+  if (paramModel && clientModels.some(m => m.id === paramModel)) {
+    if (!selectedModels.includes(paramModel)) {
+      selectedModels = [paramModel, ...selectedModels.slice(0, 2)];
+    }
+  }
+
+  const chips = document.querySelectorAll('.model-chip');
+  const countDisplay = document.getElementById('selected-badge-count');
+  const tableHeaderRow = document.getElementById('table-header-row');
+  const tableBody = document.getElementById('table-body-rows');
+  const emptyNotice = document.getElementById('no-comparison-selection');
+
+  function updateChipsState() {
+    chips.forEach(chip => {
+      const id = chip.dataset.modelId;
+      if (selectedModels.includes(id)) {
+        chip.classList.add('bg-sky-600', 'text-white', 'border-sky-600', 'dark:bg-sky-600', 'dark:text-white');
+        chip.classList.remove('bg-slate-50', 'text-slate-700', 'border-slate-200', 'dark:bg-slate-800/80', 'dark:text-slate-300', 'dark:border-slate-700');
+      } else {
+        chip.classList.remove('bg-sky-600', 'text-white', 'border-sky-600', 'dark:bg-sky-600', 'dark:text-white');
+        chip.classList.add('bg-slate-50', 'text-slate-700', 'border-slate-200', 'dark:bg-slate-800/80', 'dark:text-slate-300', 'dark:border-slate-700');
+      }
+    });
+
+    if (countDisplay) {
+      countDisplay.textContent = `已选择 ${selectedModels.length} 款模型（最多 4 款）`;
+    }
+  }
+
+  function renderTable() {
+    if (!tableHeaderRow || !tableBody) return;
+
+    if (selectedModels.length === 0) {
+      if (emptyNotice) emptyNotice.classList.remove('hidden');
+      tableBody.innerHTML = '';
+      return;
+    }
+    if (emptyNotice) emptyNotice.classList.add('hidden');
+
+    // Rebuild header
+    tableHeaderRow.innerHTML = `
+      <th scope="col" class="py-3 px-4 w-60">评测榜单来源</th>
+      <th scope="col" class="py-3 px-4 w-28">评测机制</th>
+      <th scope="col" class="py-3 px-4 w-36">核心指标口径</th>
+    `;
+
+    selectedModels.forEach(mId => {
+      const model = clientModels.find(m => m.id === mId);
+      const th = document.createElement('th');
+      th.className = 'py-3 px-4 text-center border-l border-slate-200 dark:border-slate-800';
+      th.innerHTML = `
+        <div class="font-bold text-slate-900 dark:text-white text-xs">${model?.id || mId}</div>
+        <div class="text-[10px] text-slate-400 font-normal">${model?.org || ''}</div>
+      `;
+      tableHeaderRow.appendChild(th);
+    });
+
+    // Rebuild body per source
+    tableBody.innerHTML = '';
+    clientSources.forEach(source => {
+      const tr = document.createElement('tr');
+      tr.className = 'hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition-colors';
+
+      const metricsPreview = source.metrics.slice(0, 2).join(', ');
+
+      let rowHtml = `
+        <td class="py-3 px-4 font-medium text-slate-900 dark:text-white">
+          <a href="${baseUrl}/sources/${source.id}" class="hover:text-sky-600 dark:hover:text-sky-400 flex items-center gap-1">
+            <span>${source.name}</span>
+            <span class="text-slate-400 text-[10px]">&rarr;</span>
+          </a>
+        </td>
+        <td class="py-3 px-4">
+          <span class="inline-block rounded bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 text-[10px] font-mono">
+            ${source.ranking_type}
+          </span>
+        </td>
+        <td class="py-3 px-4 text-[11px] text-slate-500 font-mono">
+          ${metricsPreview}
+        </td>
+      `;
+
+      selectedModels.forEach(mId => {
+        const model = clientModels.find(m => m.id === mId);
+        const appearance = model?.appearances.find(a => a.source_id === source.id);
+
+        if (appearance) {
+          rowHtml += `
+            <td class="py-3 px-4 text-center border-l border-slate-100 dark:border-slate-800">
+              <span class="inline-flex items-center gap-1 rounded bg-sky-50 dark:bg-sky-950/60 px-2 py-0.5 text-xs font-bold text-sky-700 dark:text-sky-300">
+                #${appearance.rank}
+              </span>
+              <div class="text-[11px] font-mono text-slate-600 dark:text-slate-400 mt-0.5">
+                ${appearance.score}
+              </div>
+            </td>
+          `;
+        } else {
+          rowHtml += `
+            <td class="py-3 px-4 text-center border-l border-slate-100 dark:border-slate-800 text-slate-400 text-xs">
+              -
+            </td>
+          `;
+        }
+      });
+
+      tr.innerHTML = rowHtml;
+      tableBody.appendChild(tr);
+    });
+  }
+
+  // Handle chips clicks
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const id = chip.dataset.modelId;
+      if (selectedModels.includes(id)) {
+        selectedModels = selectedModels.filter(m => m !== id);
+      } else {
+        if (selectedModels.length >= 4) {
+          selectedModels.shift(); // remove oldest if exceeding limit
+        }
+        selectedModels.push(id);
+      }
+      updateChipsState();
+      renderTable();
+    });
+  });
+
+  // Initial render
+  updateChipsState();
+  renderTable();
+</script>

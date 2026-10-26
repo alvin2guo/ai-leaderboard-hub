@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout
+  title="关于我们与数据合规准则 | AI Leaderboard Hub"
+  description="了解 AI Leaderboard Hub 的收录原则、数据可追溯性规范、免责声明与版权许可政策。"
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-xs text-slate-500 mb-6" aria-label="Breadcrumb">
+      <a href={`${baseUrl}/`} class="hover:text-slate-800 dark:hover:text-slate-200">首页</a>
+      <span>/</span>
+      <span class="text-slate-800 dark:text-slate-200 font-medium">关于与准则</span>
+    </nav>
+
+    <!-- Header -->
+    <div class="border-b border-slate-200 dark:border-slate-800 pb-8 mb-8">
+      <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">
+        关于 AI Leaderboard Hub
+      </h1>
+      <p class="text-base text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+        一个完全透明、数据可查、客观中立的全球 AI 大模型能力评测与选型快照集。
+      </p>
+    </div>
+
+    <div class="space-y-10 text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+      <!-- Section 1: Core Principles -->
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+          <span>🎯</span>
+          <span>核心原则与立项准则</span>
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm mb-1">
+              1. 绝不伪造或编造数据
+            </h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400">
+              所有分数、名次与指标必须来自公开可查的权威官方评测报告或公开网站，绝不人工注水或篡改分值。
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm mb-1">
+              2. 坚决不做跨榜加权混排
+            </h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400">
+              各榜单评估目标各异（Elo 胜率 vs 多学科推理 vs 幻觉率），不可比数据强行混合只会误导选型。我们仅提供横向对照。
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm mb-1">
+              3. 百分之百来源与时间可溯源
+            </h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400">
+              每一条快照数据必须严格关联原始网页链接（source_url）和采集时间（snapshot_date），供技术研究者复核。
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5">
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm mb-1">
+              4. 尊重服务条款与数据合规
+            </h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400">
+              未获授权或设有严格反爬保护的来源，采用人工提交流程，绝不使用黑客技术或暴力爬虫绕过限制。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Disclaimer & Copyright -->
+      <section class="rounded-2xl border border-amber-200 dark:border-amber-900/60 bg-amber-50/50 dark:bg-amber-950/20 p-6 sm:p-8">
+        <h2 class="text-lg font-bold text-amber-950 dark:text-amber-100 mb-3 flex items-center gap-2">
+          <span>📜</span>
+          <span>免责声明与版权归属 (Disclaimer & Copyright)</span>
+        </h2>
+        <div class="space-y-3 text-xs text-amber-900 dark:text-amber-200 leading-relaxed">
+          <p>
+            <strong>免责声明：</strong>
+            本网站展示的所有评测数据、名次与分值均仅供工程技术选型、学术交流与科研参考，不构成任何商业购买建议或对任何模型性能的绝对背书。模型实际效果高度依赖用户具体的 Prompt 设计、上下文长度、系统架构与垂直业务场景，用户应以实际业务评测（Task-specific Evaluation）为最终依据。
+          </p>
+          <p>
+            <strong>数据版权归属：</strong>
+            各榜单、评测集及排名数据的知识产权归各原始发布机构（包括但不限于 LMSYS Org、上海人工智能实验室 OpenCompass、SuperCLUE 团队、Artificial Analysis、Hugging Face、Vectara 等）所有。本项目仅出于公共利益收录必要元数据与公开排名快照。如相关机构对数据收录有异议，请提交 Issue，我们将立即响应处理。
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 3: Open Source License -->
+      <section id="license" class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8">
+        <h2 class="text-lg font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+          <span>⚖️</span>
+          <span>开源许可证 (License)</span>
+        </h2>
+        <p class="text-xs text-slate-600 dark:text-slate-400 mb-3">
+          AI Leaderboard Hub 的<strong>网站源代码</strong>采用 <strong class="text-slate-900 dark:text-white">MIT License</strong> 许可开源发布。
+        </p>
+        <div class="rounded-lg bg-slate-50 dark:bg-slate-800 p-4 font-mono text-xs text-slate-600 dark:text-slate-300">
+          MIT License<br /><br />
+          Copyright (c) 2026 AI Leaderboard Hub Maintainers<br /><br />
+          Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software...
+        </div>
+      </section>
+
+      <!-- Section 4: How to Contribute -->
+      <section class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8">
+        <h2 class="text-lg font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+          <span>🤝</span>
+          <span>如何参与贡献</span>
+        </h2>
+        <p class="text-xs text-slate-600 dark:text-slate-400 mb-4">
+          我们欢迎全球开发者与研究人员共同维护和丰富 AI Leaderboard Hub：
+        </p>
+        <ul class="list-disc pl-5 space-y-2 text-xs text-slate-600 dark:text-slate-300">
+          <li><strong>推荐新榜单：</strong> 如有公认权威的大模型能力榜单（例如多模态、Agent、安全对抗等专项），请提交 Issue 或 PR 修改 <code>data/sources.yml</code>。</li>
+          <li><strong>提交最新快照：</strong> 帮助更新各榜单的最新跑分，在 <code>data/rankings/[source-id].json</code> 中添加或更新快照，并附带快照来源网址与日期。</li>
+          <li><strong>贡献自动化适配器：</strong> 为具有开放接口的官方源编写 <code>scripts/fetch/*</code> 适配器脚本。</li>
+          <li><strong>纠正数据错误：</strong> 若发现归一化模型名称不准、机构标注有误或链接失效，请随时发起 PR 修正。</li>
+        </ul>
+        <div class="mt-4">
+          <a
+            href="https://github.com/Alvin99/ai-leaderboard-hub/blob/master/CONTRIBUTING.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 rounded-lg bg-sky-600 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-sky-500 transition-colors"
+          >
+            <span>阅读完整贡献指南 (CONTRIBUTING.md)</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
