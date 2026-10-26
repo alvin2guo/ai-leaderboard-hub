@@ -2,262 +2,262 @@
   "source_id": "huggingface-allbench",
   "snapshot_date": "2026-10-26",
   "source_url": "https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard",
-  "raw_notes": "直接实时抓取自 Hugging Face Open LLM Leaderboard v2 官方数据集基准。",
+  "raw_notes": "直接实时抓取自 Hugging Face Open LLM Leaderboard v2 官方 Space 服务端（覆盖 4576 个最新开源大模型测评数据）。",
   "models": [
     {
       "rank": 1,
-      "model_name": "Aryanne/QwentileSwap",
-      "normalized_model_name": "aryanne-qwentileswap",
-      "organization": "Aryanne",
-      "score": 43.92,
+      "model_name": "MaziyarPanahi/calme-3.2-instruct-78b",
+      "normalized_model_name": "maziyarpanahi-calme-3.2-instruct-78b",
+      "organization": "MaziyarPanahi",
+      "score": 52.08,
       "metrics": {
-        "Average Score": 43.92,
-        "IFEval": 73.78,
-        "BBH": 57.68,
-        "MATH L5": 42.22,
-        "GPQA": 15.66,
-        "MuSR": 19.21,
-        "MMLU-PRO": 54.95
+        "Average Score": 52.08,
+        "IFEval": 80.63,
+        "BBH": 62.61,
+        "MATH L5": 40.33,
+        "GPQA": 20.36,
+        "MuSR": 38.53,
+        "MMLU-PRO": 70.03
       },
-      "notes": "参数量: 32.764B, 架构: Qwen2ForCausalLM, 提交日期: 2025-02-05"
+      "notes": "架构: Qwen2ForCausalLM, 权重类型: Original, 精度: bfloat16"
     },
     {
       "rank": 2,
-      "model_name": "1024m/QWEN-14B-B100",
-      "normalized_model_name": "1024m-qwen-14b-b100",
-      "organization": "1024m",
-      "score": 41.92,
+      "model_name": "MaziyarPanahi/calme-3.1-instruct-78b",
+      "normalized_model_name": "maziyarpanahi-calme-3.1-instruct-78b",
+      "organization": "MaziyarPanahi",
+      "score": 51.29,
       "metrics": {
-        "Average Score": 41.92,
-        "IFEval": 77.62,
-        "BBH": 49.78,
-        "MATH L5": 54.38,
-        "GPQA": 13.42,
-        "MuSR": 9.88,
-        "MMLU-PRO": 46.43
+        "Average Score": 51.29,
+        "IFEval": 81.36,
+        "BBH": 62.41,
+        "MATH L5": 39.27,
+        "GPQA": 19.46,
+        "MuSR": 36.5,
+        "MMLU-PRO": 68.72
       },
-      "notes": "参数量: 14.77B, 架构: Qwen2ForCausalLM, 提交日期: 2025-02-06"
+      "notes": "架构: Qwen2ForCausalLM, 权重类型: Original, 精度: bfloat16"
     },
     {
       "rank": 3,
-      "model_name": "Aashraf995/QwenStock-14B",
-      "normalized_model_name": "aashraf995-qwenstock-14b",
-      "organization": "Aashraf995",
-      "score": 37.13,
+      "model_name": "dfurman/CalmeRys-78B-Orpo-v0.1",
+      "normalized_model_name": "dfurman-calmerys-78b-orpo-v0.1",
+      "organization": "dfurman",
+      "score": 51.23,
       "metrics": {
-        "Average Score": 37.13,
-        "IFEval": 50.09,
-        "BBH": 50.43,
-        "MATH L5": 35.73,
-        "GPQA": 18.57,
-        "MuSR": 19.27,
-        "MMLU-PRO": 48.69
+        "Average Score": 51.23,
+        "IFEval": 81.63,
+        "BBH": 61.92,
+        "MATH L5": 40.63,
+        "GPQA": 20.02,
+        "MuSR": 36.37,
+        "MMLU-PRO": 66.8
       },
-      "notes": "参数量: 14.766B, 架构: Qwen2ForCausalLM, 提交日期: 2024-12-13"
+      "notes": "架构: Qwen2ForCausalLM, 权重类型: Original, 精度: bfloat16"
     },
     {
       "rank": 4,
-      "model_name": "BAAI/Infinity-Instruct-3M-0625-Llama3-70B",
-      "normalized_model_name": "baai-infinity-instruct-3m-0625-llama3-70b",
-      "organization": "BAAI",
-      "score": 36.91,
+      "model_name": "MaziyarPanahi/calme-2.4-rys-78b",
+      "normalized_model_name": "maziyarpanahi-calme-2.4-rys-78b",
+      "organization": "MaziyarPanahi",
+      "score": 50.77,
       "metrics": {
-        "Average Score": 36.91,
-        "IFEval": 74.42,
-        "BBH": 52.03,
-        "MATH L5": 22.51,
-        "GPQA": 14.32,
-        "MuSR": 18.34,
-        "MMLU-PRO": 39.85
+        "Average Score": 50.77,
+        "IFEval": 80.11,
+        "BBH": 62.16,
+        "MATH L5": 40.71,
+        "GPQA": 20.36,
+        "MuSR": 34.57,
+        "MMLU-PRO": 66.69
       },
-      "notes": "参数量: 70.554B, 架构: LlamaForCausalLM, 提交日期: 2024-08-30"
+      "notes": "架构: Qwen2ForCausalLM, 权重类型: Original, 精度: bfloat16"
     },
     {
       "rank": 5,
-      "model_name": "1-800-LLMs/Qwen-2.5-14B-Hindi",
-      "normalized_model_name": "1-800-llms-qwen-2.5-14b-hindi",
-      "organization": "1-800-LLMs",
-      "score": 36.27,
+      "model_name": "huihui-ai/Qwen2.5-72B-Instruct-abliterated",
+      "normalized_model_name": "huihui-ai-qwen2.5-72b-instruct-abliterated",
+      "organization": "huihui-ai",
+      "score": 48.11,
       "metrics": {
-        "Average Score": 36.27,
-        "IFEval": 58.26,
-        "BBH": 49.33,
-        "MATH L5": 33.31,
-        "GPQA": 14.99,
-        "MuSR": 14.35,
-        "MMLU-PRO": 47.36
+        "Average Score": 48.11,
+        "IFEval": 85.93,
+        "BBH": 60.49,
+        "MATH L5": 60.12,
+        "GPQA": 19.35,
+        "MuSR": 12.34,
+        "MMLU-PRO": 50.41
       },
-      "notes": "参数量: 14.77B, 架构: Qwen2ForCausalLM, 提交日期: 2025-02-06"
+      "notes": "架构: Qwen2ForCausalLM, 权重类型: Original, 精度: bfloat16"
     },
     {
       "rank": 6,
-      "model_name": "BAAI/Infinity-Instruct-3M-0613-Llama3-70B",
-      "normalized_model_name": "baai-infinity-instruct-3m-0613-llama3-70b",
-      "organization": "BAAI",
-      "score": 35.58,
+      "model_name": "Qwen/Qwen2.5-72B-Instruct",
+      "normalized_model_name": "qwen-qwen2.5-72b-instruct",
+      "organization": "Qwen",
+      "score": 47.98,
       "metrics": {
-        "Average Score": 35.58,
-        "IFEval": 68.21,
-        "BBH": 51.33,
-        "MATH L5": 21.53,
-        "GPQA": 14.43,
-        "MuSR": 16.53,
-        "MMLU-PRO": 41.44
+        "Average Score": 47.98,
+        "IFEval": 86.38,
+        "BBH": 61.87,
+        "MATH L5": 59.82,
+        "GPQA": 16.67,
+        "MuSR": 11.74,
+        "MMLU-PRO": 51.4
       },
-      "notes": "参数量: 70.554B, 架构: LlamaForCausalLM, 提交日期: 2024-06-28"
+      "notes": "架构: Qwen2ForCausalLM, 权重类型: Original, 精度: bfloat16"
     },
     {
       "rank": 7,
-      "model_name": "Aashraf995/Gemma-Evo-10B",
-      "normalized_model_name": "aashraf995-gemma-evo-10b",
-      "organization": "Aashraf995",
-      "score": 34.33,
+      "model_name": "MaziyarPanahi/calme-2.1-qwen2.5-72b",
+      "normalized_model_name": "maziyarpanahi-calme-2.1-qwen2.5-72b",
+      "organization": "MaziyarPanahi",
+      "score": 47.86,
       "metrics": {
-        "Average Score": 34.33,
-        "IFEval": 73.32,
-        "BBH": 43.42,
-        "MATH L5": 22.28,
-        "GPQA": 13.87,
-        "MuSR": 16.67,
-        "MMLU-PRO": 36.39
+        "Average Score": 47.86,
+        "IFEval": 86.62,
+        "BBH": 61.66,
+        "MATH L5": 59.14,
+        "GPQA": 15.1,
+        "MuSR": 13.3,
+        "MMLU-PRO": 51.32
       },
-      "notes": "参数量: 10.159B, 架构: Gemma2ForCausalLM, 提交日期: 2024-12-13"
+      "notes": "架构: Qwen2ForCausalLM, 权重类型: Original, 精度: bfloat16"
     },
     {
       "rank": 8,
-      "model_name": "01-ai/Yi-1.5-34B-Chat",
-      "normalized_model_name": "01-ai-yi-1.5-34b-chat",
-      "organization": "01-ai",
-      "score": 33.36,
+      "model_name": "newsbang/Homer-v1.0-Qwen2.5-72B",
+      "normalized_model_name": "newsbang-homer-v1.0-qwen2.5-72b",
+      "organization": "newsbang",
+      "score": 47.46,
       "metrics": {
-        "Average Score": 33.36,
-        "IFEval": 60.67,
-        "BBH": 44.26,
-        "MATH L5": 27.72,
-        "GPQA": 15.32,
-        "MuSR": 13.06,
-        "MMLU-PRO": 39.12
+        "Average Score": 47.46,
+        "IFEval": 76.28,
+        "BBH": 62.27,
+        "MATH L5": 49.02,
+        "GPQA": 22.15,
+        "MuSR": 17.9,
+        "MMLU-PRO": 57.17
       },
-      "notes": "参数量: 34.389B, 架构: LlamaForCausalLM, 提交日期: 2024-06-12"
+      "notes": "架构: Qwen2ForCausalLM, 权重类型: Original, 精度: bfloat16"
     },
     {
       "rank": 9,
-      "model_name": "Azure99/Blossom-V6-14B",
-      "normalized_model_name": "azure99-blossom-v6-14b",
-      "organization": "Azure99",
-      "score": 32.81,
+      "model_name": "ehristoforu/qwen2.5-test-32b-it",
+      "normalized_model_name": "ehristoforu-qwen2.5-test-32b-it",
+      "organization": "ehristoforu",
+      "score": 47.37,
       "metrics": {
-        "Average Score": 32.81,
-        "IFEval": 63.95,
-        "BBH": 30.35,
-        "MATH L5": 52.57,
-        "GPQA": 1.68,
-        "MuSR": 8.91,
-        "MMLU-PRO": 39.37
+        "Average Score": 47.37,
+        "IFEval": 78.89,
+        "BBH": 58.28,
+        "MATH L5": 59.74,
+        "GPQA": 15.21,
+        "MuSR": 19.13,
+        "MMLU-PRO": 52.95
       },
-      "notes": "参数量: 14.77B, 架构: Qwen2ForCausalLM, 提交日期: 2025-01-30"
+      "notes": "架构: Qwen2ForCausalLM, 权重类型: Original, 精度: bfloat16"
     },
     {
       "rank": 10,
-      "model_name": "AELLM/gemma-2-aeria-infinity-9b",
-      "normalized_model_name": "aellm-gemma-2-aeria-infinity-9b",
-      "organization": "AELLM",
-      "score": 31.92,
+      "model_name": "Saxo/Linkbricks-Horizon-AI-Avengers-V1-32B",
+      "normalized_model_name": "saxo-linkbricks-horizon-ai-avengers-v1-32b",
+      "organization": "Saxo",
+      "score": 47.34,
       "metrics": {
-        "Average Score": 31.92,
-        "IFEval": 75.94,
-        "BBH": 42.09,
-        "MATH L5": 21.45,
-        "GPQA": 11.19,
-        "MuSR": 9.05,
-        "MMLU-PRO": 31.8
+        "Average Score": 47.34,
+        "IFEval": 79.72,
+        "BBH": 57.63,
+        "MATH L5": 60.27,
+        "GPQA": 14.99,
+        "MuSR": 18.16,
+        "MMLU-PRO": 53.25
       },
-      "notes": "参数量: 9.242B, 架构: Gemma2ForCausalLM, 提交日期: 2024-10-09"
+      "notes": "架构: Qwen2ForCausalLM, 权重类型: Original, 精度: bfloat16"
     },
     {
       "rank": 11,
-      "model_name": "Azure99/Blossom-V6-7B",
-      "normalized_model_name": "azure99-blossom-v6-7b",
-      "organization": "Azure99",
-      "score": 31.05,
+      "model_name": "MaziyarPanahi/calme-2.2-qwen2.5-72b",
+      "normalized_model_name": "maziyarpanahi-calme-2.2-qwen2.5-72b",
+      "organization": "MaziyarPanahi",
+      "score": 47.22,
       "metrics": {
-        "Average Score": 31.05,
-        "IFEval": 55.38,
-        "BBH": 29.45,
-        "MATH L5": 45.85,
-        "GPQA": 7.27,
-        "MuSR": 13.4,
-        "MMLU-PRO": 34.93
+        "Average Score": 47.22,
+        "IFEval": 84.77,
+        "BBH": 61.8,
+        "MATH L5": 58.91,
+        "GPQA": 14.54,
+        "MuSR": 12.02,
+        "MMLU-PRO": 51.31
       },
-      "notes": "参数量: 7.616B, 架构: Qwen2ForCausalLM, 提交日期: 2025-01-30"
+      "notes": "架构: Qwen2ForCausalLM, 权重类型: Original, 精度: bfloat16"
     },
     {
       "rank": 12,
-      "model_name": "1-800-LLMs/Qwen-2.5-14B-Hindi-Custom-Instruct",
-      "normalized_model_name": "1-800-llms-qwen-2.5-14b-hindi-custom-instruct",
-      "organization": "1-800-LLMs",
-      "score": 31.02,
+      "model_name": "fluently-lm/FluentlyLM-Prinum",
+      "normalized_model_name": "fluently-lm-fluentlylm-prinum",
+      "organization": "fluently-lm",
+      "score": 47.22,
       "metrics": {
-        "Average Score": 31.02,
-        "IFEval": 30.77,
-        "BBH": 46.54,
-        "MATH L5": 31.12,
-        "GPQA": 16,
-        "MuSR": 15.43,
-        "MMLU-PRO": 46.26
+        "Average Score": 47.22,
+        "IFEval": 80.9,
+        "BBH": 59.48,
+        "MATH L5": 54,
+        "GPQA": 18.23,
+        "MuSR": 17.26,
+        "MMLU-PRO": 53.42
       },
-      "notes": "参数量: 14.77B, 架构: Qwen2ForCausalLM, 提交日期: 2025-02-06"
+      "notes": "架构: Qwen2ForCausalLM, 权重类型: Original, 精度: bfloat16"
     },
     {
       "rank": 13,
-      "model_name": "Amaorynho/BBAIIFEV1",
-      "normalized_model_name": "amaorynho-bbaiifev1",
-      "organization": "Amaorynho",
-      "score": 30.58,
+      "model_name": "JungZoona/T3Q-Qwen2.5-14B-Instruct-1M-e3",
+      "normalized_model_name": "jungzoona-t3q-qwen2.5-14b-instruct-1m-e3",
+      "organization": "JungZoona",
+      "score": 47.09,
       "metrics": {
-        "Average Score": 30.58,
-        "IFEval": 80.47,
-        "BBH": 32.97,
-        "MATH L5": 19.34,
-        "GPQA": 8.05,
-        "MuSR": 10.88,
-        "MMLU-PRO": 31.75
+        "Average Score": 47.09,
+        "IFEval": 73.24,
+        "BBH": 65.47,
+        "MATH L5": 28.63,
+        "GPQA": 22.26,
+        "MuSR": 38.69,
+        "MMLU-PRO": 54.27
       },
-      "notes": "参数量: 8.03B, 架构: LlamaForCausalLM, 提交日期: 2025-03-01"
+      "notes": "架构: Unknown, 权重类型: Original, 精度: bfloat16"
     },
     {
       "rank": 14,
-      "model_name": "Azure99/blossom-v5.1-34b",
-      "normalized_model_name": "azure99-blossom-v5.1-34b",
-      "organization": "Azure99",
-      "score": 30.3,
+      "model_name": "JungZoona/T3Q-qwen2.5-14b-v1.0-e3",
+      "normalized_model_name": "jungzoona-t3q-qwen2.5-14b-v1.0-e3",
+      "organization": "JungZoona",
+      "score": 47.09,
       "metrics": {
-        "Average Score": 30.3,
-        "IFEval": 56.97,
-        "BBH": 44.15,
-        "MATH L5": 25.91,
-        "GPQA": 7.94,
-        "MuSR": 7.3,
-        "MMLU-PRO": 39.53
+        "Average Score": 47.09,
+        "IFEval": 73.24,
+        "BBH": 65.47,
+        "MATH L5": 28.63,
+        "GPQA": 22.26,
+        "MuSR": 38.69,
+        "MMLU-PRO": 54.27
       },
-      "notes": "参数量: 34.389B, 架构: LlamaForCausalLM, 提交日期: 2024-07-27"
+      "notes": "架构: Qwen2ForCausalLM, 权重类型: Original, 精度: bfloat16"
     },
     {
       "rank": 15,
-      "model_name": "Aashraf995/Qwen-Evo-7B",
-      "normalized_model_name": "aashraf995-qwen-evo-7b",
-      "organization": "Aashraf995",
-      "score": 30.28,
+      "model_name": "zetasepic/Qwen2.5-32B-Instruct-abliterated-v2",
+      "normalized_model_name": "zetasepic-qwen2.5-32b-instruct-abliterated-v2",
+      "organization": "zetasepic",
+      "score": 46.89,
       "metrics": {
-        "Average Score": 30.28,
-        "IFEval": 47.57,
-        "BBH": 38.59,
-        "MATH L5": 31.42,
-        "GPQA": 10.07,
-        "MuSR": 15.53,
-        "MMLU-PRO": 38.47
+        "Average Score": 46.89,
+        "IFEval": 83.34,
+        "BBH": 56.53,
+        "MATH L5": 59.52,
+        "GPQA": 15.66,
+        "MuSR": 14.93,
+        "MMLU-PRO": 51.35
       },
-      "notes": "参数量: 7.616B, 架构: Qwen2ForCausalLM, 提交日期: 2024-12-13"
+      "notes": "架构: Qwen2ForCausalLM, 权重类型: Original, 精度: bfloat16"
     }
   ]
 }

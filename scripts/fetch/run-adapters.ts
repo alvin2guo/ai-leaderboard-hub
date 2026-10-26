@@ -1,24 +1,26 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import yaml from 'js-yaml';
-import { LMSYSAdapter } from './lmsys-adapter';
 import { OpenCompassAdapter } from './opencompass-adapter';
 import { ArtificialAnalysisAdapter } from './artificial-analysis-adapter';
 import { SuperCLUEAdapter } from './superclue-adapter';
 import { HuggingFaceLeaderboardAdapter } from './huggingface-adapter';
 import { OpenRouterAdapter } from './openrouter-adapter';
+import { VectaraAdapter } from './vectara-adapter';
+import { MTEBAdapter } from './mteb-adapter';
 import type { Source } from '../../src/utils/types';
 
 async function main() {
-  console.log('🚀 Executing live web scrapers across all supported AI evaluation leaderboards...\n');
+  console.log('🚀 Executing live web scrapers across all active AI evaluation leaderboards...\n');
 
   const adapters = [
-    new LMSYSAdapter(),
     new OpenCompassAdapter(),
+    new OpenRouterAdapter(),
     new ArtificialAnalysisAdapter(),
     new SuperCLUEAdapter(),
     new HuggingFaceLeaderboardAdapter(),
-    new OpenRouterAdapter(),
+    new VectaraAdapter(),
+    new MTEBAdapter(),
   ];
 
   let successCount = 0;

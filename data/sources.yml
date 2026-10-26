@@ -1,19 +1,3 @@
-- id: lmarena-chat
-  name: LMSYS Chatbot Arena
-  category: arena
-  modality: text
-  url: https://chat.lmsys.org/?leaderboard
-  description: 众包盲测人类偏好 Elo 对决竞技场，全球公认的大模型人类体感基准。
-  ranking_type: elo
-  metrics:
-    - Arena Elo
-    - 95% CI
-    - Votes Count
-  license_or_terms_url: https://chat.lmsys.org/
-  last_checked_at: '2026-10-26'
-  update_frequency: daily
-  auto_fetch_supported: true
-  notes: 数据来源于全球用户匿名成对盲测，包含严格的置信区间与对战局数。
 - id: opencompass-overall
   name: OpenCompass 司南能力榜单
   category: chinese
@@ -22,17 +6,16 @@
   description: 上海人工智能实验室推出的大模型全能力评测体系，包含语言、知识、推理、数学与代码能力。
   ranking_type: benchmark
   metrics:
-    - Overall Score
-    - Reasoning
-    - Language
-    - Knowledge
-    - Math
-    - Code
+    - 均分
+    - 知识
+    - 推理
+    - 数学
+    - 代码
   license_or_terms_url: https://opencompass.org.cn/home
   last_checked_at: '2026-10-26'
   update_frequency: weekly
   auto_fetch_supported: true
-  notes: 国内学术与工业界广泛采纳的权威综合基准。
+  notes: 国内学术与工业界广泛采纳的权威综合基准，浏览器自动化直连官网提取。
 - id: superclue-general
   name: SuperCLUE 中文通用大模型基准
   category: chinese
@@ -75,9 +58,9 @@
   description: 基于全球开发者在 OpenRouter 聚合网关上的真实 Token 调用量与使用热度排名。
   ranking_type: benchmark
   metrics:
-    - Rank
-    - Usage Growth
-    - Context Length
+    - Tokens Processed
+    - Change
+    - Author
   license_or_terms_url: https://openrouter.ai/terms
   last_checked_at: '2026-10-26'
   update_frequency: daily
@@ -102,7 +85,7 @@
   last_checked_at: '2026-10-26'
   update_frequency: weekly
   auto_fetch_supported: true
-  notes: 严格防止测试集污染，针对开源权重模型。
+  notes: 严格防止测试集污染，直连 Hugging Face 官方后端 API。
 - id: vectara-hallucination
   name: Vectara Hallucination Leaderboard
   category: specialized
@@ -111,14 +94,14 @@
   description: 专注于大语言模型摘要生成场景下事实一致性与幻觉率的量化评测。
   ranking_type: benchmark
   metrics:
-    - Hallucination Rate (%)
-    - Factual Consistency Rate (%)
-    - Answer Rate (%)
-  license_or_terms_url: https://huggingface.co/spaces/vectara/leaderboard
-  last_checked_at: '2026-10-20'
+    - Hallucination Rate
+    - Factual Consistency Rate
+    - Answer Rate
+  license_or_terms_url: https://github.com/vectara/hallucination-leaderboard
+  last_checked_at: '2026-10-26'
   update_frequency: weekly
-  auto_fetch_supported: false
-  notes: 幻觉率越低越优，RAG 与企业级落地关键指标。
+  auto_fetch_supported: true
+  notes: 幻觉率越低越优，直连 Vectara 官方开源基准库提取。
 - id: mteb-retrieval
   name: MTEB Massive Text Embedding Benchmark
   category: specialized
@@ -127,27 +110,10 @@
   description: 文本嵌入与表征向量模型标准评测体系，覆盖多任务检索、分类、聚类与语义相似度。
   ranking_type: benchmark
   metrics:
-    - Overall Average
-    - Retrieval
-    - Classification
-    - STS
+    - Mean Task Score
+    - Total Params (B)
   license_or_terms_url: https://huggingface.co/spaces/mteb/leaderboard
-  last_checked_at: '2026-10-22'
+  last_checked_at: '2026-10-26'
   update_frequency: weekly
-  auto_fetch_supported: false
-  notes: 向量模型选型必备基准，重点关注 Retrieval 指标。
-- id: awesome-llm-eval
-  name: Awesome-LLM-Eval 评测资源目录
-  category: directory
-  modality: all
-  url: https://github.com/MLSysOps/Awesome-LLM-Eval
-  description: 精选的 LLM 评测工具集、基准榜单与前沿论文导航索引，不直接提供打分。
-  ranking_type: curated_list
-  metrics:
-    - Stars
-    - Curated Benchmarks Count
-  license_or_terms_url: https://github.com/MLSysOps/Awesome-LLM-Eval/blob/main/LICENSE
-  last_checked_at: '2026-10-20'
-  update_frequency: monthly
-  auto_fetch_supported: false
-  notes: 仅作收录导航与工具指引，不设具体模型跑分。
+  auto_fetch_supported: true
+  notes: 向量模型选型必备基准，直连 MTEB 官方后端 API。

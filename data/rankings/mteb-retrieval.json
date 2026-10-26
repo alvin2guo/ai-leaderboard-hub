@@ -1,64 +1,233 @@
 {
   "source_id": "mteb-retrieval",
-  "snapshot_date": "2026-10-22",
+  "snapshot_date": "2026-10-26",
   "source_url": "https://huggingface.co/spaces/mteb/leaderboard",
-  "raw_notes": "MTEB (Massive Text Embedding Benchmark) 检索子任务 (Retrieval) 排名快照。",
+  "raw_notes": "直接实时抓取自 MTEB (Massive Text Embedding Benchmark v2) 官方 Space 后端服务，涵盖 349 个文本向量嵌入与检索模型评测。",
   "models": [
     {
       "rank": 1,
-      "model_name": "voyage-large-2-instruct",
-      "normalized_model_name": "voyage-large-2",
-      "organization": "Voyage AI",
-      "score": 58.6,
+      "model_name": "jcorners/ingot-8b-r3",
+      "normalized_model_name": "jcorners-ingot-8b-r3",
+      "organization": "jcorners",
+      "score": 75.98,
       "metrics": {
-        "Overall Average": 68.2,
-        "Retrieval": 58.6,
-        "Classification": 82.1,
-        "STS": 85.4
+        "Mean Task Score": 75.98,
+        "Total Params": "7.57B",
+        "Retrieval": 70,
+        "Classification": 90.41,
+        "STS": 89.32
       },
-      "notes": "企业级向量检索商业模型领先"
+      "notes": "发布时间: 2026-05-23, 机构: jcorners, 参数量: 7.57B"
     },
     {
       "rank": 2,
-      "model_name": "BAAI/bge-en-icl",
-      "normalized_model_name": "bge-en-icl",
-      "organization": "BAAI (智源)",
-      "score": 58.1,
+      "model_name": "Kingsoft-LLM/QZhou-Embedding",
+      "normalized_model_name": "kingsoft-llm-qzhou-embedding",
+      "organization": "Kingsoft-LLM",
+      "score": 75.97,
       "metrics": {
-        "Overall Average": 67.9,
-        "Retrieval": 58.1,
-        "Classification": 81.5,
-        "STS": 84.9
+        "Mean Task Score": 75.97,
+        "Total Params": "7.07B",
+        "Retrieval": 67.12,
+        "Classification": 88.97,
+        "STS": 91.65
       },
-      "notes": "智源推出的开源上下文学习嵌入模型"
+      "notes": "发布时间: 2025-08-24, 机构: Kingsoft-LLM, 参数量: 7.07B"
     },
     {
       "rank": 3,
-      "model_name": "Cohere/embed-english-v3.0",
-      "normalized_model_name": "cohere-embed-v3",
-      "organization": "Cohere",
-      "score": 56.4,
+      "model_name": "Qwen/Qwen3-Embedding-8B",
+      "normalized_model_name": "qwen-qwen3-embedding-8b",
+      "organization": "Qwen",
+      "score": 75.22,
       "metrics": {
-        "Overall Average": 66.8,
-        "Retrieval": 56.4,
-        "Classification": 80.2,
-        "STS": 83.7
+        "Mean Task Score": 75.22,
+        "Total Params": "7.57B",
+        "Retrieval": 69.44,
+        "Classification": 90.42,
+        "STS": 88.58
       },
-      "notes": "支持多用途压缩与两阶段检索"
+      "notes": "发布时间: 2025-06-05, 机构: Qwen, 参数量: 7.57B"
     },
     {
       "rank": 4,
-      "model_name": "text-embedding-3-large",
-      "normalized_model_name": "openai-text-embedding-3-large",
-      "organization": "OpenAI",
-      "score": 55.4,
+      "model_name": "ByteDance-Seed/Seed1.5-Embedding",
+      "normalized_model_name": "bytedance-seed-seed1.5-embedding",
+      "organization": "ByteDance-Seed",
+      "score": 74.76,
       "metrics": {
-        "Overall Average": 64.6,
-        "Retrieval": 55.4,
-        "Classification": 78.4,
-        "STS": 81.9
+        "Mean Task Score": 74.76,
+        "Total Params": "N/A",
+        "Retrieval": 67.45,
+        "Classification": 89.88,
+        "STS": 87.23
       },
-      "notes": "支持可自定义维度的向量表征"
+      "notes": "发布时间: 2025-04-25, 机构: ByteDance-Seed, 参数量: N/A"
+    },
+    {
+      "rank": 5,
+      "model_name": "infgrad/Jasper-Token-Compression-600M",
+      "normalized_model_name": "infgrad-jasper-token-compression-600m",
+      "organization": "infgrad",
+      "score": 74.75,
+      "metrics": {
+        "Mean Task Score": 74.75,
+        "Total Params": "0.61B",
+        "Retrieval": 66.19,
+        "Classification": 90.35,
+        "STS": 88.79
+      },
+      "notes": "发布时间: 2025-11-14, 机构: infgrad, 参数量: 0.61B"
+    },
+    {
+      "rank": 6,
+      "model_name": "Qwen/Qwen3-Embedding-4B",
+      "normalized_model_name": "qwen-qwen3-embedding-4b",
+      "organization": "Qwen",
+      "score": 74.6,
+      "metrics": {
+        "Mean Task Score": 74.6,
+        "Total Params": "4.02B",
+        "Retrieval": 68.46,
+        "Classification": 89.83,
+        "STS": 88.72
+      },
+      "notes": "发布时间: 2025-06-05, 机构: Qwen, 参数量: 4.02B"
+    },
+    {
+      "rank": 7,
+      "model_name": "annamodels/LGAI-Embedding-Preview",
+      "normalized_model_name": "annamodels-lgai-embedding-preview",
+      "organization": "annamodels",
+      "score": 74.12,
+      "metrics": {
+        "Mean Task Score": 74.12,
+        "Total Params": "7.11B",
+        "Retrieval": 66.18,
+        "Classification": 89.97,
+        "STS": 86.69
+      },
+      "notes": "发布时间: 2025-06-11, 机构: annamodels, 参数量: 7.11B"
+    },
+    {
+      "rank": 8,
+      "model_name": "Bytedance/Seed1.6-embedding",
+      "normalized_model_name": "bytedance-seed1.6-embedding",
+      "organization": "Bytedance",
+      "score": 74.07,
+      "metrics": {
+        "Mean Task Score": 74.07,
+        "Total Params": "N/A",
+        "Retrieval": 64.9,
+        "Classification": 92.42,
+        "STS": 86.87
+      },
+      "notes": "发布时间: 2025-06-18, 机构: Bytedance, 参数量: N/A"
+    },
+    {
+      "rank": 9,
+      "model_name": "codefuse-ai/F2LLM-4B",
+      "normalized_model_name": "codefuse-ai-f2llm-4b",
+      "organization": "codefuse-ai",
+      "score": 73.67,
+      "metrics": {
+        "Mean Task Score": 73.67,
+        "Total Params": "4.02B",
+        "Retrieval": 59.63,
+        "Classification": 91.68,
+        "STS": 84.2
+      },
+      "notes": "发布时间: 2025-09-18, 机构: codefuse-ai, 参数量: 4.02B"
+    },
+    {
+      "rank": 10,
+      "model_name": "google/gemini-embedding-001",
+      "normalized_model_name": "google-gemini-embedding-001",
+      "organization": "google",
+      "score": 73.3,
+      "metrics": {
+        "Mean Task Score": 73.3,
+        "Total Params": "N/A",
+        "Retrieval": 64.35,
+        "Classification": 90.05,
+        "STS": 85.29
+      },
+      "notes": "发布时间: 2025-07-14, 机构: google, 参数量: N/A"
+    },
+    {
+      "rank": 11,
+      "model_name": "codefuse-ai/F2LLM-v2-14B",
+      "normalized_model_name": "codefuse-ai-f2llm-v2-14b",
+      "organization": "codefuse-ai",
+      "score": 73.08,
+      "metrics": {
+        "Mean Task Score": 73.08,
+        "Total Params": "13.99B",
+        "Retrieval": 60.63,
+        "Classification": 91.68,
+        "STS": 84.55
+      },
+      "notes": "发布时间: 2026-03-09, 机构: codefuse-ai, 参数量: 13.99B"
+    },
+    {
+      "rank": 12,
+      "model_name": "codefuse-ai/F2LLM-v2-8B",
+      "normalized_model_name": "codefuse-ai-f2llm-v2-8b",
+      "organization": "codefuse-ai",
+      "score": 72.86,
+      "metrics": {
+        "Mean Task Score": 72.86,
+        "Total Params": "7.57B",
+        "Retrieval": 59.82,
+        "Classification": 91.52,
+        "STS": 84.65
+      },
+      "notes": "发布时间: 2026-03-09, 机构: codefuse-ai, 参数量: 7.57B"
+    },
+    {
+      "rank": 13,
+      "model_name": "codefuse-ai/F2LLM-v2-4B",
+      "normalized_model_name": "codefuse-ai-f2llm-v2-4b",
+      "organization": "codefuse-ai",
+      "score": 72.41,
+      "metrics": {
+        "Mean Task Score": 72.41,
+        "Total Params": "4.02B",
+        "Retrieval": 59.13,
+        "Classification": 91.68,
+        "STS": 84.22
+      },
+      "notes": "发布时间: 2026-03-09, 机构: codefuse-ai, 参数量: 4.02B"
+    },
+    {
+      "rank": 14,
+      "model_name": "ai-sage/Giga-Embeddings-instruct-10B-A1.8B-0826",
+      "normalized_model_name": "ai-sage-giga-embeddings-instruct-10b-a1.8b-0826",
+      "organization": "ai-sage",
+      "score": 72.23,
+      "metrics": {
+        "Mean Task Score": 72.23,
+        "Total Params": "10.48B",
+        "Retrieval": 60.03,
+        "Classification": 91.62,
+        "STS": 84.27
+      },
+      "notes": "发布时间: 2026-08-19, 机构: ai-sage, 参数量: 10.48B"
+    },
+    {
+      "rank": 15,
+      "model_name": "codefuse-ai/F2LLM-1.7B",
+      "normalized_model_name": "codefuse-ai-f2llm-1.7b",
+      "organization": "codefuse-ai",
+      "score": 72.01,
+      "metrics": {
+        "Mean Task Score": 72.01,
+        "Total Params": "1.72B",
+        "Retrieval": 57.83,
+        "Classification": 90.86,
+        "STS": 83.9
+      },
+      "notes": "发布时间: 2025-09-18, 机构: codefuse-ai, 参数量: 1.72B"
     }
   ]
 }

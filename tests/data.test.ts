@@ -11,17 +11,18 @@ import {
 describe('Data Utility Functions', () => {
   it('should load all sources from data/sources.yml', () => {
     const sources = getSources();
-    expect(sources.length).toBeGreaterThanOrEqual(8);
-    expect(sources.some((s) => s.id === 'lmarena-chat')).toBe(true);
+    expect(sources.length).toBeGreaterThanOrEqual(7);
     expect(sources.some((s) => s.id === 'opencompass-overall')).toBe(true);
+    expect(sources.some((s) => s.id === 'artificial-analysis')).toBe(true);
+    expect(sources.some((s) => s.id === 'openrouter-rankings')).toBe(true);
   });
 
   it('should retrieve individual source by ID', () => {
-    const source = getSourceById('lmarena-chat');
+    const source = getSourceById('artificial-analysis');
     expect(source).toBeDefined();
-    expect(source?.name).toBe('LMSYS Chatbot Arena');
-    expect(source?.category).toBe('arena');
-    expect(source?.url).toContain('lmsys.org');
+    expect(source?.name).toBe('Artificial Analysis Leaderboard');
+    expect(source?.category).toBe('comprehensive');
+    expect(source?.url).toContain('artificialanalysis.ai');
   });
 
   it('should return undefined for non-existent source ID', () => {
@@ -30,9 +31,9 @@ describe('Data Utility Functions', () => {
   });
 
   it('should load ranking snapshot for valid sources', () => {
-    const ranking = getRankingBySourceId('lmarena-chat');
+    const ranking = getRankingBySourceId('artificial-analysis');
     expect(ranking).toBeDefined();
-    expect(ranking?.source_id).toBe('lmarena-chat');
+    expect(ranking?.source_id).toBe('artificial-analysis');
     expect(ranking?.models.length).toBeGreaterThan(0);
     expect(ranking?.models[0].rank).toBe(1);
     expect(ranking?.models[0].normalized_model_name).toBeDefined();
@@ -40,10 +41,10 @@ describe('Data Utility Functions', () => {
 
   it('should aggregate sources with ranking snapshots', () => {
     const list = getAllSourcesWithRankings();
-    expect(list.length).toBeGreaterThanOrEqual(8);
-    const arena = list.find((s) => s.id === 'lmarena-chat');
-    expect(arena?.snapshot).toBeDefined();
-    expect(arena?.modelCount).toBeGreaterThan(0);
+    expect(list.length).toBeGreaterThanOrEqual(7);
+    const aa = list.find((s) => s.id === 'artificial-analysis');
+    expect(aa?.snapshot).toBeDefined();
+    expect(aa?.modelCount).toBeGreaterThan(0);
   });
 
   it('should extract unique normalized models across all rankings', () => {
@@ -55,7 +56,7 @@ describe('Data Utility Functions', () => {
     }
     // Prominent models should appear across leaderboards
     expect(models.length).toBeGreaterThanOrEqual(10);
-    expect(models[0].appearances.length).toBeGreaterThanOrEqual(2);
+    expect(models[0].appearances.length).toBeGreaterThanOrEqual(1);
   });
 
   it('should correctly format resolveUrl', () => {

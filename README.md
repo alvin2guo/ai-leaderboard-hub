@@ -28,15 +28,13 @@
 
 | 榜单 ID | 评测机构 / 名称 | 分类 | 模态 | 核心评测机制与指标 | 官方原站链接 | 许可 / 条款 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `lmarena-chat` | LMSYS Chatbot Arena | 竞技场对决 | 文本 | 盲测成对胜率、Arena Elo (Bradley-Terry) | [官网](https://chat.lmsys.org/?leaderboard) | [条款](https://chat.lmsys.org/) |
 | `opencompass-overall` | 上海 AI 实验室 OpenCompass | 中文综合基准 | 文本 | 语言、知识、推理、数学、代码能力综合分 | [官网](https://opencompass.org.cn/leaderboard-llm) | [条款](https://opencompass.org.cn/home) |
 | `superclue-general` | SuperCLUE 中文通用基准 | 中文基准 | 文本 | 基础能力、专业能力、应用能力十大维度 | [官网](https://www.superclueai.com/) | [条款](https://www.superclueai.com/) |
-| `artificial-analysis` | Artificial Analysis | 综合选型 | 文本 | Quality Index 质量指数、Output Speed (tps)、单位成本 | [官网](https://artificialanalysis.ai/leaderboards/models) | [条款](https://artificialanalysis.ai/terms) |
+| `artificial-analysis` | Artificial Analysis | 综合选型 | 文本 | Intelligence Index 智能指数、吐字速度、任务成本 | [官网](https://artificialanalysis.ai/leaderboards/models) | [条款](https://artificialanalysis.ai/terms) |
 | `openrouter-rankings` | OpenRouter Top Models | 综合热度 | 全模态 | 开发者真实 Token 消耗量排名、调用增长率 | [官网](https://openrouter.ai/rankings) | [条款](https://openrouter.ai/terms) |
 | `huggingface-allbench` | Hugging Face Open LLM v2 | 综合基准 | 文本 | IFEval, BBH, MATH L5, GPQA, MuSR, MMLU-PRO | [官网](https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard) | [条款](https://huggingface.co/terms-of-service) |
-| `vectara-hallucination` | Vectara 幻觉基准 | 垂直专项 | 文本 | Hallucination Rate 幻觉率、事实一致性 | [官网](https://huggingface.co/spaces/vectara/leaderboard) | [条款](https://huggingface.co/spaces/vectara/leaderboard) |
-| `mteb-retrieval` | MTEB 文本嵌入基准 | 垂直专项 | 向量 | Retrieval 检索召回、分类聚类、语义相似度 | [官网](https://huggingface.co/spaces/mteb/leaderboard) | [条款](https://huggingface.co/spaces/mteb/leaderboard) |
-| `awesome-llm-eval` | Awesome-LLM-Eval | 资源目录 | 全模态 | 全球主流开源评测工具集与基准论文索引 | [仓库](https://github.com/MLSysOps/Awesome-LLM-Eval) | [MIT License](https://github.com/MLSysOps/Awesome-LLM-Eval/blob/main/LICENSE) |
+| `vectara-hallucination` | Vectara 幻觉基准 | 垂直专项 | 文本 | Hallucination Rate 幻觉率、事实一致性 | [官网](https://huggingface.co/spaces/vectara/leaderboard) | [开源基准](https://github.com/vectara/hallucination-leaderboard) |
+| `mteb-retrieval` | MTEB 文本嵌入基准 | 垂直专项 | 向量 | Mean Task Score、Retrieval 检索、分类、STS | [官网](https://huggingface.co/spaces/mteb/leaderboard) | [条款](https://huggingface.co/spaces/mteb/leaderboard) |
 
 ---
 
@@ -51,8 +49,7 @@ ai-leaderboard-hub/
 │   └── ISSUE_TEMPLATE/             # 申请新榜单、数据纠错与功能建议模板
 ├── data/
 │   ├── sources.yml                 # 榜单来源元数据定义
-│   ├── rankings/                   # 独立结构化快照 JSON (8+ 权威数据源)
-│   │   ├── lmarena-chat.json
+│   ├── rankings/                   # 独立结构化快照 JSON (7 权威数据源)
 │   │   ├── opencompass-overall.json
 │   │   └── ...
 │   └── schema/                     # JSON Schema 校验规范

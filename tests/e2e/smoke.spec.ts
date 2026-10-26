@@ -18,14 +18,14 @@ test.describe('AI Leaderboard Hub Smoke Tests', () => {
     // Check sources grid cards are rendered
     const cards = page.locator('#sources-grid > div');
     const count = await cards.count();
-    expect(count).toBeGreaterThanOrEqual(8);
+    expect(count).toBeGreaterThanOrEqual(7);
   });
 
   test('Leaderboard detail page renders model snapshot table', async ({ page }) => {
-    await page.goto('/sources/lmarena-chat');
+    await page.goto('/sources/artificial-analysis');
 
     // Check title and source name
-    await expect(page.locator('h1')).toContainText('LMSYS Chatbot Arena');
+    await expect(page.locator('h1')).toContainText('Artificial Analysis Leaderboard');
 
     // Check disclaimer note
     await expect(page.locator('text=快照采纳链接')).toBeVisible();
@@ -36,7 +36,7 @@ test.describe('AI Leaderboard Hub Smoke Tests', () => {
     expect(rowCount).toBeGreaterThanOrEqual(5);
 
     // Check prominent model exists
-    await expect(page.locator('#ranking-models-table')).toContainText('Gemini');
+    await expect(page.locator('#ranking-models-table')).toContainText('Claude');
   });
 
   test('Cross-model comparison page renders multi-model matrix', async ({ page }) => {

@@ -1,73 +1,218 @@
 {
   "source_id": "vectara-hallucination",
-  "snapshot_date": "2026-10-20",
+  "snapshot_date": "2026-10-26",
   "source_url": "https://huggingface.co/spaces/vectara/leaderboard",
-  "raw_notes": "Vectara 幻觉基准排行榜快照（按幻觉率 Hallucination Rate 由低到高排列，越低越好）。",
+  "raw_notes": "直接实时抓取自 Vectara 官方 HHEM 幻觉评测基准库（涵盖最新主流大语言模型摘要一致性与幻觉率测试）。",
   "models": [
     {
       "rank": 1,
-      "model_name": "gpt-4o-2024-08-06",
-      "normalized_model_name": "gpt-4o",
-      "organization": "OpenAI",
-      "score": "1.5%",
+      "model_name": "antgroup/finix_s1_32b",
+      "normalized_model_name": "antgroup-finix-s1-32b",
+      "organization": "antgroup",
+      "score": 98.2,
       "metrics": {
-        "Hallucination Rate (%)": 1.5,
-        "Factual Consistency Rate (%)": 98.5,
-        "Answer Rate (%)": 100.0
+        "Hallucination Rate": "1.8%",
+        "Factual Consistency Rate": "98.2%",
+        "Answer Rate": "99.5%",
+        "Avg Summary Length": "172.4"
       },
-      "notes": "幻觉率极低，结构化事实表现突出"
+      "notes": "事实一致性: 98.2%, 幻觉率: 1.8%, 回答率: 99.5%"
     },
     {
       "rank": 2,
-      "model_name": "claude-3-5-sonnet-20240620",
-      "normalized_model_name": "claude-3-5-sonnet",
-      "organization": "Anthropic",
-      "score": "1.8%",
+      "model_name": "openai/gpt-5.4-nano-2026-03-17",
+      "normalized_model_name": "openai-gpt-5.4-nano-2026-03-17",
+      "organization": "openai",
+      "score": 96.9,
       "metrics": {
-        "Hallucination Rate (%)": 1.8,
-        "Factual Consistency Rate (%)": 98.2,
-        "Answer Rate (%)": 100.0
+        "Hallucination Rate": "3.1%",
+        "Factual Consistency Rate": "96.9%",
+        "Answer Rate": "100%",
+        "Avg Summary Length": "144.4"
       },
-      "notes": "长文档阅读与事实引用保持稳定"
+      "notes": "事实一致性: 96.9%, 幻觉率: 3.1%, 回答率: 100%"
     },
     {
       "rank": 3,
-      "model_name": "gemini-1.5-pro-preview-0801",
-      "normalized_model_name": "gemini-1.5-pro",
-      "organization": "Google",
-      "score": "2.1%",
+      "model_name": "google/gemini-2.5-flash-lite",
+      "normalized_model_name": "google-gemini-2.5-flash-lite",
+      "organization": "google",
+      "score": 96.7,
       "metrics": {
-        "Hallucination Rate (%)": 2.1,
-        "Factual Consistency Rate (%)": 97.9,
-        "Answer Rate (%)": 100.0
+        "Hallucination Rate": "3.3%",
+        "Factual Consistency Rate": "96.7%",
+        "Answer Rate": "99.5%",
+        "Avg Summary Length": "95.7"
       },
-      "notes": "超长上下文检索事实衰减低"
+      "notes": "事实一致性: 96.7%, 幻觉率: 3.3%, 回答率: 99.5%"
     },
     {
       "rank": 4,
-      "model_name": "llama-3-70b-instruct",
-      "normalized_model_name": "llama-3-70b",
-      "organization": "Meta",
-      "score": "3.4%",
+      "model_name": "microsoft/Phi-4",
+      "normalized_model_name": "microsoft-phi-4",
+      "organization": "microsoft",
+      "score": 96.3,
       "metrics": {
-        "Hallucination Rate (%)": 3.4,
-        "Factual Consistency Rate (%)": 96.6,
-        "Answer Rate (%)": 99.8
+        "Hallucination Rate": "3.7%",
+        "Factual Consistency Rate": "96.3%",
+        "Answer Rate": "80.7%",
+        "Avg Summary Length": "120.9"
       },
-      "notes": "开源中型模型事实一致性基线"
+      "notes": "事实一致性: 96.3%, 幻觉率: 3.7%, 回答率: 80.7%"
     },
     {
       "rank": 5,
-      "model_name": "gpt-4o-mini-2024-07-18",
-      "normalized_model_name": "gpt-4o-mini",
-      "organization": "OpenAI",
-      "score": "3.8%",
+      "model_name": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+      "normalized_model_name": "meta-llama-llama-3.3-70b-instruct-turbo",
+      "organization": "meta-llama",
+      "score": 95.9,
       "metrics": {
-        "Hallucination Rate (%)": 3.8,
-        "Factual Consistency Rate (%)": 96.2,
-        "Answer Rate (%)": 100.0
+        "Hallucination Rate": "4.1%",
+        "Factual Consistency Rate": "95.9%",
+        "Answer Rate": "99.5%",
+        "Avg Summary Length": "64.6"
       },
-      "notes": "轻量级模型中表现稳定"
+      "notes": "事实一致性: 95.9%, 幻觉率: 4.1%, 回答率: 99.5%"
+    },
+    {
+      "rank": 6,
+      "model_name": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "normalized_model_name": "deepseek-ai-deepseek-v4.1-flash",
+      "organization": "deepseek-ai",
+      "score": 95.8,
+      "metrics": {
+        "Hallucination Rate": "4.2%",
+        "Factual Consistency Rate": "95.8%",
+        "Answer Rate": "99.9%",
+        "Avg Summary Length": "108.2"
+      },
+      "notes": "事实一致性: 95.8%, 幻觉率: 4.2%, 回答率: 99.9%"
+    },
+    {
+      "rank": 7,
+      "model_name": "snowflake/snowflake-arctic-instruct",
+      "normalized_model_name": "snowflake-snowflake-arctic-instruct",
+      "organization": "snowflake",
+      "score": 95.7,
+      "metrics": {
+        "Hallucination Rate": "4.3%",
+        "Factual Consistency Rate": "95.7%",
+        "Answer Rate": "62.7%",
+        "Avg Summary Length": "81.4"
+      },
+      "notes": "事实一致性: 95.7%, 幻觉率: 4.3%, 回答率: 62.7%"
+    },
+    {
+      "rank": 8,
+      "model_name": "google/gemma-3-12b-it",
+      "normalized_model_name": "google-gemma-3-12b-it",
+      "organization": "google",
+      "score": 95.6,
+      "metrics": {
+        "Hallucination Rate": "4.4%",
+        "Factual Consistency Rate": "95.6%",
+        "Answer Rate": "97.4%",
+        "Avg Summary Length": "89.7"
+      },
+      "notes": "事实一致性: 95.6%, 幻觉率: 4.4%, 回答率: 97.4%"
+    },
+    {
+      "rank": 9,
+      "model_name": "mistralai/mistral-large-2411",
+      "normalized_model_name": "mistralai-mistral-large-2411",
+      "organization": "mistralai",
+      "score": 95.5,
+      "metrics": {
+        "Hallucination Rate": "4.5%",
+        "Factual Consistency Rate": "95.5%",
+        "Answer Rate": "99.9%",
+        "Avg Summary Length": "85.0"
+      },
+      "notes": "事实一致性: 95.5%, 幻觉率: 4.5%, 回答率: 99.9%"
+    },
+    {
+      "rank": 10,
+      "model_name": "qwen/qwen3-8b",
+      "normalized_model_name": "qwen-qwen3-8b",
+      "organization": "qwen",
+      "score": 95.2,
+      "metrics": {
+        "Hallucination Rate": "4.8%",
+        "Factual Consistency Rate": "95.2%",
+        "Answer Rate": "99.9%",
+        "Avg Summary Length": "83.6"
+      },
+      "notes": "事实一致性: 95.2%, 幻觉率: 4.8%, 回答率: 99.9%"
+    },
+    {
+      "rank": 11,
+      "model_name": "amazon/nova-pro-v1:0",
+      "normalized_model_name": "amazon-nova-pro-v1-0",
+      "organization": "amazon",
+      "score": 94.9,
+      "metrics": {
+        "Hallucination Rate": "5.1%",
+        "Factual Consistency Rate": "94.9%",
+        "Answer Rate": "99.3%",
+        "Avg Summary Length": "66.2"
+      },
+      "notes": "事实一致性: 94.9%, 幻觉率: 5.1%, 回答率: 99.3%"
+    },
+    {
+      "rank": 12,
+      "model_name": "amazon/nova-2-lite-v1:0",
+      "normalized_model_name": "amazon-nova-2-lite-v1-0",
+      "organization": "amazon",
+      "score": 94.9,
+      "metrics": {
+        "Hallucination Rate": "5.1%",
+        "Factual Consistency Rate": "94.9%",
+        "Answer Rate": "99.6%",
+        "Avg Summary Length": "94.1"
+      },
+      "notes": "事实一致性: 94.9%, 幻觉率: 5.1%, 回答率: 99.6%"
+    },
+    {
+      "rank": 13,
+      "model_name": "mistralai/mistral-small-2501",
+      "normalized_model_name": "mistralai-mistral-small-2501",
+      "organization": "mistralai",
+      "score": 94.9,
+      "metrics": {
+        "Hallucination Rate": "5.1%",
+        "Factual Consistency Rate": "94.9%",
+        "Answer Rate": "97.9%",
+        "Avg Summary Length": "98.8"
+      },
+      "notes": "事实一致性: 94.9%, 幻觉率: 5.1%, 回答率: 97.9%"
+    },
+    {
+      "rank": 14,
+      "model_name": "ibm-granite/granite-4.0-h-small",
+      "normalized_model_name": "ibm-granite-granite-4.0-h-small",
+      "organization": "ibm-granite",
+      "score": 94.8,
+      "metrics": {
+        "Hallucination Rate": "5.2%",
+        "Factual Consistency Rate": "94.8%",
+        "Answer Rate": "100%",
+        "Avg Summary Length": "107.4"
+      },
+      "notes": "事实一致性: 94.8%, 幻觉率: 5.2%, 回答率: 100%"
+    },
+    {
+      "rank": 15,
+      "model_name": "google/gemma-4-26b-a4b-it",
+      "normalized_model_name": "google-gemma-4-26b-a4b-it",
+      "organization": "google",
+      "score": 94.8,
+      "metrics": {
+        "Hallucination Rate": "5.2%",
+        "Factual Consistency Rate": "94.8%",
+        "Answer Rate": "99.8%",
+        "Avg Summary Length": "67.1"
+      },
+      "notes": "事实一致性: 94.8%, 幻觉率: 5.2%, 回答率: 99.8%"
     }
   ]
 }
