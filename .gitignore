@@ -1,0 +1,20 @@
+# Build output
+dist/
+.astro/
+
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.production
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test artifacts
+test-results/
+playwright-report/
+blob-report/

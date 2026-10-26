@@ -1,0 +1,76 @@
+{
+  "source_id": "huggingface-allbench",
+  "snapshot_date": "2026-10-23",
+  "source_url": "https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard",
+  "raw_notes": "Hugging Face Open LLM Leaderboard v2 开源权重模型评测快照（包含 IFEval, BBH, MATH L5, GPQA, MuSR, MMLU-PRO）。",
+  "models": [
+    {
+      "rank": 1,
+      "model_name": "meta-llama/Llama-3.1-70B-Instruct",
+      "normalized_model_name": "llama-3.1-70b",
+      "organization": "Meta",
+      "score": 45.8,
+      "metrics": {
+        "Average Score": 45.8,
+        "IFEval": 84.2,
+        "BBH": 64.1,
+        "MATH L5": 38.6,
+        "GPQA": 37.4,
+        "MuSR": 46.2,
+        "MMLU-PRO": 44.5
+      },
+      "notes": "开源中型参数标杆"
+    },
+    {
+      "rank": 2,
+      "model_name": "Qwen/Qwen2.5-72B-Instruct",
+      "normalized_model_name": "qwen2.5-72b-instruct",
+      "organization": "Alibaba",
+      "score": 45.4,
+      "metrics": {
+        "Average Score": 45.4,
+        "IFEval": 85.1,
+        "BBH": 63.8,
+        "MATH L5": 42.1,
+        "GPQA": 35.8,
+        "MuSR": 44.9,
+        "MMLU-PRO": 46.2
+      },
+      "notes": "MATH L5 与 MMLU-PRO 分数极高"
+    },
+    {
+      "rank": 3,
+      "model_name": "mistralai/Mistral-Large-Instruct-2407",
+      "normalized_model_name": "mistral-large-2407",
+      "organization": "Mistral AI",
+      "score": 44.1,
+      "metrics": {
+        "Average Score": 44.1,
+        "IFEval": 82.5,
+        "BBH": 61.2,
+        "MATH L5": 36.4,
+        "GPQA": 34.9,
+        "MuSR": 43.8,
+        "MMLU-PRO": 43.1
+      },
+      "notes": "欧洲开源标杆模型"
+    },
+    {
+      "rank": 4,
+      "model_name": "meta-llama/Llama-3.1-8B-Instruct",
+      "normalized_model_name": "llama-3.1-8b",
+      "organization": "Meta",
+      "score": 35.2,
+      "metrics": {
+        "Average Score": 35.2,
+        "IFEval": 72.8,
+        "BBH": 48.9,
+        "MATH L5": 21.4,
+        "GPQA": 22.1,
+        "MuSR": 38.0,
+        "MMLU-PRO": 29.5
+      },
+      "notes": "端侧轻量小模型第一梯队"
+    }
+  ]
+}

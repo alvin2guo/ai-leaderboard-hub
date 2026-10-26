@@ -1,0 +1,53 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import DisclaimerBanner from '../components/DisclaimerBanner.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'AI Leaderboard Hub | 聚合全球主流 AI 大模型评测榜单',
+  description = '汇聚主流 AI 大模型能力评测榜单，按类别分类浏览、多维度排名快照与模型检索，坚持客观真实与可追溯原则。',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://alvin99.github.io/ai-leaderboard-hub');
+---
+
+<!doctype html>
+<html lang="zh-CN" class="h-full bg-slate-50 text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href={new URL(`${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`, Astro.url)} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+  </head>
+  <body class="flex min-h-full flex-col font-sans selection:bg-sky-500 selection:text-white">
+    <DisclaimerBanner />
+    <Header />
+    <main class="flex-1 pb-16">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

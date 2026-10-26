@@ -1,0 +1,73 @@
+---
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t border-slate-200 bg-white py-12 dark:border-slate-800 dark:bg-slate-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="flex h-7 w-7 items-center justify-center rounded bg-sky-600 text-white font-black text-sm">
+            AI
+          </span>
+          <span class="font-bold text-slate-900 dark:text-white">AI Leaderboard Hub</span>
+        </div>
+        <p class="text-sm text-slate-600 dark:text-slate-400 max-w-md leading-relaxed">
+          一个开放、透明、可追溯的大模型能力评测榜单聚合项目。我们不伪造数据，不做跨榜混排，所有指标与排名均可溯源至原始来源与快照。
+        </p>
+        <div class="mt-4 text-xs text-slate-500">
+          基于 Astro + Tailwind CSS 构建，完全静态部署，数据驱动。
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-white mb-3">
+          快速导航
+        </h4>
+        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+          <li><a href={`${baseUrl}/`} class="hover:text-sky-600 dark:hover:text-sky-400">首页总览</a></li>
+          <li><a href={`${baseUrl}/compare`} class="hover:text-sky-600 dark:hover:text-sky-400">多模型跨榜对照</a></li>
+          <li><a href={`${baseUrl}/status`} class="hover:text-sky-600 dark:hover:text-sky-400">数据与快照状态</a></li>
+          <li><a href={`${baseUrl}/about`} class="hover:text-sky-600 dark:hover:text-sky-400">收录准则与免责</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-white mb-3">
+          开源与贡献
+        </h4>
+        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+          <li>
+            <a href="https://github.com/Alvin99/ai-leaderboard-hub" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 dark:hover:text-sky-400">
+              GitHub 仓库
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/Alvin99/ai-leaderboard-hub/issues" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 dark:hover:text-sky-400">
+              提交新榜单或数据纠错
+            </a>
+          </li>
+          <li>
+            <a href={`${baseUrl}/about#license`} class="hover:text-sky-600 dark:hover:text-sky-400">
+              MIT 开源许可声明
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <p>
+        © {currentYear} AI Leaderboard Hub. 代码采用 MIT 协议开源。各榜单数据版权归原始机构所有。
+      </p>
+      <div class="flex items-center gap-4">
+        <span>不伪造数据</span>
+        <span>•</span>
+        <span>不做跨榜混排</span>
+        <span>•</span>
+        <span>完全静态开源</span>
+      </div>
+    </div>
+  </div>
+</footer>

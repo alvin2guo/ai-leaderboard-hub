@@ -1,0 +1,296 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SourceCard from '../components/SourceCard.astro';
+import { getAllSourcesWithRankings, getAllUniqueModels } from '../utils/data';
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+const sources = getAllSourcesWithRankings();
+const uniqueModels = getAllUniqueModels();
+
+const totalSources = sources.length;
+const totalModels = uniqueModels.length;
+const totalRankings = sources.filter((s) => s.snapshot).length;
+const autoFetchCount = sources.filter((s) => s.auto_fetch_supported).length;
+
+const categories = [
+  { id: 'all', label: '全部榜单' },
+  { id: 'arena', label: '竞技场对决 (Arena)' },
+  { id: 'comprehensive', label: '综合性能与选型' },
+  { id: 'chinese', label: '中文/国内评测' },
+  { id: 'specialized', label: '专项评测 (幻觉/检索)' },
+  { id: 'directory', label: '资源目录' },
+];
+---
+
+<Layout
+  title="AI Leaderboard Hub | 聚合全球主流 AI 大模型评测榜单与选型指南"
+  description="汇聚全球主流 AI 大模型评测榜单（LMArena、OpenCompass、SuperCLUE、Artificial Analysis、HF Leaderboard 等），客观透明，数据可查。"
+>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-sky-50/50 via-white to-slate-50 dark:from-slate-900/50 dark:via-slate-950 dark:to-slate-950 border-b border-slate-200/80 dark:border-slate-800 py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 rounded-full bg-sky-50 dark:bg-sky-950/60 border border-sky-200 dark:border-sky-800/80 px-3 py-1 text-xs font-semibold text-sky-700 dark:text-sky-300 mb-6">
+          <span class="inline-block h-2 w-2 rounded-full bg-sky-500 animate-ping"></span>
+          开源·客观·可追溯的大模型评测枢纽
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+          聚合主流 AI 评测榜单<br />
+          <span class="bg-gradient-to-r from-sky-600 to-indigo-600 bg-clip-text text-transparent">
+            为大模型选型提供真实参照
+          </span>
+        </h1>
+        <p class="mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+          不编造分数、不做跨榜混排加权。汇聚全球人类偏好盲测、综合基准、中文评测及垂直任务快照，所有数据百分之百回溯至原始出处与时间戳。
+        </p>
+
+        <!-- Search Bar -->
+        <div class="mt-8 max-w-xl mx-auto">
+          <div class="relative flex items-center">
+            <input
+              type="text"
+              id="global-search-input"
+              placeholder="快速搜索榜单名称、机构（OpenAI, Anthropic, 阿里...）或指标..."
+              class="w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 pl-11 text-sm shadow-sm focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500/20 dark:text-white"
+            />
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+            <span id="search-count" class="hidden absolute right-3 text-xs text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded"></span>
+          </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4 max-w-2xl mx-auto">
+          <div class="rounded-lg border border-slate-200/80 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 p-3 shadow-xs">
+            <div class="text-2xl font-bold text-slate-900 dark:text-white">{totalSources}</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400">收录权威榜单</div>
+          </div>
+          <div class="rounded-lg border border-slate-200/80 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 p-3 shadow-xs">
+            <div class="text-2xl font-bold text-sky-600 dark:text-sky-400">{totalRankings}</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400">有效快照集</div>
+          </div>
+          <div class="rounded-lg border border-slate-200/80 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 p-3 shadow-xs">
+            <div class="text-2xl font-bold text-slate-900 dark:text-white">{totalModels}</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400">收录归一化模型</div>
+          </div>
+          <div class="rounded-lg border border-slate-200/80 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 p-3 shadow-xs">
+            <div class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">{autoFetchCount}</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400">支持自动定时更新</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sources Grid Section -->
+  <section id="sources-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+    <!-- Filters Header -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-5">
+      <div>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <span>榜单来源分类</span>
+          <span class="text-xs font-normal text-slate-500">共 {totalSources} 个收录来源</span>
+        </h2>
+        <p class="text-xs text-slate-500 mt-1">
+          点击来源卡片可查看对应榜单的完整排名快照、评测口径与官方链接
+        </p>
+      </div>
+
+      <!-- Quick Action Button -->
+      <div class="flex items-center gap-2 shrink-0">
+        <a
+          href={`${baseUrl}/compare`}
+          class="inline-flex items-center gap-1.5 rounded-lg bg-sky-600 px-3.5 py-2 text-xs font-semibold text-white shadow-sm hover:bg-sky-500 transition-colors"
+        >
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+          进入多模型跨榜对比
+        </a>
+      </div>
+    </div>
+
+    <!-- Category Pills Filter -->
+    <div class="mt-4 flex flex-wrap items-center gap-2" id="category-filter-group">
+      {categories.map((cat, idx) => (
+        <button
+          type="button"
+          data-category-btn={cat.id}
+          class={`filter-btn rounded-full px-3 py-1.5 text-xs font-medium transition-all ${
+            idx === 0
+              ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-sm active-filter'
+              : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 dark:bg-slate-900 dark:text-slate-300 dark:border-slate-800 dark:hover:bg-slate-800'
+          }`}
+        >
+          {cat.label}
+        </button>
+      ))}
+    </div>
+
+    <!-- Cards Grid -->
+    <div id="sources-grid" class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {sources.map((source) => (
+        <SourceCard source={source} />
+      ))}
+    </div>
+
+    <!-- No results placeholder -->
+    <div id="no-results" class="hidden text-center py-16">
+      <div class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-400 mb-3">
+        🔍
+      </div>
+      <h3 class="text-sm font-semibold text-slate-900 dark:text-white">未找到匹配的榜单</h3>
+      <p class="text-xs text-slate-500 mt-1">请尝试更换检索关键词或选择“全部榜单”类别。</p>
+    </div>
+  </section>
+
+  <!-- Highlight Section: Model cross-reference preview -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+        <div>
+          <span class="inline-flex items-center rounded-md bg-sky-50 dark:bg-sky-950 px-2 py-1 text-xs font-semibold text-sky-700 dark:text-sky-300 mb-1">
+            跨榜收录高频模型
+          </span>
+          <h2 class="text-lg font-bold text-slate-900 dark:text-white">
+            主流模型在各榜单中的收录快照
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">
+            各榜单评价维度不同，本表展示模型在各榜单独占排名，非加权总分。
+          </p>
+        </div>
+        <a
+          href={`${baseUrl}/compare`}
+          class="text-xs font-semibold text-sky-600 dark:text-sky-400 hover:underline flex items-center gap-1 shrink-0"
+        >
+          查看完整跨榜对比工具 &rarr;
+        </a>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-800 text-left text-xs">
+          <thead class="bg-slate-50 dark:bg-slate-800/60 font-semibold text-slate-700 dark:text-slate-300">
+            <tr>
+              <th scope="col" class="py-3 px-4">归一化模型</th>
+              <th scope="col" class="py-3 px-4">机构</th>
+              <th scope="col" class="py-3 px-4">上榜数量</th>
+              <th scope="col" class="py-3 px-4">收录榜单与名次</th>
+              <th scope="col" class="py-3 px-4 text-right">操作</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 dark:divide-slate-800/60 text-slate-600 dark:text-slate-300">
+            {uniqueModels.slice(0, 6).map((model) => (
+              <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition-colors">
+                <td class="py-3 px-4 font-semibold text-slate-900 dark:text-white">
+                  {model.normalized_model_name}
+                </td>
+                <td class="py-3 px-4">
+                  <span class="inline-block rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[11px] font-medium text-slate-700 dark:text-slate-300">
+                    {model.organization}
+                  </span>
+                </td>
+                <td class="py-3 px-4 font-mono font-semibold text-sky-600 dark:text-sky-400">
+                  {model.appearances.length} 处
+                </td>
+                <td class="py-3 px-4">
+                  <div class="flex flex-wrap gap-1.5">
+                    {model.appearances.map((app) => (
+                      <a
+                        href={`${baseUrl}/sources/${app.source_id}`}
+                        class="inline-flex items-center gap-1 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-1.5 py-0.5 text-[10px] text-slate-600 dark:text-slate-300 hover:border-sky-400"
+                      >
+                        <span class="font-medium truncate max-w-[120px]">{app.source_name}</span>
+                        <span class="font-bold text-sky-600 dark:text-sky-400 font-mono">#{app.rank}</span>
+                      </a>
+                    ))}
+                  </div>
+                </td>
+                <td class="py-3 px-4 text-right">
+                  <a
+                    href={`${baseUrl}/compare?model=${model.normalized_model_name}`}
+                    class="inline-flex items-center text-sky-600 dark:text-sky-400 hover:underline font-medium"
+                  >
+                    对比
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Client-side quick filter & search
+  const searchInput = document.getElementById('global-search-input') as HTMLInputElement | null;
+  const cards = Array.from(document.querySelectorAll('#sources-grid > div')) as HTMLElement[];
+  const filterBtns = Array.from(document.querySelectorAll('#category-filter-group button')) as HTMLButtonElement[];
+  const noResults = document.getElementById('no-results');
+  const searchCount = document.getElementById('search-count');
+
+  let activeCategory = 'all';
+  let searchTerm = '';
+
+  function applyFilters() {
+    let visibleCount = 0;
+
+    cards.forEach((card) => {
+      const cardCategory = card.dataset.category || '';
+      const textContent = card.innerText.toLowerCase();
+
+      const matchesCat = activeCategory === 'all' || cardCategory === activeCategory;
+      const matchesSearch = !searchTerm || textContent.includes(searchTerm);
+
+      if (matchesCat && matchesSearch) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (noResults) {
+      if (visibleCount === 0) {
+        noResults.classList.remove('hidden');
+      } else {
+        noResults.classList.add('hidden');
+      }
+    }
+
+    if (searchCount) {
+      if (searchTerm) {
+        searchCount.textContent = `找到 ${visibleCount} 个来源`;
+        searchCount.classList.remove('hidden');
+      } else {
+        searchCount.classList.add('hidden');
+      }
+    }
+  }
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach((b) => {
+        b.classList.remove('bg-slate-900', 'text-white', 'dark:bg-white', 'dark:text-slate-900', 'shadow-sm', 'active-filter');
+        b.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200', 'dark:bg-slate-900', 'dark:text-slate-300', 'dark:border-slate-800');
+      });
+
+      btn.classList.add('bg-slate-900', 'text-white', 'dark:bg-white', 'dark:text-slate-900', 'shadow-sm', 'active-filter');
+      btn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200', 'dark:bg-slate-900', 'dark:text-slate-300', 'dark:border-slate-800');
+
+      activeCategory = btn.dataset.categoryBtn || 'all';
+      applyFilters();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchTerm = (e.target as HTMLInputElement).value.trim().toLowerCase();
+      applyFilters();
+    });
+  }
+</script>

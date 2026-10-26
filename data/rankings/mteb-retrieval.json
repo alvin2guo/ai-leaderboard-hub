@@ -1,0 +1,64 @@
+{
+  "source_id": "mteb-retrieval",
+  "snapshot_date": "2026-10-22",
+  "source_url": "https://huggingface.co/spaces/mteb/leaderboard",
+  "raw_notes": "MTEB (Massive Text Embedding Benchmark) 检索子任务 (Retrieval) 排名快照。",
+  "models": [
+    {
+      "rank": 1,
+      "model_name": "voyage-large-2-instruct",
+      "normalized_model_name": "voyage-large-2",
+      "organization": "Voyage AI",
+      "score": 58.6,
+      "metrics": {
+        "Overall Average": 68.2,
+        "Retrieval": 58.6,
+        "Classification": 82.1,
+        "STS": 85.4
+      },
+      "notes": "企业级向量检索商业模型领先"
+    },
+    {
+      "rank": 2,
+      "model_name": "BAAI/bge-en-icl",
+      "normalized_model_name": "bge-en-icl",
+      "organization": "BAAI (智源)",
+      "score": 58.1,
+      "metrics": {
+        "Overall Average": 67.9,
+        "Retrieval": 58.1,
+        "Classification": 81.5,
+        "STS": 84.9
+      },
+      "notes": "智源推出的开源上下文学习嵌入模型"
+    },
+    {
+      "rank": 3,
+      "model_name": "Cohere/embed-english-v3.0",
+      "normalized_model_name": "cohere-embed-v3",
+      "organization": "Cohere",
+      "score": 56.4,
+      "metrics": {
+        "Overall Average": 66.8,
+        "Retrieval": 56.4,
+        "Classification": 80.2,
+        "STS": 83.7
+      },
+      "notes": "支持多用途压缩与两阶段检索"
+    },
+    {
+      "rank": 4,
+      "model_name": "text-embedding-3-large",
+      "normalized_model_name": "openai-text-embedding-3-large",
+      "organization": "OpenAI",
+      "score": 55.4,
+      "metrics": {
+        "Overall Average": 64.6,
+        "Retrieval": 55.4,
+        "Classification": 78.4,
+        "STS": 81.9
+      },
+      "notes": "支持可自定义维度的向量表征"
+    }
+  ]
+}

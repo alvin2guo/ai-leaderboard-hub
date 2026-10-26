@@ -1,0 +1,152 @@
+---
+import type { SourceWithRanking } from '../utils/types';
+
+interface Props {
+  source: SourceWithRanking;
+}
+
+const { source } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const categoryMap: Record<string, { label: string; color: string }> = {
+  arena: { label: '竞技场对决', color: 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/40 dark:text-rose-300 dark:border-rose-900' },
+  comprehensive: { label: '综合性能', color: 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:border-blue-900' },
+  chinese: { label: '中文基准', color: 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-900' },
+  specialized: { label: '专项评测', color: 'bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950/40 dark:text-purple-300 dark:border-purple-900' },
+  directory: { label: '资源目录', color: 'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:border-amber-900' },
+};
+
+const modalityMap: Record<string, string> = {
+  text: '文本 Text',
+  multimodal: '多模态 Multimodal',
+  code: '代码 Code',
+  embedding: '向量 Embedding',
+  audio: '语音 Audio',
+  all: '全模态 All',
+};
+
+const catInfo = categoryMap[source.category] || { label: source.category, color: 'bg-slate-50 text-slate-700 border-slate-200' };
+const topModels = source.snapshot ? source.snapshot.models.slice(0, 3) : [];
+---
+
+<div
+  class="group relative flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:border-sky-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-sky-700"
+  data-category={source.category}
+  data-modality={source.modality}
+  data-autofetch={source.auto_fetch_supported ? 'true' : 'false'}
+>
+  <div>
+    <!-- Top Tags -->
+    <div class="flex items-center justify-between gap-2 mb-3">
+      <div class="flex items-center gap-1.5 flex-wrap">
+        <span class={`inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-medium ${catInfo.color}`}>
+          {catInfo.label}
+        </span>
+        <span class="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-600 dark:text-slate-300">
+          {modalityMap[source.modality] || source.modality}
+        </span>
+      </div>
+
+      {source.auto_fetch_supported ? (
+        <span class="inline-flex items-center gap-1 rounded-full bg-emerald-50 dark:bg-emerald-950/40 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800" title="支持通过 API 或公开快照自动更新">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          自动更新
+        </span>
+      ) : (
+        <span class="inline-flex items-center rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[10px] font-medium text-slate-500 dark:text-slate-400" title="由社区和维护者验证后人工维护更新">
+          快照维护
+        </span>
+      )}
+    </div>
+
+    <!-- Title and Description -->
+    <h3 class="text-lg font-bold text-slate-900 group-hover:text-sky-600 dark:text-white dark:group-hover:text-sky-400 transition-colors">
+      <a href={`${baseUrl}/sources/${source.id}`}>
+        {source.name}
+      </a>
+    </h3>
+    <p class="mt-1.5 text-xs text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed">
+      {source.description}
+    </p>
+
+    <!-- Metrics List -->
+    <div class="mt-3 flex flex-wrap gap-1">
+      {source.metrics.slice(0, 4).map((m) => (
+        <span class="inline-block rounded bg-slate-100 dark:bg-slate-800/80 px-1.5 py-0.5 text-[10px] font-mono text-slate-600 dark:text-slate-400">
+          {m}
+        </span>
+      ))}
+      {source.metrics.length > 4 && (
+        <span class="inline-block text-[10px] text-slate-400 dark:text-slate-500 py-0.5">
+          +{source.metrics.length - 4} 项指标
+        </span>
+      )}
+    </div>
+
+    <!-- Top Models Preview if available -->
+    {topModels.length > 0 && (
+      <div class="mt-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 p-2.5 border border-slate-100 dark:border-slate-800">
+        <div class="flex items-center justify-between text-[11px] font-semibold text-slate-500 dark:text-slate-400 mb-1.5">
+          <span>榜首快照预览</span>
+          <span>指标分值</span>
+        </div>
+        <ul class="space-y-1">
+          {topModels.map((m) => (
+            <li class="flex items-center justify-between text-xs">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <span class={`flex h-4 w-4 shrink-0 items-center justify-center rounded text-[10px] font-bold ${
+                  m.rank === 1 ? 'bg-amber-400/20 text-amber-600 dark:text-amber-300' :
+                  m.rank === 2 ? 'bg-slate-300/30 text-slate-600 dark:text-slate-300' :
+                  'bg-orange-300/20 text-orange-600 dark:text-orange-300'
+                }`}>
+                  {m.rank}
+                </span>
+                <span class="truncate font-medium text-slate-800 dark:text-slate-200" title={m.model_name}>
+                  {m.model_name}
+                </span>
+              </div>
+              <span class="font-mono text-xs font-semibold text-sky-600 dark:text-sky-400 shrink-0">
+                {m.score}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {source.category === 'directory' && (
+      <div class="mt-4 rounded-lg bg-amber-50/50 dark:bg-amber-950/20 p-2.5 border border-amber-200/50 dark:border-amber-900/30 text-xs text-amber-800 dark:text-amber-300">
+        📌 评测全景目录与论文索引，不提供单独模型综合跑分，适合评测方法学调研。
+      </div>
+    )}
+  </div>
+
+  <!-- Bottom Meta & Actions -->
+  <div class="mt-5 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400">
+    <div class="flex flex-col">
+      <span>快照: {source.snapshot ? source.snapshot.snapshot_date : source.last_checked_at}</span>
+      <span class="text-[10px] text-slate-400">频率: {source.update_frequency}</span>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <a
+        href={source.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-0.5 text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 font-medium"
+        title="访问官方原站"
+      >
+        <span>原站</span>
+        <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+      <a
+        href={`${baseUrl}/sources/${source.id}`}
+        class="inline-flex items-center rounded bg-sky-50 dark:bg-sky-950/60 px-2 py-1 font-semibold text-sky-600 dark:text-sky-400 hover:bg-sky-100 dark:hover:bg-sky-900/80 transition-colors"
+      >
+        详情 &rarr;
+      </a>
+    </div>
+  </div>
+</div>

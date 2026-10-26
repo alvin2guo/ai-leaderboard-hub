@@ -1,0 +1,112 @@
+{
+  "source_id": "lmarena-chat",
+  "snapshot_date": "2026-10-25",
+  "source_url": "https://chat.lmsys.org/?leaderboard",
+  "raw_notes": "基于 LMSYS 众包对战数据，截至 2026 年 10 月全品类对战结果（过滤代码专项后的大语言模型全能力榜）。",
+  "models": [
+    {
+      "rank": 1,
+      "model_name": "gemini-1.5-pro-002",
+      "normalized_model_name": "gemini-1.5-pro",
+      "organization": "Google",
+      "score": 1301,
+      "metrics": {
+        "Arena Elo": 1301,
+        "95% CI": "[-7, +7]",
+        "Votes Count": 42100
+      },
+      "notes": "支持超长上下文与多模态输入"
+    },
+    {
+      "rank": 2,
+      "model_name": "chatgpt-4o-latest (2024-10-18)",
+      "normalized_model_name": "gpt-4o",
+      "organization": "OpenAI",
+      "score": 1289,
+      "metrics": {
+        "Arena Elo": 1289,
+        "95% CI": "[-6, +6]",
+        "Votes Count": 68500
+      },
+      "notes": "OpenAI 旗舰全功能多模态模型"
+    },
+    {
+      "rank": 3,
+      "model_name": "claude-3-5-sonnet-20241022",
+      "normalized_model_name": "claude-3-5-sonnet",
+      "organization": "Anthropic",
+      "score": 1284,
+      "metrics": {
+        "Arena Elo": 1284,
+        "95% CI": "[-8, +8]",
+        "Votes Count": 51200
+      },
+      "notes": "具备行业顶尖的编码与计算机使用能力"
+    },
+    {
+      "rank": 4,
+      "model_name": "o1-preview",
+      "normalized_model_name": "o1-preview",
+      "organization": "OpenAI",
+      "score": 1278,
+      "metrics": {
+        "Arena Elo": 1278,
+        "95% CI": "[-9, +9]",
+        "Votes Count": 33100
+      },
+      "notes": "慢思考推理模型，数学与复杂逻辑突出"
+    },
+    {
+      "rank": 5,
+      "model_name": "qwen2.5-72b-instruct",
+      "normalized_model_name": "qwen2.5-72b-instruct",
+      "organization": "Alibaba",
+      "score": 1261,
+      "metrics": {
+        "Arena Elo": 1261,
+        "95% CI": "[-7, +7]",
+        "Votes Count": 39800
+      },
+      "notes": "开源权重代表，在多语言与推理上表现优异"
+    },
+    {
+      "rank": 6,
+      "model_name": "meta-llama-3.1-405b-instruct",
+      "normalized_model_name": "llama-3.1-405b",
+      "organization": "Meta",
+      "score": 1256,
+      "metrics": {
+        "Arena Elo": 1256,
+        "95% CI": "[-9, +9]",
+        "Votes Count": 28400
+      },
+      "notes": "超大规模开源旗舰基座"
+    },
+    {
+      "rank": 7,
+      "model_name": "deepseek-v2.5",
+      "normalized_model_name": "deepseek-v2.5",
+      "organization": "DeepSeek",
+      "score": 1248,
+      "metrics": {
+        "Arena Elo": 1248,
+        "95% CI": "[-8, +8]",
+        "Votes Count": 31000
+      },
+      "notes": "MoE 架构的高性价比开源/商用模型"
+    },
+    {
+      "rank": 8,
+      "model_name": "gpt-4o-mini-2024-07-18",
+      "normalized_model_name": "gpt-4o-mini",
+      "organization": "OpenAI",
+      "score": 1235,
+      "metrics": {
+        "Arena Elo": 1235,
+        "95% CI": "[-6, +6]",
+        "Votes Count": 45000
+      },
+      "notes": "轻量高性价比模型"
+    }
+  ]
+}

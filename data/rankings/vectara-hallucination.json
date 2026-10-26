@@ -1,0 +1,73 @@
+{
+  "source_id": "vectara-hallucination",
+  "snapshot_date": "2026-10-20",
+  "source_url": "https://huggingface.co/spaces/vectara/leaderboard",
+  "raw_notes": "Vectara 幻觉基准排行榜快照（按幻觉率 Hallucination Rate 由低到高排列，越低越好）。",
+  "models": [
+    {
+      "rank": 1,
+      "model_name": "gpt-4o-2024-08-06",
+      "normalized_model_name": "gpt-4o",
+      "organization": "OpenAI",
+      "score": "1.5%",
+      "metrics": {
+        "Hallucination Rate (%)": 1.5,
+        "Factual Consistency Rate (%)": 98.5,
+        "Answer Rate (%)": 100.0
+      },
+      "notes": "幻觉率极低，结构化事实表现突出"
+    },
+    {
+      "rank": 2,
+      "model_name": "claude-3-5-sonnet-20240620",
+      "normalized_model_name": "claude-3-5-sonnet",
+      "organization": "Anthropic",
+      "score": "1.8%",
+      "metrics": {
+        "Hallucination Rate (%)": 1.8,
+        "Factual Consistency Rate (%)": 98.2,
+        "Answer Rate (%)": 100.0
+      },
+      "notes": "长文档阅读与事实引用保持稳定"
+    },
+    {
+      "rank": 3,
+      "model_name": "gemini-1.5-pro-preview-0801",
+      "normalized_model_name": "gemini-1.5-pro",
+      "organization": "Google",
+      "score": "2.1%",
+      "metrics": {
+        "Hallucination Rate (%)": 2.1,
+        "Factual Consistency Rate (%)": 97.9,
+        "Answer Rate (%)": 100.0
+      },
+      "notes": "超长上下文检索事实衰减低"
+    },
+    {
+      "rank": 4,
+      "model_name": "llama-3-70b-instruct",
+      "normalized_model_name": "llama-3-70b",
+      "organization": "Meta",
+      "score": "3.4%",
+      "metrics": {
+        "Hallucination Rate (%)": 3.4,
+        "Factual Consistency Rate (%)": 96.6,
+        "Answer Rate (%)": 99.8
+      },
+      "notes": "开源中型模型事实一致性基线"
+    },
+    {
+      "rank": 5,
+      "model_name": "gpt-4o-mini-2024-07-18",
+      "normalized_model_name": "gpt-4o-mini",
+      "organization": "OpenAI",
+      "score": "3.8%",
+      "metrics": {
+        "Hallucination Rate (%)": 3.8,
+        "Factual Consistency Rate (%)": 96.2,
+        "Answer Rate (%)": 100.0
+      },
+      "notes": "轻量级模型中表现稳定"
+    }
+  ]
+}

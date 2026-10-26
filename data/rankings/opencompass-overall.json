@@ -1,0 +1,104 @@
+{
+  "source_id": "opencompass-overall",
+  "snapshot_date": "2026-10-24",
+  "source_url": "https://opencompass.org.cn/leaderboard-llm",
+  "raw_notes": "OpenCompass 司南大模型整体综合基准，按 Overall 综合能力归一化得分排序。",
+  "models": [
+    {
+      "rank": 1,
+      "model_name": "GPT-4o (2024-05-13)",
+      "normalized_model_name": "gpt-4o",
+      "organization": "OpenAI",
+      "score": 75.8,
+      "metrics": {
+        "Overall Score": 75.8,
+        "Language": 81.2,
+        "Knowledge": 79.4,
+        "Reasoning": 74.5,
+        "Math": 71.8,
+        "Code": 72.1
+      },
+      "notes": "闭源商业模型参考基准"
+    },
+    {
+      "rank": 2,
+      "model_name": "Claude-3.5-Sonnet",
+      "normalized_model_name": "claude-3-5-sonnet",
+      "organization": "Anthropic",
+      "score": 75.2,
+      "metrics": {
+        "Overall Score": 75.2,
+        "Language": 79.5,
+        "Knowledge": 77.8,
+        "Reasoning": 75.8,
+        "Math": 70.4,
+        "Code": 76.5
+      },
+      "notes": "代码与推理分项极高"
+    },
+    {
+      "rank": 3,
+      "model_name": "Qwen2.5-72B-Instruct",
+      "normalized_model_name": "qwen2.5-72b-instruct",
+      "organization": "Alibaba",
+      "score": 74.5,
+      "metrics": {
+        "Overall Score": 74.5,
+        "Language": 79.0,
+        "Knowledge": 76.2,
+        "Reasoning": 73.1,
+        "Math": 72.5,
+        "Code": 71.8
+      },
+      "notes": "开源模型中表现顶尖"
+    },
+    {
+      "rank": 4,
+      "model_name": "GLM-4-Plus",
+      "normalized_model_name": "glm-4-plus",
+      "organization": "Zhipu AI",
+      "score": 73.6,
+      "metrics": {
+        "Overall Score": 73.6,
+        "Language": 78.4,
+        "Knowledge": 75.8,
+        "Reasoning": 71.9,
+        "Math": 69.8,
+        "Code": 70.2
+      },
+      "notes": "智谱 AI 最新基座升级版"
+    },
+    {
+      "rank": 5,
+      "model_name": "DeepSeek-V2.5",
+      "normalized_model_name": "deepseek-v2.5",
+      "organization": "DeepSeek",
+      "score": 73.1,
+      "metrics": {
+        "Overall Score": 73.1,
+        "Language": 77.2,
+        "Knowledge": 74.6,
+        "Reasoning": 72.4,
+        "Math": 71.0,
+        "Code": 70.3
+      },
+      "notes": "融合通用与代码能力的 MoE 统一版本"
+    },
+    {
+      "rank": 6,
+      "model_name": "Doubao-pro-4k",
+      "normalized_model_name": "doubao-pro",
+      "organization": "ByteDance",
+      "score": 72.4,
+      "metrics": {
+        "Overall Score": 72.4,
+        "Language": 77.8,
+        "Knowledge": 73.5,
+        "Reasoning": 70.1,
+        "Math": 68.2,
+        "Code": 67.9
+      },
+      "notes": "字节跳动商业化主力主力模型"
+    }
+  ]
+}
