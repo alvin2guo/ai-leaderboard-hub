@@ -1,0 +1,23 @@
+name: '💡 功能需求与改进建议 (Feature Request)'
+description: '为 AI Leaderboard Hub 提出页面交互、可视化或架构改进建议'
+title: '[功能建议]: '
+labels: ['enhancement']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        欢迎提出有益于开源社区的大模型选型交互与可视化建议！
+  - type: textarea
+    id: problem
+    attributes:
+      label: 您希望解决的问题或使用痛点 (Problem Statement)
+      placeholder: 在进行模型对比时...
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: 期望的实现方案 (Proposed Solution)
+      placeholder: 增加雷达图展示 / 增加导出 Markdown 表格能力...
+    validations:
+      required: true

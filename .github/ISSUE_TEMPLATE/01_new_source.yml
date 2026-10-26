@@ -1,0 +1,69 @@
+name: '➕ 申请收录新榜单 (New Leaderboard Source)'
+description: '推荐并申请收录新的权威 AI 大模型评测榜单'
+title: '[新榜单申请]: '
+labels: ['new-source', 'triage']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢您为 AI Leaderboard Hub 推荐优质评测来源！请确保推荐的榜单具有明确评测方法学、公开可查的数据及合理的使用条款。
+  - type: input
+    id: source_name
+    attributes:
+      label: 榜单名称 (Leaderboard Name)
+      placeholder: 例如：LiveCodeBench / SimpleQA / Skylenage
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: 官方网站或论文链接 (URL)
+      placeholder: https://...
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: 榜单类别 (Category)
+      options:
+        - 'arena (人类偏好/盲测竞技场)'
+        - 'comprehensive (综合多维度能力基准)'
+        - 'chinese (中文/国内专项评测)'
+        - 'specialized (垂直专项评测，如代码/数学/安全/幻觉)'
+        - 'directory (工具/资源索引目录)'
+    validations:
+      required: true
+  - type: dropdown
+    id: modality
+    attributes:
+      label: 支持模态 (Modality)
+      options:
+        - 'text'
+        - 'multimodal'
+        - 'code'
+        - 'embedding'
+        - 'audio'
+        - 'all'
+    validations:
+      required: true
+  - type: textarea
+    id: metrics
+    attributes:
+      label: 核心指标与评测维度 (Metrics & Methodology)
+      placeholder: 例如：Pass@1, Elo Rating, Hallucination Rate...
+    validations:
+      required: true
+  - type: input
+    id: license_url
+    attributes:
+      label: 许可条款或服务协议链接 (License / Terms URL)
+      placeholder: https://...
+    validations:
+      required: true
+  - type: checkboxes
+    id: compliance_check
+    attributes:
+      label: 合规与真实性确认
+      options:
+        - label: '我确认该来源具备公开可查的数据，且收录行为符合其条款，不涉及编造数据或绕过商业反爬防御。'
+          required: true

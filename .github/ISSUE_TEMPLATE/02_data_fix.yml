@@ -1,0 +1,37 @@
+name: '🐛 数据纠错与快照更新 (Data Fix / Snapshot Update)'
+description: '报告榜单中的错误数据、失效链接或提交最新快照'
+title: '[数据纠错]: '
+labels: ['data-fix', 'verified-needed']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        如发现模型名称归一化错误、机构归属有误、分值与官方原站不符，请在此提交。
+  - type: input
+    id: source_id
+    attributes:
+      label: 涉及的榜单 ID (Source ID)
+      placeholder: 例如：lmarena-chat / opencompass-overall
+    validations:
+      required: true
+  - type: input
+    id: model_name
+    attributes:
+      label: 涉及的模型名称 (Model Name)
+      placeholder: 例如：gpt-4o / claude-3-5-sonnet
+    validations:
+      required: true
+  - type: textarea
+    id: issue_description
+    attributes:
+      label: 问题详细描述与正确数值 (Description of Discrepancy)
+      placeholder: 当前网站显示分值为 XX，但官方最新快照已更新为 YY...
+    validations:
+      required: true
+  - type: input
+    id: proof_url
+    attributes:
+      label: 官方核验链接或佐证截图链接 (Proof URL)
+      placeholder: https://...
+    validations:
+      required: true
