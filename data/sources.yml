@@ -58,9 +58,10 @@
   description: 针对主流商业和开源大模型提供质量、速度（Tokens/s）与价格的独立第三方评测。
   ranking_type: cost_quality
   metrics:
-    - Quality Index
-    - Output Speed (tps)
-    - Blended Price ($/M tokens)
+    - Intelligence Index
+    - Context Window
+    - Cost / Task (USD)
+    - Median Speed
   license_or_terms_url: https://artificialanalysis.ai/terms
   last_checked_at: '2026-10-26'
   update_frequency: weekly

@@ -2,202 +2,244 @@
   "source_id": "artificial-analysis",
   "snapshot_date": "2026-10-26",
   "source_url": "https://artificialanalysis.ai/leaderboards/models",
-  "raw_notes": "直接实时抓取自 Artificial Analysis 官方页面状态（收录 515 个最新大模型版本）。",
+  "raw_notes": "直接实时抓取自 Artificial Analysis 官方榜单页面 (https://artificialanalysis.ai/leaderboards/models) 状态流，收录 266 个模型与测试版本。评分以官方 Artificial Analysis Intelligence Index 为基准。",
   "models": [
     {
       "rank": 1,
-      "model_name": "Claude Opus 5.5",
-      "normalized_model_name": "claude-opus-5-5",
+      "model_name": "Claude Opus 5.5 (max with fallback)",
+      "normalized_model_name": "claude-opus-5.5-max-with-fallback",
       "organization": "Anthropic",
-      "score": 92,
+      "score": 58,
       "metrics": {
-        "Quality Index": 92,
-        "Release Date": "2026-09-22",
-        "Provider Slug": "anthropic"
+        "Intelligence Index": 58,
+        "Exact Index": 57.62,
+        "Context Window": "1M",
+        "Cost / Task (USD)": "$5.98",
+        "Median Speed": "97 tps",
+        "Price ($ In/Out 1M)": "$4/$20"
       },
-      "notes": "发布日期: 2026-09-22, 归属机构: Anthropic"
+      "notes": "机构: Anthropic | 上下文: 1M | 成本: $5.98 | 速度: 97 tps"
     },
     {
       "rank": 2,
-      "model_name": "Claude Sonnet 5.5",
-      "normalized_model_name": "claude-sonnet-5-5",
+      "model_name": "Claude Sonnet 5.5 (max with fallback)",
+      "normalized_model_name": "claude-sonnet-5.5-max-with-fallback",
       "organization": "Anthropic",
-      "score": 91,
+      "score": 56,
       "metrics": {
-        "Quality Index": 91,
-        "Release Date": "2026-09-28",
-        "Provider Slug": "anthropic"
+        "Intelligence Index": 56,
+        "Exact Index": 56,
+        "Context Window": "1M",
+        "Cost / Task (USD)": "$5.46",
+        "Median Speed": "138 tps",
+        "Price ($ In/Out 1M)": "$2/$10"
       },
-      "notes": "发布日期: 2026-09-28, 归属机构: Anthropic"
+      "notes": "机构: Anthropic | 上下文: 1M | 成本: $5.46 | 速度: 138 tps"
     },
     {
       "rank": 3,
-      "model_name": "Claude Fable 5.1",
-      "normalized_model_name": "claude-fable-5-1",
+      "model_name": "Claude Opus 5.5 (xhigh with fallback)",
+      "normalized_model_name": "claude-opus-5.5-xhigh-with-fallback",
       "organization": "Anthropic",
-      "score": 89,
+      "score": 56,
       "metrics": {
-        "Quality Index": 89,
-        "Release Date": "2026-09-01",
-        "Provider Slug": "anthropic"
+        "Intelligence Index": 56,
+        "Exact Index": 55.99,
+        "Context Window": "1M",
+        "Cost / Task (USD)": "$3.46",
+        "Median Speed": "82 tps",
+        "Price ($ In/Out 1M)": "$4/$20"
       },
-      "notes": "发布日期: 2026-09-01, 归属机构: Anthropic"
+      "notes": "机构: Anthropic | 上下文: 1M | 成本: $3.46 | 速度: 82 tps"
     },
     {
       "rank": 4,
-      "model_name": "Claude Opus 5",
-      "normalized_model_name": "claude-opus-5",
-      "organization": "Anthropic",
-      "score": 88,
+      "model_name": "Muse Wonder Full (max)",
+      "normalized_model_name": "muse-wonder-full-max",
+      "organization": "Meta",
+      "score": 56,
       "metrics": {
-        "Quality Index": 88,
-        "Release Date": "2026-07-24",
-        "Provider Slug": "anthropic"
+        "Intelligence Index": 56,
+        "Exact Index": 55.8,
+        "Context Window": "1M"
       },
-      "notes": "发布日期: 2026-07-24, 归属机构: Anthropic"
+      "notes": "机构: Meta | 上下文: 1M"
     },
     {
       "rank": 5,
-      "model_name": "Claude Fable 5",
-      "normalized_model_name": "claude-fable-5",
-      "organization": "Anthropic",
-      "score": 86,
+      "model_name": "Kimi K3.1 Pro",
+      "normalized_model_name": "kimi-k3.1-pro",
+      "organization": "Kimi",
+      "score": 55,
       "metrics": {
-        "Quality Index": 86,
-        "Release Date": "2026-06-09",
-        "Provider Slug": "anthropic"
+        "Intelligence Index": 55,
+        "Exact Index": 55.09,
+        "Context Window": "1M",
+        "Cost / Task (USD)": "$2.11",
+        "Median Speed": "52 tps",
+        "Price ($ In/Out 1M)": "$2/$10"
       },
-      "notes": "发布日期: 2026-06-09, 归属机构: Anthropic"
+      "notes": "机构: Kimi | 上下文: 1M | 成本: $2.11 | 速度: 52 tps"
     },
     {
       "rank": 6,
-      "model_name": "Claude Haiku 5.5",
-      "normalized_model_name": "claude-haiku-5-5",
+      "model_name": "Claude Opus 5.5 (high with fallback)",
+      "normalized_model_name": "claude-opus-5.5-high-with-fallback",
       "organization": "Anthropic",
-      "score": 85,
+      "score": 54,
       "metrics": {
-        "Quality Index": 85,
-        "Release Date": "2026-10-07",
-        "Provider Slug": "anthropic"
+        "Intelligence Index": 54,
+        "Exact Index": 53.58,
+        "Context Window": "1M",
+        "Cost / Task (USD)": "$1.82",
+        "Median Speed": "80 tps",
+        "Price ($ In/Out 1M)": "$4/$20"
       },
-      "notes": "发布日期: 2026-10-07, 归属机构: Anthropic"
+      "notes": "机构: Anthropic | 上下文: 1M | 成本: $1.82 | 速度: 80 tps"
     },
     {
       "rank": 7,
-      "model_name": "Claude Opus 4.8",
-      "normalized_model_name": "claude-opus-4-8",
+      "model_name": "Claude Fable 5.1 (max with fallback)",
+      "normalized_model_name": "claude-fable-5.1-max-with-fallback",
       "organization": "Anthropic",
-      "score": 84,
+      "score": 53,
       "metrics": {
-        "Quality Index": 84,
-        "Release Date": "2026-05-28",
-        "Provider Slug": "anthropic"
+        "Intelligence Index": 53,
+        "Exact Index": 53.35,
+        "Context Window": "1M",
+        "Cost / Task (USD)": "$7.63",
+        "Median Speed": "70 tps",
+        "Price ($ In/Out 1M)": "$10/$50"
       },
-      "notes": "发布日期: 2026-05-28, 归属机构: Anthropic"
+      "notes": "机构: Anthropic | 上下文: 1M | 成本: $7.63 | 速度: 70 tps"
     },
     {
       "rank": 8,
-      "model_name": "Claude Opus 4.7",
-      "normalized_model_name": "claude-opus-4-7",
+      "model_name": "Claude Fable 5.1 (xhigh with fallback)",
+      "normalized_model_name": "claude-fable-5.1-xhigh-with-fallback",
       "organization": "Anthropic",
-      "score": 82,
+      "score": 53,
       "metrics": {
-        "Quality Index": 82,
-        "Release Date": "2026-04-16",
-        "Provider Slug": "anthropic"
+        "Intelligence Index": 53,
+        "Exact Index": 53.2,
+        "Context Window": "1M",
+        "Cost / Task (USD)": "$5.98",
+        "Median Speed": "62 tps",
+        "Price ($ In/Out 1M)": "$10/$50"
       },
-      "notes": "发布日期: 2026-04-16, 归属机构: Anthropic"
+      "notes": "机构: Anthropic | 上下文: 1M | 成本: $5.98 | 速度: 62 tps"
     },
     {
       "rank": 9,
-      "model_name": "Claude Sonnet 5",
-      "normalized_model_name": "claude-sonnet-5",
-      "organization": "Anthropic",
-      "score": 81,
+      "model_name": "GPT-6 Astra (max)",
+      "normalized_model_name": "gpt-6-astra-max",
+      "organization": "OpenAI",
+      "score": 53,
       "metrics": {
-        "Quality Index": 81,
-        "Release Date": "2026-06-30",
-        "Provider Slug": "anthropic"
+        "Intelligence Index": 53,
+        "Exact Index": 52.67,
+        "Context Window": "1M",
+        "Cost / Task (USD)": "$3.26",
+        "Median Speed": "67 tps",
+        "Price ($ In/Out 1M)": "$10/$50"
       },
-      "notes": "发布日期: 2026-06-30, 归属机构: Anthropic"
+      "notes": "机构: OpenAI | 上下文: 1M | 成本: $3.26 | 速度: 67 tps"
     },
     {
       "rank": 10,
-      "model_name": "Claude Opus 4.6",
-      "normalized_model_name": "claude-opus-4-6",
-      "organization": "Anthropic",
-      "score": 79,
+      "model_name": "Gemini 4 Argon (high)",
+      "normalized_model_name": "gemini-4-argon-high",
+      "organization": "Google",
+      "score": 53,
       "metrics": {
-        "Quality Index": 79,
-        "Release Date": "2026-02-05",
-        "Provider Slug": "anthropic"
+        "Intelligence Index": 53,
+        "Exact Index": 52.56,
+        "Context Window": "1M",
+        "Cost / Task (USD)": "$1.99",
+        "Median Speed": "81 tps",
+        "Price ($ In/Out 1M)": "$2/$10"
       },
-      "notes": "发布日期: 2026-02-05, 归属机构: Anthropic"
+      "notes": "机构: Google | 上下文: 1M | 成本: $1.99 | 速度: 81 tps"
     },
     {
       "rank": 11,
-      "model_name": "Claude Sonnet 4.6",
-      "normalized_model_name": "claude-sonnet-4-6",
-      "organization": "Anthropic",
-      "score": 78,
+      "model_name": "Muse Wonder (max)",
+      "normalized_model_name": "muse-wonder-max",
+      "organization": "Meta",
+      "score": 52,
       "metrics": {
-        "Quality Index": 78,
-        "Release Date": "2026-02-17",
-        "Provider Slug": "anthropic"
+        "Intelligence Index": 52,
+        "Exact Index": 52.39,
+        "Context Window": "1M",
+        "Cost / Task (USD)": "$4.54",
+        "Median Speed": "190 tps",
+        "Price ($ In/Out 1M)": "$4/$20"
       },
-      "notes": "发布日期: 2026-02-17, 归属机构: Anthropic"
+      "notes": "机构: Meta | 上下文: 1M | 成本: $4.54 | 速度: 190 tps"
     },
     {
       "rank": 12,
-      "model_name": "Claude Opus 4.5",
-      "normalized_model_name": "claude-opus-4-5",
-      "organization": "Anthropic",
-      "score": 77,
+      "model_name": "GPT-6 Astra (xhigh)",
+      "normalized_model_name": "gpt-6-astra-xhigh",
+      "organization": "OpenAI",
+      "score": 52,
       "metrics": {
-        "Quality Index": 77,
-        "Release Date": "2025-11-24",
-        "Provider Slug": "anthropic"
+        "Intelligence Index": 52,
+        "Exact Index": 52.39,
+        "Context Window": "1M",
+        "Cost / Task (USD)": "$2.31",
+        "Median Speed": "68 tps",
+        "Price ($ In/Out 1M)": "$10/$50"
       },
-      "notes": "发布日期: 2025-11-24, 归属机构: Anthropic"
+      "notes": "机构: OpenAI | 上下文: 1M | 成本: $2.31 | 速度: 68 tps"
     },
     {
       "rank": 13,
-      "model_name": "Claude 4.1 Opus",
-      "normalized_model_name": "claude-4-1-opus",
+      "model_name": "Claude Sonnet 5.5 (xhigh with fallback)",
+      "normalized_model_name": "claude-sonnet-5.5-xhigh-with-fallback",
       "organization": "Anthropic",
-      "score": 75,
+      "score": 52,
       "metrics": {
-        "Quality Index": 75,
-        "Release Date": "2025-08-05",
-        "Provider Slug": "anthropic"
+        "Intelligence Index": 52,
+        "Exact Index": 51.9,
+        "Context Window": "1M",
+        "Cost / Task (USD)": "$2.01",
+        "Median Speed": "110 tps",
+        "Price ($ In/Out 1M)": "$2/$10"
       },
-      "notes": "发布日期: 2025-08-05, 归属机构: Anthropic"
+      "notes": "机构: Anthropic | 上下文: 1M | 成本: $2.01 | 速度: 110 tps"
     },
     {
       "rank": 14,
-      "model_name": "Claude 4.5 Sonnet",
-      "normalized_model_name": "claude-4-5-sonnet",
-      "organization": "Anthropic",
-      "score": 74,
+      "model_name": "GPT-6.1 Sol (max)",
+      "normalized_model_name": "gpt-6.1-sol-max",
+      "organization": "OpenAI",
+      "score": 52,
       "metrics": {
-        "Quality Index": 74,
-        "Release Date": "2025-09-29",
-        "Provider Slug": "anthropic"
+        "Intelligence Index": 52,
+        "Exact Index": 51.83,
+        "Context Window": "1M",
+        "Cost / Task (USD)": "$0.72",
+        "Median Speed": "62 tps",
+        "Price ($ In/Out 1M)": "$2/$10"
       },
-      "notes": "发布日期: 2025-09-29, 归属机构: Anthropic"
+      "notes": "机构: OpenAI | 上下文: 1M | 成本: $0.72 | 速度: 62 tps"
     },
     {
       "rank": 15,
-      "model_name": "Claude 4 Opus",
-      "normalized_model_name": "claude-4-opus",
+      "model_name": "Claude Opus 5.5 (medium with fallback)",
+      "normalized_model_name": "claude-opus-5.5-medium-with-fallback",
       "organization": "Anthropic",
-      "score": 72,
+      "score": 51,
       "metrics": {
-        "Quality Index": 72,
-        "Release Date": "2025-05-22",
-        "Provider Slug": "anthropic"
+        "Intelligence Index": 51,
+        "Exact Index": 51.24,
+        "Context Window": "1M",
+        "Cost / Task (USD)": "$1.34",
+        "Median Speed": "83 tps",
+        "Price ($ In/Out 1M)": "$4/$20"
       },
-      "notes": "发布日期: 2025-05-22, 归属机构: Anthropic"
+      "notes": "机构: Anthropic | 上下文: 1M | 成本: $1.34 | 速度: 83 tps"
     }
   ]
 }
