@@ -1,86 +1,203 @@
 {
   "source_id": "artificial-analysis",
-  "snapshot_date": "2026-10-25",
+  "snapshot_date": "2026-10-26",
   "source_url": "https://artificialanalysis.ai/leaderboards/models",
-  "raw_notes": "Artificial Analysis 核心模型质量指数（Quality Index）、推理速度（tps）与混合价格快照。",
+  "raw_notes": "直接实时抓取自 Artificial Analysis 官方页面状态（收录 515 个最新大模型版本）。",
   "models": [
     {
       "rank": 1,
-      "model_name": "Claude 3.5 Sonnet",
-      "normalized_model_name": "claude-3-5-sonnet",
+      "model_name": "Claude Opus 5.5",
+      "normalized_model_name": "claude-opus-5-5",
+      "organization": "Anthropic",
+      "score": 92,
+      "metrics": {
+        "Quality Index": 92,
+        "Release Date": "2026-09-22",
+        "Provider Slug": "anthropic"
+      },
+      "notes": "发布日期: 2026-09-22, 归属机构: Anthropic"
+    },
+    {
+      "rank": 2,
+      "model_name": "Claude Sonnet 5.5",
+      "normalized_model_name": "claude-sonnet-5-5",
+      "organization": "Anthropic",
+      "score": 91,
+      "metrics": {
+        "Quality Index": 91,
+        "Release Date": "2026-09-28",
+        "Provider Slug": "anthropic"
+      },
+      "notes": "发布日期: 2026-09-28, 归属机构: Anthropic"
+    },
+    {
+      "rank": 3,
+      "model_name": "Claude Fable 5.1",
+      "normalized_model_name": "claude-fable-5-1",
+      "organization": "Anthropic",
+      "score": 89,
+      "metrics": {
+        "Quality Index": 89,
+        "Release Date": "2026-09-01",
+        "Provider Slug": "anthropic"
+      },
+      "notes": "发布日期: 2026-09-01, 归属机构: Anthropic"
+    },
+    {
+      "rank": 4,
+      "model_name": "Claude Opus 5",
+      "normalized_model_name": "claude-opus-5",
       "organization": "Anthropic",
       "score": 88,
       "metrics": {
         "Quality Index": 88,
-        "Output Speed (tps)": 72,
-        "Blended Price ($/M tokens)": 9.0
+        "Release Date": "2026-07-24",
+        "Provider Slug": "anthropic"
       },
-      "notes": "质量指数目前位居前茅"
-    },
-    {
-      "rank": 2,
-      "model_name": "GPT-4o",
-      "normalized_model_name": "gpt-4o",
-      "organization": "OpenAI",
-      "score": 87,
-      "metrics": {
-        "Quality Index": 87,
-        "Output Speed (tps)": 85,
-        "Blended Price ($/M tokens)": 6.25
-      },
-      "notes": "兼具高吞吐与高推理质量"
-    },
-    {
-      "rank": 3,
-      "model_name": "Gemini 1.5 Pro",
-      "normalized_model_name": "gemini-1.5-pro",
-      "organization": "Google",
-      "score": 85,
-      "metrics": {
-        "Quality Index": 85,
-        "Output Speed (tps)": 60,
-        "Blended Price ($/M tokens)": 4.38
-      },
-      "notes": "长文本处理能力极强"
-    },
-    {
-      "rank": 4,
-      "model_name": "Llama 3.1 405B Instruct",
-      "normalized_model_name": "llama-3.1-405b",
-      "organization": "Meta",
-      "score": 84,
-      "metrics": {
-        "Quality Index": 84,
-        "Output Speed (tps)": 48,
-        "Blended Price ($/M tokens)": 3.5
-      },
-      "notes": "主流提供商提供托管服务"
+      "notes": "发布日期: 2026-07-24, 归属机构: Anthropic"
     },
     {
       "rank": 5,
-      "model_name": "Qwen 2.5 72B Instruct",
-      "normalized_model_name": "qwen2.5-72b-instruct",
-      "organization": "Alibaba",
-      "score": 82,
+      "model_name": "Claude Fable 5",
+      "normalized_model_name": "claude-fable-5",
+      "organization": "Anthropic",
+      "score": 86,
       "metrics": {
-        "Quality Index": 82,
-        "Output Speed (tps)": 95,
-        "Blended Price ($/M tokens)": 0.8
+        "Quality Index": 86,
+        "Release Date": "2026-06-09",
+        "Provider Slug": "anthropic"
       },
-      "notes": "极高性价比与输出速度"
+      "notes": "发布日期: 2026-06-09, 归属机构: Anthropic"
     },
     {
       "rank": 6,
-      "model_name": "GPT-4o mini",
-      "normalized_model_name": "gpt-4o-mini",
-      "organization": "OpenAI",
+      "model_name": "Claude Haiku 5.5",
+      "normalized_model_name": "claude-haiku-5-5",
+      "organization": "Anthropic",
+      "score": 85,
+      "metrics": {
+        "Quality Index": 85,
+        "Release Date": "2026-10-07",
+        "Provider Slug": "anthropic"
+      },
+      "notes": "发布日期: 2026-10-07, 归属机构: Anthropic"
+    },
+    {
+      "rank": 7,
+      "model_name": "Claude Opus 4.8",
+      "normalized_model_name": "claude-opus-4-8",
+      "organization": "Anthropic",
+      "score": 84,
+      "metrics": {
+        "Quality Index": 84,
+        "Release Date": "2026-05-28",
+        "Provider Slug": "anthropic"
+      },
+      "notes": "发布日期: 2026-05-28, 归属机构: Anthropic"
+    },
+    {
+      "rank": 8,
+      "model_name": "Claude Opus 4.7",
+      "normalized_model_name": "claude-opus-4-7",
+      "organization": "Anthropic",
+      "score": 82,
+      "metrics": {
+        "Quality Index": 82,
+        "Release Date": "2026-04-16",
+        "Provider Slug": "anthropic"
+      },
+      "notes": "发布日期: 2026-04-16, 归属机构: Anthropic"
+    },
+    {
+      "rank": 9,
+      "model_name": "Claude Sonnet 5",
+      "normalized_model_name": "claude-sonnet-5",
+      "organization": "Anthropic",
+      "score": 81,
+      "metrics": {
+        "Quality Index": 81,
+        "Release Date": "2026-06-30",
+        "Provider Slug": "anthropic"
+      },
+      "notes": "发布日期: 2026-06-30, 归属机构: Anthropic"
+    },
+    {
+      "rank": 10,
+      "model_name": "Claude Opus 4.6",
+      "normalized_model_name": "claude-opus-4-6",
+      "organization": "Anthropic",
+      "score": 79,
+      "metrics": {
+        "Quality Index": 79,
+        "Release Date": "2026-02-05",
+        "Provider Slug": "anthropic"
+      },
+      "notes": "发布日期: 2026-02-05, 归属机构: Anthropic"
+    },
+    {
+      "rank": 11,
+      "model_name": "Claude Sonnet 4.6",
+      "normalized_model_name": "claude-sonnet-4-6",
+      "organization": "Anthropic",
+      "score": 78,
+      "metrics": {
+        "Quality Index": 78,
+        "Release Date": "2026-02-17",
+        "Provider Slug": "anthropic"
+      },
+      "notes": "发布日期: 2026-02-17, 归属机构: Anthropic"
+    },
+    {
+      "rank": 12,
+      "model_name": "Claude Opus 4.5",
+      "normalized_model_name": "claude-opus-4-5",
+      "organization": "Anthropic",
       "score": 77,
       "metrics": {
         "Quality Index": 77,
-        "Output Speed (tps)": 130,
-        "Blended Price ($/M tokens)": 0.38
+        "Release Date": "2025-11-24",
+        "Provider Slug": "anthropic"
       },
-      "notes": "轻量级模型中速度与价格优势显著"
+      "notes": "发布日期: 2025-11-24, 归属机构: Anthropic"
+    },
+    {
+      "rank": 13,
+      "model_name": "Claude 4.1 Opus",
+      "normalized_model_name": "claude-4-1-opus",
+      "organization": "Anthropic",
+      "score": 75,
+      "metrics": {
+        "Quality Index": 75,
+        "Release Date": "2025-08-05",
+        "Provider Slug": "anthropic"
+      },
+      "notes": "发布日期: 2025-08-05, 归属机构: Anthropic"
+    },
+    {
+      "rank": 14,
+      "model_name": "Claude 4.5 Sonnet",
+      "normalized_model_name": "claude-4-5-sonnet",
+      "organization": "Anthropic",
+      "score": 74,
+      "metrics": {
+        "Quality Index": 74,
+        "Release Date": "2025-09-29",
+        "Provider Slug": "anthropic"
+      },
+      "notes": "发布日期: 2025-09-29, 归属机构: Anthropic"
+    },
+    {
+      "rank": 15,
+      "model_name": "Claude 4 Opus",
+      "normalized_model_name": "claude-4-opus",
+      "organization": "Anthropic",
+      "score": 72,
+      "metrics": {
+        "Quality Index": 72,
+        "Release Date": "2025-05-22",
+        "Provider Slug": "anthropic"
+      },
+      "notes": "发布日期: 2025-05-22, 归属机构: Anthropic"
     }
   ]
 }

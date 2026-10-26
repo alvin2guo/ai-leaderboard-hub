@@ -1,92 +1,203 @@
 {
   "source_id": "superclue-general",
-  "snapshot_date": "2026-10-24",
+  "snapshot_date": "2026-10-26",
   "source_url": "https://www.superclueai.com/",
-  "raw_notes": "SuperCLUE 中文大模型综合测评快照，依据基础能力、专业能力与应用能力加权总分。",
+  "raw_notes": "直接抓取自 SuperCLUE 官方基准最新公布的测评天梯榜单。",
   "models": [
     {
       "rank": 1,
-      "model_name": "GPT-4o",
-      "normalized_model_name": "gpt-4o",
+      "model_name": "GPT4-Turbo",
+      "normalized_model_name": "gpt4-turbo",
       "organization": "OpenAI",
-      "score": 83.2,
+      "score": 90.63,
       "metrics": {
-        "总分": 83.2,
-        "基础能力": 84.5,
-        "专业能力": 82.1,
-        "应用能力": 83.0
+        "总分": 90.63,
+        "OPEN多轮开放问题": 90.89,
+        "OPT三大能力客观题": 90.03
       },
-      "notes": "全球闭源模型领跑"
+      "notes": "部署渠道: API"
     },
     {
       "rank": 2,
-      "model_name": "Claude-3.5-Sonnet",
-      "normalized_model_name": "claude-3-5-sonnet",
-      "organization": "Anthropic",
-      "score": 82.6,
+      "model_name": "GPT4(网页)",
+      "normalized_model_name": "gpt4",
+      "organization": "OpenAI",
+      "score": 83.92,
       "metrics": {
-        "总分": 82.6,
-        "基础能力": 83.2,
-        "专业能力": 83.8,
-        "应用能力": 80.8
+        "总分": 83.92,
+        "OPEN多轮开放问题": 80.76,
+        "OPT三大能力客观题": 91.28
       },
-      "notes": "专业能力维度最高"
+      "notes": "部署渠道: 网页"
     },
     {
       "rank": 3,
-      "model_name": "GLM-4-Plus",
-      "normalized_model_name": "glm-4-plus",
-      "organization": "Zhipu AI",
-      "score": 80.8,
+      "model_name": "GPT4(API)",
+      "normalized_model_name": "gpt4",
+      "organization": "OpenAI",
+      "score": 79.84,
       "metrics": {
-        "总分": 80.8,
-        "基础能力": 81.5,
-        "专业能力": 80.4,
-        "应用能力": 80.5
+        "总分": 79.84,
+        "OPEN多轮开放问题": 76.24,
+        "OPT三大能力客观题": 88.24
       },
-      "notes": "国内自研模型位列第一梯队"
+      "notes": "部署渠道: API"
     },
     {
       "rank": 4,
-      "model_name": "Qwen2.5-72B",
-      "normalized_model_name": "qwen2.5-72b-instruct",
-      "organization": "Alibaba",
-      "score": 80.5,
+      "model_name": "文心一言4.0(API)",
+      "normalized_model_name": "4.0",
+      "organization": "百度",
+      "score": 79.02,
       "metrics": {
-        "总分": 80.5,
-        "基础能力": 81.2,
-        "专业能力": 79.9,
-        "应用能力": 80.4
+        "总分": 79.02,
+        "OPEN多轮开放问题": 75,
+        "OPT三大能力客观题": 88.38
       },
-      "notes": "开源中文能力突出"
+      "notes": "部署渠道: API"
     },
     {
       "rank": 5,
-      "model_name": "ERNIE 4.0 Turbo",
-      "normalized_model_name": "ernie-4.0-turbo",
-      "organization": "Baidu",
-      "score": 79.9,
+      "model_name": "通义千问2.0",
+      "normalized_model_name": "2.0",
+      "organization": "阿里巴巴",
+      "score": 76.54,
       "metrics": {
-        "总分": 79.9,
-        "基础能力": 80.4,
-        "专业能力": 79.1,
-        "应用能力": 80.2
+        "总分": 76.54,
+        "OPEN多轮开放问题": 71.78,
+        "OPT三大能力客观题": 87.64
       },
-      "notes": "百度文心旗舰 Turbo 升级版"
+      "notes": "部署渠道: API"
     },
     {
       "rank": 6,
-      "model_name": "Doubao-pro-128k",
-      "normalized_model_name": "doubao-pro",
-      "organization": "ByteDance",
-      "score": 79.4,
+      "model_name": "AndesGPT",
+      "normalized_model_name": "andesgpt",
+      "organization": "OPPO",
+      "score": 75.04,
       "metrics": {
-        "总分": 79.4,
-        "基础能力": 80.0,
-        "专业能力": 78.5,
-        "应用能力": 79.7
+        "总分": 75.04,
+        "OPEN多轮开放问题": 70.01,
+        "OPT三大能力客观题": 86.76
       },
-      "notes": "长上下文与应用落地优异"
+      "notes": "部署渠道: API"
+    },
+    {
+      "rank": 7,
+      "model_name": "智谱清言",
+      "normalized_model_name": "智谱清言",
+      "organization": "清华&智谱",
+      "score": 74.11,
+      "metrics": {
+        "总分": 74.11,
+        "OPEN多轮开放问题": 69.91,
+        "OPT三大能力客观题": 83.92
+      },
+      "notes": "部署渠道: 网页"
+    },
+    {
+      "rank": 8,
+      "model_name": "Moonshot(KimiChat)",
+      "normalized_model_name": "moonshot",
+      "organization": "月之暗面",
+      "score": 71.92,
+      "metrics": {
+        "总分": 71.92,
+        "OPEN多轮开放问题": 67.25,
+        "OPT三大能力客观题": 82.81
+      },
+      "notes": "部署渠道: 网页"
+    },
+    {
+      "rank": 9,
+      "model_name": "文心一言4.0(网页)",
+      "normalized_model_name": "4.0",
+      "organization": "百度",
+      "score": 70.28,
+      "metrics": {
+        "总分": 70.28,
+        "OPEN多轮开放问题": 62.59,
+        "OPT三大能力客观题": 88.22
+      },
+      "notes": "部署渠道: 网页"
+    },
+    {
+      "rank": 10,
+      "model_name": "Qwen-72B-Chat",
+      "normalized_model_name": "qwen-72b-chat",
+      "organization": "阿里巴巴",
+      "score": 69.69,
+      "metrics": {
+        "总分": 69.69,
+        "OPEN多轮开放问题": 62.31,
+        "OPT三大能力客观题": 86.9
+      },
+      "notes": "部署渠道: API"
+    },
+    {
+      "rank": 11,
+      "model_name": "序列猴子",
+      "normalized_model_name": "序列猴子",
+      "organization": "出门问问",
+      "score": 68.98,
+      "metrics": {
+        "总分": 68.98,
+        "OPEN多轮开放问题": 61.01,
+        "OPT三大能力客观题": 87.59
+      },
+      "notes": "部署渠道: API"
+    },
+    {
+      "rank": 12,
+      "model_name": "Yi-34B-Chat",
+      "normalized_model_name": "yi-34b-chat",
+      "organization": "零一万物",
+      "score": 68.46,
+      "metrics": {
+        "总分": 68.46,
+        "OPEN多轮开放问题": 61.99,
+        "OPT三大能力客观题": 83.56
+      },
+      "notes": "部署渠道: 模型"
+    },
+    {
+      "rank": 13,
+      "model_name": "PCI-TransGPT",
+      "normalized_model_name": "pci-transgpt",
+      "organization": "佳都科技",
+      "score": 68.33,
+      "metrics": {
+        "总分": 68.33,
+        "OPEN多轮开放问题": 60.41,
+        "OPT三大能力客观题": 86.81
+      },
+      "notes": "部署渠道: API"
+    },
+    {
+      "rank": 14,
+      "model_name": "360GPT_Pro",
+      "normalized_model_name": "360gpt-pro",
+      "organization": "360",
+      "score": 68.32,
+      "metrics": {
+        "总分": 68.32,
+        "OPEN多轮开放问题": 61.36,
+        "OPT三大能力客观题": 84.56
+      },
+      "notes": "部署渠道: API"
+    },
+    {
+      "rank": 15,
+      "model_name": "Claude2",
+      "normalized_model_name": "claude2",
+      "organization": "Anthropic",
+      "score": 67.43,
+      "metrics": {
+        "总分": 67.43,
+        "OPEN多轮开放问题": 65.14,
+        "OPT三大能力客观题": 72.77
+      },
+      "notes": "部署渠道: API"
     }
   ]
 }

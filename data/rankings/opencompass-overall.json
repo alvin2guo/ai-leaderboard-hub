@@ -1,104 +1,263 @@
 {
   "source_id": "opencompass-overall",
-  "snapshot_date": "2026-10-24",
-  "source_url": "https://opencompass.org.cn/leaderboard-llm",
-  "raw_notes": "OpenCompass 司南大模型整体综合基准，按 Overall 综合能力归一化得分排序。",
+  "snapshot_date": "2026-10-26",
+  "source_url": "https://rank.opencompass.org.cn/leaderboard-llm",
+  "raw_notes": "直接实时抓取自 OpenCompass 司南官方评测数据源（包含知识、抽象、推理、交互、安全五维一体能力全面评测）。",
   "models": [
     {
       "rank": 1,
-      "model_name": "GPT-4o (2024-05-13)",
-      "normalized_model_name": "gpt-4o",
-      "organization": "OpenAI",
-      "score": 75.8,
+      "model_name": "Claude Opus 5.5 (max)",
+      "normalized_model_name": "claude-opus-5-5",
+      "organization": "Anthropic",
+      "score": 78.25,
       "metrics": {
-        "Overall Score": 75.8,
-        "Language": 81.2,
-        "Knowledge": 79.4,
-        "Reasoning": 74.5,
-        "Math": 71.8,
-        "Code": 72.1
+        "Overall Score": 78.25,
+        "Knowledge": 80,
+        "Abstraction": 75,
+        "Reasoning": 84.62,
+        "Interaction": 72.41,
+        "Safety": 85.37,
+        "Agent": 72.12
       },
-      "notes": "闭源商业模型参考基准"
+      "notes": "发布时间: 2026-09-22, 机构: Anthropic"
     },
     {
       "rank": 2,
-      "model_name": "Claude-3.5-Sonnet",
-      "normalized_model_name": "claude-3-5-sonnet",
+      "model_name": "Claude Sonnet 5.5 (max)",
+      "normalized_model_name": "claude-sonnet-5-5",
       "organization": "Anthropic",
-      "score": 75.2,
+      "score": 75.56,
       "metrics": {
-        "Overall Score": 75.2,
-        "Language": 79.5,
-        "Knowledge": 77.8,
-        "Reasoning": 75.8,
-        "Math": 70.4,
-        "Code": 76.5
+        "Overall Score": 75.56,
+        "Knowledge": 76,
+        "Abstraction": 80,
+        "Reasoning": 79.49,
+        "Interaction": 71.43,
+        "Safety": 85.37,
+        "Agent": 61.1
       },
-      "notes": "代码与推理分项极高"
+      "notes": "发布时间: 2026-09-28, 机构: Anthropic"
     },
     {
       "rank": 3,
-      "model_name": "Qwen2.5-72B-Instruct",
-      "normalized_model_name": "qwen2.5-72b-instruct",
-      "organization": "Alibaba",
-      "score": 74.5,
+      "model_name": "GPT-6.1 Sol (max)",
+      "normalized_model_name": "gpt-6.1-sol",
+      "organization": "OpenAI",
+      "score": 75.19,
       "metrics": {
-        "Overall Score": 74.5,
-        "Language": 79.0,
-        "Knowledge": 76.2,
-        "Reasoning": 73.1,
-        "Math": 72.5,
-        "Code": 71.8
+        "Overall Score": 75.19,
+        "Knowledge": 78,
+        "Abstraction": 85,
+        "Reasoning": 77.5,
+        "Interaction": 69.23,
+        "Safety": 73.68,
+        "Agent": 67.71
       },
-      "notes": "开源模型中表现顶尖"
+      "notes": "发布时间: 2026-09-29, 机构: OpenAI"
     },
     {
       "rank": 4,
-      "model_name": "GLM-4-Plus",
-      "normalized_model_name": "glm-4-plus",
-      "organization": "Zhipu AI",
-      "score": 73.6,
+      "model_name": "GPT-6 Astra (max)",
+      "normalized_model_name": "gpt-6-astra",
+      "organization": "OpenAI",
+      "score": 74.3,
       "metrics": {
-        "Overall Score": 73.6,
-        "Language": 78.4,
-        "Knowledge": 75.8,
-        "Reasoning": 71.9,
-        "Math": 69.8,
-        "Code": 70.2
+        "Overall Score": 74.3,
+        "Knowledge": 72,
+        "Abstraction": 80,
+        "Reasoning": 82.5,
+        "Interaction": 62.07,
+        "Safety": 80.49,
+        "Agent": 68.72
       },
-      "notes": "智谱 AI 最新基座升级版"
+      "notes": "发布时间: 2026-09-03, 机构: OpenAI"
     },
     {
       "rank": 5,
-      "model_name": "DeepSeek-V2.5",
-      "normalized_model_name": "deepseek-v2.5",
-      "organization": "DeepSeek",
-      "score": 73.1,
+      "model_name": "Gemini 4 Argon (high)",
+      "normalized_model_name": "gemini-4-argon",
+      "organization": "Google DeepMind",
+      "score": 72.52,
       "metrics": {
-        "Overall Score": 73.1,
-        "Language": 77.2,
-        "Knowledge": 74.6,
-        "Reasoning": 72.4,
-        "Math": 71.0,
-        "Code": 70.3
+        "Overall Score": 72.52,
+        "Knowledge": 66,
+        "Abstraction": 67.5,
+        "Reasoning": 80,
+        "Interaction": 79.31,
+        "Safety": 80.49,
+        "Agent": 61.79
       },
-      "notes": "融合通用与代码能力的 MoE 统一版本"
+      "notes": "发布时间: 2026-09-30, 机构: Google DeepMind"
     },
     {
       "rank": 6,
-      "model_name": "Doubao-pro-4k",
-      "normalized_model_name": "doubao-pro",
+      "model_name": "Doubao-Seed-2.1-Pro-0915 (high)",
+      "normalized_model_name": "doubao-seed-2-1-pro-260915",
       "organization": "ByteDance",
-      "score": 72.4,
+      "score": 71.8,
       "metrics": {
-        "Overall Score": 72.4,
-        "Language": 77.8,
-        "Knowledge": 73.5,
-        "Reasoning": 70.1,
-        "Math": 68.2,
-        "Code": 67.9
+        "Overall Score": 71.8,
+        "Knowledge": 72,
+        "Abstraction": 72.5,
+        "Reasoning": 77.5,
+        "Interaction": 65.52,
+        "Safety": 78.05,
+        "Agent": 65.26
       },
-      "notes": "字节跳动商业化主力主力模型"
+      "notes": "发布时间: 2026-09-15, 机构: ByteDance"
+    },
+    {
+      "rank": 7,
+      "model_name": "Qwen3.8-Max (xhigh)",
+      "normalized_model_name": "qwen3.8-max",
+      "organization": "Alibaba",
+      "score": 71.74,
+      "metrics": {
+        "Overall Score": 71.74,
+        "Knowledge": 78,
+        "Abstraction": 72.5,
+        "Reasoning": 77.5,
+        "Interaction": 65.52,
+        "Safety": 78.05,
+        "Agent": 58.9
+      },
+      "notes": "发布时间: 2026-08-03, 机构: Alibaba"
+    },
+    {
+      "rank": 8,
+      "model_name": "Grok 4.7 (xhigh)",
+      "normalized_model_name": "grok-4.7",
+      "organization": "xAI",
+      "score": 71.48,
+      "metrics": {
+        "Overall Score": 71.48,
+        "Knowledge": 67.35,
+        "Abstraction": 71.05,
+        "Reasoning": 78.79,
+        "Interaction": 67.86,
+        "Safety": 75.61,
+        "Agent": 68.22
+      },
+      "notes": "发布时间: 2026-09-21, 机构: xAI"
+    },
+    {
+      "rank": 9,
+      "model_name": "GLM-5.3 (max)",
+      "normalized_model_name": "glm-5.3",
+      "organization": "Zhipu AI",
+      "score": 71.45,
+      "metrics": {
+        "Overall Score": 71.45,
+        "Knowledge": 72,
+        "Abstraction": 65,
+        "Reasoning": 84.21,
+        "Interaction": 72.41,
+        "Safety": 73.17,
+        "Agent": 61.89
+      },
+      "notes": "发布时间: 2026-08-14, 机构: Zhipu AI"
+    },
+    {
+      "rank": 10,
+      "model_name": "Gemini 3.8 Flash (high)",
+      "normalized_model_name": "gemini-3.8-flash",
+      "organization": "Google DeepMind",
+      "score": 71.01,
+      "metrics": {
+        "Overall Score": 71.01,
+        "Knowledge": 70,
+        "Abstraction": 72.5,
+        "Reasoning": 80,
+        "Interaction": 72.41,
+        "Safety": 75.61,
+        "Agent": 55.55
+      },
+      "notes": "发布时间: 2026-09-02, 机构: Google DeepMind"
+    },
+    {
+      "rank": 11,
+      "model_name": "DeepSeek-V4.1-Flash-1017 (max)",
+      "normalized_model_name": "deepseek-flash",
+      "organization": "DeepSeek",
+      "score": 70.4,
+      "metrics": {
+        "Overall Score": 70.4,
+        "Knowledge": 68,
+        "Abstraction": 72.5,
+        "Reasoning": 82.5,
+        "Interaction": 62.07,
+        "Safety": 75.61,
+        "Agent": 61.73
+      },
+      "notes": "发布时间: 2026-10-17, 机构: DeepSeek"
+    },
+    {
+      "rank": 12,
+      "model_name": "hy4-preview (high)",
+      "normalized_model_name": "hy4-preview",
+      "organization": "Tencent",
+      "score": 68.63,
+      "metrics": {
+        "Overall Score": 68.63,
+        "Knowledge": 66,
+        "Abstraction": 77.5,
+        "Reasoning": 73.68,
+        "Interaction": 62.07,
+        "Safety": 78.05,
+        "Agent": 54.48
+      },
+      "notes": "发布时间: 2026-08-28, 机构: Tencent"
+    },
+    {
+      "rank": 13,
+      "model_name": "Qwen3.8-Flash (xhigh)",
+      "normalized_model_name": "qwen3.8-flash",
+      "organization": "Alibaba",
+      "score": 68.49,
+      "metrics": {
+        "Overall Score": 68.49,
+        "Knowledge": 66,
+        "Abstraction": 69.23,
+        "Reasoning": 75,
+        "Interaction": 68.97,
+        "Safety": 75.61,
+        "Agent": 56.12
+      },
+      "notes": "发布时间: 2026-08-26, 机构: Alibaba"
+    },
+    {
+      "rank": 14,
+      "model_name": "GLM-5.3-Flash (max)",
+      "normalized_model_name": "glm-5.3-flash",
+      "organization": "Zhipu AI",
+      "score": 68.46,
+      "metrics": {
+        "Overall Score": 68.46,
+        "Knowledge": 66,
+        "Abstraction": 73.68,
+        "Reasoning": 75.68,
+        "Interaction": 57.14,
+        "Safety": 78.05,
+        "Agent": 60.21
+      },
+      "notes": "发布时间: 2026-08-26, 机构: Zhipu AI"
+    },
+    {
+      "rank": 15,
+      "model_name": "Kimi K3 (max)",
+      "normalized_model_name": "kimi-k3",
+      "organization": "Moonshot AI",
+      "score": 66.85,
+      "metrics": {
+        "Overall Score": 66.85,
+        "Knowledge": 70,
+        "Abstraction": 67.5,
+        "Reasoning": 72.5,
+        "Interaction": 65.52,
+        "Safety": 68.29,
+        "Agent": 57.31
+      },
+      "notes": "发布时间: 2026-07-16, 机构: Moonshot AI"
     }
   ]
 }

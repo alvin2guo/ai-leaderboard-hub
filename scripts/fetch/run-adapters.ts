@@ -1,31 +1,69 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import yaml from 'js-yaml';
+import { LMSYSAdapter } from './lmsys-adapter';
+import { OpenCompassAdapter } from './opencompass-adapter';
+import { ArtificialAnalysisAdapter } from './artificial-analysis-adapter';
+import { SuperCLUEAdapter } from './superclue-adapter';
+import { HuggingFaceLeaderboardAdapter } from './huggingface-adapter';
 import { OpenRouterAdapter } from './openrouter-adapter';
+import type { Source } from '../../src/utils/types';
 
 async function main() {
-  console.log('🚀 Running scheduled leaderboard data adapters...');
+  console.log('🚀 Executing live web scrapers across all supported AI evaluation leaderboards...\n');
+
   const adapters = [
+    new LMSYSAdapter(),
+    new OpenCompassAdapter(),
+    new ArtificialAnalysisAdapter(),
+    new SuperCLUEAdapter(),
+    new HuggingFaceLeaderboardAdapter(),
     new OpenRouterAdapter(),
   ];
 
   let successCount = 0;
   let failCount = 0;
+  const today = new Date().toISOString().split('T')[0];
 
   for (const adapter of adapters) {
     try {
       const res = await adapter.update();
       if (res.success) {
         successCount++;
+        console.log(`✅ [${adapter.sourceId}] ${res.message}`);
       } else {
         failCount++;
-        console.warn(`⚠️ Adapter warning for ${adapter.sourceId}: ${res.message}`);
+        console.warn(`⚠️ [${adapter.sourceId}] Warning: ${res.message}`);
       }
     } catch (err: any) {
       failCount++;
-      console.error(`❌ Adapter error for ${adapter.sourceId}:`, err);
+      console.error(`❌ [${adapter.sourceId}] Error:`, err.message);
     }
   }
 
-  console.log(`\n🏁 Adapters execution complete: ${successCount} updated, ${failCount} warnings/failed.`);
-  // Note: we do NOT exit with non-zero code to avoid blocking deployment; warnings are captured in logs
+  // Update data/sources.yml with today's checked date and mark auto_fetch_supported for scraped sources
+  try {
+    const sourcesPath = path.resolve(process.cwd(), 'data', 'sources.yml');
+    if (fs.existsSync(sourcesPath)) {
+      const rawYaml = fs.readFileSync(sourcesPath, 'utf8');
+      const sources = yaml.load(rawYaml) as Source[];
+      const scrapedIds = new Set(adapters.map(a => a.sourceId));
+
+      sources.forEach(s => {
+        if (scrapedIds.has(s.id)) {
+          s.last_checked_at = today;
+          s.auto_fetch_supported = true;
+        }
+      });
+
+      fs.writeFileSync(sourcesPath, yaml.dump(sources), 'utf8');
+      console.log(`\n✓ Synchronized data/sources.yml with latest scrape timestamps and auto-fetch flags.`);
+    }
+  } catch (err: any) {
+    console.error('Failed to update data/sources.yml:', err.message);
+  }
+
+  console.log(`\n🏁 Scraping pipeline complete: ${successCount} successful, ${failCount} warnings.`);
   process.exit(0);
 }
 

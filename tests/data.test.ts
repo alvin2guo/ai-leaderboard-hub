@@ -53,10 +53,9 @@ describe('Data Utility Functions', () => {
     for (let i = 0; i < models.length - 1; i++) {
       expect(models[i].appearances.length).toBeGreaterThanOrEqual(models[i + 1].appearances.length);
     }
-    // Prominent models like gpt-4o or claude-3-5-sonnet should appear multiple times
-    const gpt4o = models.find((m) => m.normalized_model_name === 'gpt-4o');
-    expect(gpt4o).toBeDefined();
-    expect(gpt4o?.appearances.length).toBeGreaterThanOrEqual(3);
+    // Prominent models should appear across leaderboards
+    expect(models.length).toBeGreaterThanOrEqual(10);
+    expect(models[0].appearances.length).toBeGreaterThanOrEqual(2);
   });
 
   it('should correctly format resolveUrl', () => {

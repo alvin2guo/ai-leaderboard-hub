@@ -1,8 +1,8 @@
 {
   "source_id": "openrouter-rankings",
-  "snapshot_date": "2026-10-25",
+  "snapshot_date": "2026-10-26",
   "source_url": "https://openrouter.ai/rankings",
-  "raw_notes": "OpenRouter 平台开发者实际 API Token 消耗量热度排行榜快照。",
+  "raw_notes": "基于 OpenRouter 官方 API 公开元数据与平台消耗量自动更新于 2026-10-26",
   "models": [
     {
       "rank": 1,
@@ -13,9 +13,9 @@
       "metrics": {
         "Rank": 1,
         "Weekly Growth": "+14%",
-        "Context Length": "200k"
+        "Context Length": "128k"
       },
-      "notes": "开发者编码与 Agent 构建的首选"
+      "notes": "OpenRouter 聚合主流调用"
     },
     {
       "rank": 2,
@@ -28,7 +28,7 @@
         "Weekly Growth": "+6%",
         "Context Length": "128k"
       },
-      "notes": "通用业务场景主力调用"
+      "notes": "GPT-4o (\"o\" for \"omni\") is OpenAI's latest AI mode..."
     },
     {
       "rank": 3,
@@ -39,9 +39,9 @@
       "metrics": {
         "Rank": 3,
         "Weekly Growth": "+9%",
-        "Context Length": "128k"
+        "Context Length": "131k"
       },
-      "notes": "开源高性价比主力调用模型"
+      "notes": "Meta's latest class of model (Llama 3.1) launched ..."
     },
     {
       "rank": 4,
@@ -52,9 +52,9 @@
       "metrics": {
         "Rank": 4,
         "Weekly Growth": "+28%",
-        "Context Length": "128k"
+        "Context Length": "33k"
       },
-      "notes": "调用增长速度最快的开源模型之一"
+      "notes": "Qwen2.5 72B is the latest series of Qwen large lan..."
     },
     {
       "rank": 5,
@@ -67,7 +67,7 @@
         "Weekly Growth": "+11%",
         "Context Length": "128k"
       },
-      "notes": "批量轻量任务第一名"
+      "notes": "GPT-4o mini is OpenAI's newest model after [GPT-4 ..."
     }
   ]
 }

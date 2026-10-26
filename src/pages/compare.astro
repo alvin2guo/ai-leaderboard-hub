@@ -124,7 +124,8 @@ const clientSources = sources.map((s) => ({
 
 <script define:vars={{ clientModels, clientSources, baseUrl }}>
   // Interactive client-side comparison logic
-  const defaultSelected = ['gpt-4o', 'claude-3-5-sonnet', 'qwen2.5-72b-instruct'];
+  // Dynamic default selected models from available cross-ranked models
+  const defaultSelected = clientModels.slice(0, 3).map(m => m.id);
 
   // Check URL params
   const urlParams = new URLSearchParams(window.location.search);

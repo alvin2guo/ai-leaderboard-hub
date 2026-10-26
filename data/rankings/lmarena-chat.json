@@ -1,112 +1,203 @@
 {
   "source_id": "lmarena-chat",
-  "snapshot_date": "2026-10-25",
+  "snapshot_date": "2026-10-26",
   "source_url": "https://chat.lmsys.org/?leaderboard",
-  "raw_notes": "基于 LMSYS 众包对战数据，截至 2026 年 10 月全品类对战结果（过滤代码专项后的大语言模型全能力榜）。",
+  "raw_notes": "直接实时抓取自 LMSYS Chatbot Arena 官方数据集快照（共 100 款评测模型，按 Arena Elo 综合天梯排序）。",
   "models": [
     {
       "rank": 1,
-      "model_name": "gemini-1.5-pro-002",
-      "normalized_model_name": "gemini-1.5-pro",
+      "model_name": "Gemini-2.5-Pro",
+      "normalized_model_name": "gemini-2.5-pro",
       "organization": "Google",
-      "score": 1301,
+      "score": 1474,
       "metrics": {
-        "Arena Elo": 1301,
-        "95% CI": "[-7, +7]",
-        "Votes Count": 42100
+        "Arena Elo": 1474,
+        "95% CI": "+5/-4",
+        "Votes Count": 19209
       },
-      "notes": "支持超长上下文与多模态输入"
+      "notes": "盲测胜率置信区间: +5/-4, 执裁样本: 19209"
     },
     {
       "rank": 2,
-      "model_name": "chatgpt-4o-latest (2024-10-18)",
-      "normalized_model_name": "gpt-4o",
-      "organization": "OpenAI",
-      "score": 1289,
+      "model_name": "Gemini-2.5-Pro-Preview-05-06",
+      "normalized_model_name": "gemini-2.5-pro",
+      "organization": "Google",
+      "score": 1446,
       "metrics": {
-        "Arena Elo": 1289,
-        "95% CI": "[-6, +6]",
-        "Votes Count": 68500
+        "Arena Elo": 1446,
+        "95% CI": "+4/-5",
+        "Votes Count": 13692
       },
-      "notes": "OpenAI 旗舰全功能多模态模型"
+      "notes": "盲测胜率置信区间: +4/-5, 执裁样本: 13692"
     },
     {
       "rank": 3,
-      "model_name": "claude-3-5-sonnet-20241022",
-      "normalized_model_name": "claude-3-5-sonnet",
-      "organization": "Anthropic",
-      "score": 1284,
+      "model_name": "Grok-4-0709",
+      "normalized_model_name": "grok-4-0709",
+      "organization": "xAI",
+      "score": 1443,
       "metrics": {
-        "Arena Elo": 1284,
-        "95% CI": "[-8, +8]",
-        "Votes Count": 51200
+        "Arena Elo": 1443,
+        "95% CI": "+7/-8",
+        "Votes Count": 5725
       },
-      "notes": "具备行业顶尖的编码与计算机使用能力"
+      "notes": "盲测胜率置信区间: +7/-8, 执裁样本: 5725"
     },
     {
       "rank": 4,
-      "model_name": "o1-preview",
-      "normalized_model_name": "o1-preview",
+      "model_name": "ChatGPT-4o-latest (2025-03-26)",
+      "normalized_model_name": "chatgpt-4o",
       "organization": "OpenAI",
-      "score": 1278,
+      "score": 1429,
       "metrics": {
-        "Arena Elo": 1278,
-        "95% CI": "[-9, +9]",
-        "Votes Count": 33100
+        "Arena Elo": 1429,
+        "95% CI": "+4/-4",
+        "Votes Count": 26230
       },
-      "notes": "慢思考推理模型，数学与复杂逻辑突出"
+      "notes": "盲测胜率置信区间: +4/-4, 执裁样本: 26230"
     },
     {
       "rank": 5,
-      "model_name": "qwen2.5-72b-instruct",
-      "normalized_model_name": "qwen2.5-72b-instruct",
-      "organization": "Alibaba",
-      "score": 1261,
+      "model_name": "o3-2025-04-16",
+      "normalized_model_name": "o3-2025-04-16",
+      "organization": "OpenAI",
+      "score": 1428,
       "metrics": {
-        "Arena Elo": 1261,
-        "95% CI": "[-7, +7]",
-        "Votes Count": 39800
+        "Arena Elo": 1428,
+        "95% CI": "+5/-3",
+        "Votes Count": 25442
       },
-      "notes": "开源权重代表，在多语言与推理上表现优异"
+      "notes": "盲测胜率置信区间: +5/-3, 执裁样本: 25442"
     },
     {
       "rank": 6,
-      "model_name": "meta-llama-3.1-405b-instruct",
-      "normalized_model_name": "llama-3.1-405b",
-      "organization": "Meta",
-      "score": 1256,
+      "model_name": "DeepSeek-R1-0528",
+      "normalized_model_name": "deepseek-r1-0528",
+      "organization": "DeepSeek",
+      "score": 1424,
       "metrics": {
-        "Arena Elo": 1256,
-        "95% CI": "[-9, +9]",
-        "Votes Count": 28400
+        "Arena Elo": 1424,
+        "95% CI": "+5/-5",
+        "Votes Count": 14514
       },
-      "notes": "超大规模开源旗舰基座"
+      "notes": "盲测胜率置信区间: +5/-5, 执裁样本: 14514"
     },
     {
       "rank": 7,
-      "model_name": "deepseek-v2.5",
-      "normalized_model_name": "deepseek-v2.5",
-      "organization": "DeepSeek",
-      "score": 1248,
+      "model_name": "Grok-3-Preview-02-24",
+      "normalized_model_name": "grok-3",
+      "organization": "xAI",
+      "score": 1423,
       "metrics": {
-        "Arena Elo": 1248,
-        "95% CI": "[-8, +8]",
-        "Votes Count": 31000
+        "Arena Elo": 1423,
+        "95% CI": "+4/-3",
+        "Votes Count": 27643
       },
-      "notes": "MoE 架构的高性价比开源/商用模型"
+      "notes": "盲测胜率置信区间: +4/-3, 执裁样本: 27643"
     },
     {
       "rank": 8,
-      "model_name": "gpt-4o-mini-2024-07-18",
-      "normalized_model_name": "gpt-4o-mini",
-      "organization": "OpenAI",
-      "score": 1235,
+      "model_name": "Gemini-2.5-Flash",
+      "normalized_model_name": "gemini-2.5-flash",
+      "organization": "Google",
+      "score": 1417,
       "metrics": {
-        "Arena Elo": 1235,
-        "95% CI": "[-6, +6]",
-        "Votes Count": 45000
+        "Arena Elo": 1417,
+        "95% CI": "+4/-3",
+        "Votes Count": 24656
       },
-      "notes": "轻量高性价比模型"
+      "notes": "盲测胜率置信区间: +4/-3, 执裁样本: 24656"
+    },
+    {
+      "rank": 9,
+      "model_name": "GPT-4.5-Preview",
+      "normalized_model_name": "gpt-4.5",
+      "organization": "OpenAI",
+      "score": 1413,
+      "metrics": {
+        "Arena Elo": 1413,
+        "95% CI": "+5/-5",
+        "Votes Count": 15271
+      },
+      "notes": "盲测胜率置信区间: +5/-5, 执裁样本: 15271"
+    },
+    {
+      "rank": 10,
+      "model_name": "Gemini-2.5-Flash-Preview-04-17",
+      "normalized_model_name": "gemini-2.5-flash",
+      "organization": "Google",
+      "score": 1397,
+      "metrics": {
+        "Arena Elo": 1397,
+        "95% CI": "+5/-4",
+        "Votes Count": 18607
+      },
+      "notes": "盲测胜率置信区间: +5/-4, 执裁样本: 18607"
+    },
+    {
+      "rank": 11,
+      "model_name": "Qwen3-235B-A22B-no-thinking",
+      "normalized_model_name": "qwen3-235b-a22b-no-thinking",
+      "organization": "Alibaba",
+      "score": 1392,
+      "metrics": {
+        "Arena Elo": 1392,
+        "95% CI": "+5/-4",
+        "Votes Count": 19352
+      },
+      "notes": "盲测胜率置信区间: +5/-4, 执裁样本: 19352"
+    },
+    {
+      "rank": 12,
+      "model_name": "GPT-4.1-2025-04-14",
+      "normalized_model_name": "gpt-4.1-2025-04-14",
+      "organization": "OpenAI",
+      "score": 1384,
+      "metrics": {
+        "Arena Elo": 1384,
+        "95% CI": "+5/-4",
+        "Votes Count": 20325
+      },
+      "notes": "盲测胜率置信区间: +5/-4, 执裁样本: 20325"
+    },
+    {
+      "rank": 13,
+      "model_name": "DeepSeek-V3-0324",
+      "normalized_model_name": "deepseek-v3-0324",
+      "organization": "DeepSeek",
+      "score": 1382,
+      "metrics": {
+        "Arena Elo": 1382,
+        "95% CI": "+5/-4",
+        "Votes Count": 23031
+      },
+      "notes": "盲测胜率置信区间: +5/-4, 执裁样本: 23031"
+    },
+    {
+      "rank": 14,
+      "model_name": "Hunyuan-Turbos-20250416",
+      "normalized_model_name": "hunyuan-turbos-20250416",
+      "organization": "Tencent",
+      "score": 1378,
+      "metrics": {
+        "Arena Elo": 1378,
+        "95% CI": "+5/-5",
+        "Votes Count": 8950
+      },
+      "notes": "盲测胜率置信区间: +5/-5, 执裁样本: 8950"
+    },
+    {
+      "rank": 15,
+      "model_name": "kimi-k2-0711-preview",
+      "normalized_model_name": "kimi-k2-0711",
+      "organization": "Moonshot",
+      "score": 1374,
+      "metrics": {
+        "Arena Elo": 1374,
+        "95% CI": "+12/-11",
+        "Votes Count": 3166
+      },
+      "notes": "盲测胜率置信区间: +12/-11, 执裁样本: 3166"
     }
   ]
 }
