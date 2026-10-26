@@ -2,11 +2,11 @@
 
 > 聚合全球主流 AI 大模型权威评测榜单，客观中立、拒绝编造、全量可追溯的开源评测与选型中心。
 
-[![Deploy to GitHub Pages](https://github.com/Alvin99/ai-leaderboard-hub/actions/workflows/deploy.yml/badge.svg)](https://github.com/Alvin99/ai-leaderboard-hub/actions/workflows/deploy.yml)
-[![Data Validation](https://img.shields.io/badge/Schema-JSON%20Schema%20Valid-emerald.svg)](https://github.com/Alvin99/ai-leaderboard-hub)
-[![Vitest](https://img.shields.io/badge/Tests-Vitest%20%2B%20Playwright-blue.svg)](https://github.com/Alvin99/ai-leaderboard-hub)
+[![Deploy to GitHub Pages](https://github.com/alvin2guo/ai-leaderboard-hub/actions/workflows/deploy.yml/badge.svg)](https://github.com/alvin2guo/ai-leaderboard-hub/actions/workflows/deploy.yml)
+[![Data Validation](https://img.shields.io/badge/Schema-JSON%20Schema%20Valid-emerald.svg)](https://github.com/alvin2guo/ai-leaderboard-hub)
+[![Vitest](https://img.shields.io/badge/Tests-Vitest%20%2B%20Playwright-blue.svg)](https://github.com/alvin2guo/ai-leaderboard-hub)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Alvin99/ai-leaderboard-hub/blob/master/CONTRIBUTING.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/alvin2guo/ai-leaderboard-hub/blob/master/CONTRIBUTING.md)
 
 ---
 
@@ -94,7 +94,7 @@ ai-leaderboard-hub/
 
 ### 2. 克隆与安装依赖
 ```bash
-git clone https://github.com/Alvin99/ai-leaderboard-hub.git
+git clone https://github.com/alvin2guo/ai-leaderboard-hub.git
 cd ai-leaderboard-hub
 npm install
 ```
@@ -126,7 +126,7 @@ npm run build
 
 欢迎社区共同丰富和校准数据：
 
-1. **申请收录新榜单：** 提交 [➕ 新榜单申请 Issue](https://github.com/Alvin99/ai-leaderboard-hub/issues/new?template=01_new_source.yml)，或发起 PR 修改 `data/sources.yml`；
+1. **申请收录新榜单：** 提交 [➕ 新榜单申请 Issue](https://github.com/alvin2guo/ai-leaderboard-hub/issues/new?template=01_new_source.yml)，或发起 PR 修改 `data/sources.yml`；
 2. **提交最新快照：** 修改 `data/rankings/[source-id].json`，补充官方来源 `source_url` 和 `snapshot_date`；
 3. **编写自动适配器：** 继承 `scripts/fetch/base-adapter.ts`，为符合授权要求的 API 编写拉取器；
 4. 详见完整的 [贡献指南 (CONTRIBUTING.md)](CONTRIBUTING.md)。

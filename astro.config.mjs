@@ -13,7 +13,7 @@ const getBase = () => {
 
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.SITE_URL || 'https://alvin99.github.io',
+  site: process.env.SITE_URL || 'https://alvin2guo.github.io',
   base: getBase(),
   output: 'static',
   integrations: [tailwind()],

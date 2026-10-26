@@ -47,7 +47,7 @@ jobs:
         run: npm run build
         env:
           BASE_URL: ${{ steps.pages.outputs.base_path || '/' }}
-          SITE_URL: ${{ steps.pages.outputs.origin || 'https://alvin99.github.io' }}
+          SITE_URL: ${{ steps.pages.outputs.origin || 'https://alvin2guo.github.io' }}
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3

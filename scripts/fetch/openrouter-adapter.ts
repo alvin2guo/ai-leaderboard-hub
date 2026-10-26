@@ -16,7 +16,7 @@ export class OpenRouterAdapter extends BaseAdapter {
     try {
       const response = await fetch('https://openrouter.ai/api/v1/models', {
         headers: {
-          'User-Agent': 'AI-Leaderboard-Hub/0.1 (https://github.com/Alvin99/ai-leaderboard-hub)',
+          'User-Agent': 'AI-Leaderboard-Hub/0.1 (https://github.com/alvin2guo/ai-leaderboard-hub)',
           'Accept': 'application/json',
         },
         signal: controller.signal,

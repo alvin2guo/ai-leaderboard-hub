@@ -21,7 +21,7 @@
 
 ```bash
 # 1. 克隆代码仓库
-git clone https://github.com/Alvin99/ai-leaderboard-hub.git
+git clone https://github.com/alvin2guo/ai-leaderboard-hub.git
 cd ai-leaderboard-hub
 
 # 2. 安装依赖
