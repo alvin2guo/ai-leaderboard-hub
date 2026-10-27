@@ -1,6 +1,6 @@
 {
   "source_id": "vectara-hallucination",
-  "snapshot_date": "2026-10-26",
+  "snapshot_date": "2026-10-27",
   "source_url": "https://huggingface.co/spaces/vectara/leaderboard",
   "raw_notes": "直接实时抓取自 Vectara 官方 HHEM 幻觉评测基准库（涵盖最新主流大语言模型摘要一致性与幻觉率测试）。",
   "models": [

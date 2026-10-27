@@ -1,6 +1,6 @@
 {
   "source_id": "artificial-analysis",
-  "snapshot_date": "2026-10-26",
+  "snapshot_date": "2026-10-27",
   "source_url": "https://artificialanalysis.ai/leaderboards/models",
   "raw_notes": "直接实时抓取自 Artificial Analysis 官方榜单页面 (https://artificialanalysis.ai/leaderboards/models) 状态流，收录 266 个模型与测试版本。评分以官方 Artificial Analysis Intelligence Index 为基准。",
   "models": [
@@ -76,10 +76,10 @@
         "Exact Index": 55.09,
         "Context Window": "1M",
         "Cost / Task (USD)": "$2.11",
-        "Median Speed": "51 tps",
+        "Median Speed": "43 tps",
         "Price ($ In/Out 1M)": "$2/$10"
       },
-      "notes": "机构: Kimi | 上下文: 1M | 成本: $2.11 | 速度: 51 tps"
+      "notes": "机构: Kimi | 上下文: 1M | 成本: $2.11 | 速度: 43 tps"
     },
     {
       "rank": 6,
@@ -124,10 +124,10 @@
         "Exact Index": 53.2,
         "Context Window": "1M",
         "Cost / Task (USD)": "$5.98",
-        "Median Speed": "63 tps",
+        "Median Speed": "62 tps",
         "Price ($ In/Out 1M)": "$10/$50"
       },
-      "notes": "机构: Anthropic | 上下文: 1M | 成本: $5.98 | 速度: 63 tps"
+      "notes": "机构: Anthropic | 上下文: 1M | 成本: $5.98 | 速度: 62 tps"
     },
     {
       "rank": 9,
@@ -140,10 +140,10 @@
         "Exact Index": 52.67,
         "Context Window": "1M",
         "Cost / Task (USD)": "$3.26",
-        "Median Speed": "67 tps",
+        "Median Speed": "66 tps",
         "Price ($ In/Out 1M)": "$10/$50"
       },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $3.26 | 速度: 67 tps"
+      "notes": "机构: OpenAI | 上下文: 1M | 成本: $3.26 | 速度: 66 tps"
     },
     {
       "rank": 10,
@@ -155,11 +155,11 @@
         "Intelligence Index": 53,
         "Exact Index": 52.56,
         "Context Window": "1M",
-        "Cost / Task (USD)": "$1.99",
-        "Median Speed": "81 tps",
+        "Cost / Task (USD)": "$1.62",
+        "Median Speed": "80 tps",
         "Price ($ In/Out 1M)": "$2/$10"
       },
-      "notes": "机构: Google | 上下文: 1M | 成本: $1.99 | 速度: 81 tps"
+      "notes": "机构: Google | 上下文: 1M | 成本: $1.62 | 速度: 80 tps"
     },
     {
       "rank": 11,
@@ -171,11 +171,11 @@
         "Intelligence Index": 52,
         "Exact Index": 52.39,
         "Context Window": "1M",
-        "Cost / Task (USD)": "$4.54",
-        "Median Speed": "190 tps",
+        "Cost / Task (USD)": "$3.27",
+        "Median Speed": "208 tps",
         "Price ($ In/Out 1M)": "$4/$20"
       },
-      "notes": "机构: Meta | 上下文: 1M | 成本: $4.54 | 速度: 190 tps"
+      "notes": "机构: Meta | 上下文: 1M | 成本: $3.27 | 速度: 208 tps"
     },
     {
       "rank": 12,
@@ -220,10 +220,10 @@
         "Exact Index": 51.83,
         "Context Window": "1M",
         "Cost / Task (USD)": "$0.72",
-        "Median Speed": "66 tps",
+        "Median Speed": "73 tps",
         "Price ($ In/Out 1M)": "$2/$10"
       },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $0.72 | 速度: 66 tps"
+      "notes": "机构: OpenAI | 上下文: 1M | 成本: $0.72 | 速度: 73 tps"
     },
     {
       "rank": 15,

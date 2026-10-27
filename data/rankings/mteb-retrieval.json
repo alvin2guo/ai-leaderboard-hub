@@ -1,6 +1,6 @@
 {
   "source_id": "mteb-retrieval",
-  "snapshot_date": "2026-10-26",
+  "snapshot_date": "2026-10-27",
   "source_url": "https://huggingface.co/spaces/mteb/leaderboard",
   "raw_notes": "直接实时抓取自 MTEB (Massive Text Embedding Benchmark v2) 官方 Space 后端服务，涵盖 349 个文本向量嵌入与检索模型评测。",
   "models": [

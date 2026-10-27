@@ -1,6 +1,6 @@
 {
   "source_id": "huggingface-allbench",
-  "snapshot_date": "2026-10-26",
+  "snapshot_date": "2026-10-27",
   "source_url": "https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard",
   "raw_notes": "直接实时抓取自 Hugging Face Open LLM Leaderboard v2 官方 Space 服务端（覆盖 4576 个最新开源大模型测评数据）。",
   "models": [
