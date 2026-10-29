@@ -1,11 +1,27 @@
 {
   "source_id": "artificial-analysis",
-  "snapshot_date": "2026-10-28",
+  "snapshot_date": "2026-10-29",
   "source_url": "https://artificialanalysis.ai/leaderboards/models",
-  "raw_notes": "直接实时抓取自 Artificial Analysis 官方榜单页面 (https://artificialanalysis.ai/leaderboards/models) 状态流，收录 76 个模型与测试版本。评分以官方 Artificial Analysis Intelligence Index 为基准。",
+  "raw_notes": "直接实时抓取自 Artificial Analysis 官方榜单页面 (https://artificialanalysis.ai/leaderboards/models) 状态流，收录 77 个模型与测试版本。评分以官方 Artificial Analysis Intelligence Index 为基准。",
   "models": [
     {
       "rank": 1,
+      "model_name": "Gemini 4 Carbon (high)",
+      "normalized_model_name": "gemini-4-carbon-high",
+      "organization": "Google",
+      "score": 59,
+      "metrics": {
+        "Intelligence Index": 59,
+        "Exact Index": 59.43,
+        "Context Window": "1M",
+        "Cost / Task (USD)": "$7.76",
+        "Median Speed": "100 tps",
+        "Price ($ In/Out 1M)": "$4/$20"
+      },
+      "notes": "机构: Google | 上下文: 1M | 成本: $7.76 | 速度: 100 tps"
+    },
+    {
+      "rank": 2,
       "model_name": "Claude Opus 5.5 (max with fallback)",
       "normalized_model_name": "claude-opus-5.5-max-with-fallback",
       "organization": "Anthropic",
@@ -21,7 +37,7 @@
       "notes": "机构: Anthropic | 上下文: 1M | 成本: $10.04 | 速度: 98 tps"
     },
     {
-      "rank": 2,
+      "rank": 3,
       "model_name": "Claude Opus 5.5 (xhigh with fallback)",
       "normalized_model_name": "claude-opus-5.5-xhigh-with-fallback",
       "organization": "Anthropic",
@@ -31,13 +47,13 @@
         "Exact Index": 56.99,
         "Context Window": "1M",
         "Cost / Task (USD)": "$6.05",
-        "Median Speed": "84 tps",
+        "Median Speed": "85 tps",
         "Price ($ In/Out 1M)": "$4/$20"
       },
-      "notes": "机构: Anthropic | 上下文: 1M | 成本: $6.05 | 速度: 84 tps"
+      "notes": "机构: Anthropic | 上下文: 1M | 成本: $6.05 | 速度: 85 tps"
     },
     {
-      "rank": 3,
+      "rank": 4,
       "model_name": "GPT-6 Astra (max)",
       "normalized_model_name": "gpt-6-astra-max",
       "organization": "OpenAI",
@@ -47,13 +63,13 @@
         "Exact Index": 56.85,
         "Context Window": "1M",
         "Cost / Task (USD)": "$6.24",
-        "Median Speed": "71 tps",
+        "Median Speed": "73 tps",
         "Price ($ In/Out 1M)": "$10/$50"
       },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $6.24 | 速度: 71 tps"
+      "notes": "机构: OpenAI | 上下文: 1M | 成本: $6.24 | 速度: 73 tps"
     },
     {
-      "rank": 4,
+      "rank": 5,
       "model_name": "GPT-6 Astra (xhigh)",
       "normalized_model_name": "gpt-6-astra-xhigh",
       "organization": "OpenAI",
@@ -63,13 +79,13 @@
         "Exact Index": 55.26,
         "Context Window": "1M",
         "Cost / Task (USD)": "$3.66",
-        "Median Speed": "68 tps",
+        "Median Speed": "63 tps",
         "Price ($ In/Out 1M)": "$10/$50"
       },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $3.66 | 速度: 68 tps"
+      "notes": "机构: OpenAI | 上下文: 1M | 成本: $3.66 | 速度: 63 tps"
     },
     {
-      "rank": 5,
+      "rank": 6,
       "model_name": "GPT-6 Astra (high)",
       "normalized_model_name": "gpt-6-astra-high",
       "organization": "OpenAI",
@@ -85,7 +101,7 @@
       "notes": "机构: OpenAI | 上下文: 1M | 成本: $3.24 | 速度: 63 tps"
     },
     {
-      "rank": 6,
+      "rank": 7,
       "model_name": "GPT-6.1 Sol (max)",
       "normalized_model_name": "gpt-6.1-sol-max",
       "organization": "OpenAI",
@@ -95,13 +111,13 @@
         "Exact Index": 54.51,
         "Context Window": "1M",
         "Cost / Task (USD)": "$1.27",
-        "Median Speed": "81 tps",
+        "Median Speed": "79 tps",
         "Price ($ In/Out 1M)": "$2/$10"
       },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $1.27 | 速度: 81 tps"
+      "notes": "机构: OpenAI | 上下文: 1M | 成本: $1.27 | 速度: 79 tps"
     },
     {
-      "rank": 7,
+      "rank": 8,
       "model_name": "Claude Sonnet 5.5 (max with fallback)",
       "normalized_model_name": "claude-sonnet-5.5-max-with-fallback",
       "organization": "Anthropic",
@@ -111,13 +127,13 @@
         "Exact Index": 54.24,
         "Context Window": "1M",
         "Cost / Task (USD)": "$10.02",
-        "Median Speed": "140 tps",
+        "Median Speed": "137 tps",
         "Price ($ In/Out 1M)": "$2/$10"
       },
-      "notes": "机构: Anthropic | 上下文: 1M | 成本: $10.02 | 速度: 140 tps"
+      "notes": "机构: Anthropic | 上下文: 1M | 成本: $10.02 | 速度: 137 tps"
     },
     {
-      "rank": 8,
+      "rank": 9,
       "model_name": "GPT-6.1 Sol (xhigh)",
       "normalized_model_name": "gpt-6.1-sol-xhigh",
       "organization": "OpenAI",
@@ -127,13 +143,13 @@
         "Exact Index": 52.31,
         "Context Window": "1M",
         "Cost / Task (USD)": "$0.76",
-        "Median Speed": "70 tps",
+        "Median Speed": "71 tps",
         "Price ($ In/Out 1M)": "$2/$10"
       },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $0.76 | 速度: 70 tps"
+      "notes": "机构: OpenAI | 上下文: 1M | 成本: $0.76 | 速度: 71 tps"
     },
     {
-      "rank": 9,
+      "rank": 10,
       "model_name": "Claude Opus 5.5 (high with fallback)",
       "normalized_model_name": "claude-opus-5.5-high-with-fallback",
       "organization": "Anthropic",
@@ -149,7 +165,7 @@
       "notes": "机构: Anthropic | 上下文: 1M | 成本: $3.46 | 速度: 81 tps"
     },
     {
-      "rank": 10,
+      "rank": 11,
       "model_name": "GPT-6 Astra (medium)",
       "normalized_model_name": "gpt-6-astra-medium",
       "organization": "OpenAI",
@@ -159,13 +175,13 @@
         "Exact Index": 51.45,
         "Context Window": "1M",
         "Cost / Task (USD)": "$2.73",
-        "Median Speed": "59 tps",
+        "Median Speed": "64 tps",
         "Price ($ In/Out 1M)": "$10/$50"
       },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $2.73 | 速度: 59 tps"
+      "notes": "机构: OpenAI | 上下文: 1M | 成本: $2.73 | 速度: 64 tps"
     },
     {
-      "rank": 11,
+      "rank": 12,
       "model_name": "GPT-6.1 Terra (max)",
       "normalized_model_name": "gpt-6.1-terra-max",
       "organization": "OpenAI",
@@ -181,7 +197,7 @@
       "notes": "机构: OpenAI | 上下文: 1M | 成本: $0.96 | 速度: 91 tps"
     },
     {
-      "rank": 12,
+      "rank": 13,
       "model_name": "Gemini 4 Argon (high)",
       "normalized_model_name": "gemini-4-argon-high",
       "organization": "Google",
@@ -190,14 +206,14 @@
         "Intelligence Index": 50,
         "Exact Index": 50.41,
         "Context Window": "1M",
-        "Cost / Task (USD)": "$3.84",
+        "Cost / Task (USD)": "$7.68",
         "Median Speed": "82 tps",
-        "Price ($ In/Out 1M)": "$2/$10"
+        "Price ($ In/Out 1M)": "$4/$20"
       },
-      "notes": "机构: Google | 上下文: 1M | 成本: $3.84 | 速度: 82 tps"
+      "notes": "机构: Google | 上下文: 1M | 成本: $7.68 | 速度: 82 tps"
     },
     {
-      "rank": 13,
+      "rank": 14,
       "model_name": "GPT-6.1 Sol (high)",
       "normalized_model_name": "gpt-6.1-sol-high",
       "organization": "OpenAI",
@@ -213,7 +229,7 @@
       "notes": "机构: OpenAI | 上下文: 1M | 成本: $0.59 | 速度: 70 tps"
     },
     {
-      "rank": 14,
+      "rank": 15,
       "model_name": "Muse Wonder Full (max)",
       "normalized_model_name": "muse-wonder-full-max",
       "organization": "Meta",
@@ -224,22 +240,6 @@
         "Context Window": "1M"
       },
       "notes": "机构: Meta | 上下文: 1M"
-    },
-    {
-      "rank": 15,
-      "model_name": "Claude Fable 5.1 (xhigh with fallback)",
-      "normalized_model_name": "claude-fable-5.1-xhigh-with-fallback",
-      "organization": "Anthropic",
-      "score": 50,
-      "metrics": {
-        "Intelligence Index": 50,
-        "Exact Index": 49.67,
-        "Context Window": "1M",
-        "Cost / Task (USD)": "$10.89",
-        "Median Speed": "66 tps",
-        "Price ($ In/Out 1M)": "$10/$50"
-      },
-      "notes": "机构: Anthropic | 上下文: 1M | 成本: $10.89 | 速度: 66 tps"
     }
   ]
 }
