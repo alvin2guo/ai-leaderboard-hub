@@ -1,8 +1,8 @@
 {
   "source_id": "artificial-analysis",
-  "snapshot_date": "2026-10-29",
+  "snapshot_date": "2026-10-30",
   "source_url": "https://artificialanalysis.ai/leaderboards/models",
-  "raw_notes": "直接实时抓取自 Artificial Analysis 官方榜单页面 (https://artificialanalysis.ai/leaderboards/models) 状态流，收录 77 个模型与测试版本。评分以官方 Artificial Analysis Intelligence Index 为基准。",
+  "raw_notes": "直接实时抓取自 Artificial Analysis 官方榜单页面 (https://artificialanalysis.ai/leaderboards/models) 状态流，收录 83 个模型与测试版本。评分以官方 Artificial Analysis Intelligence Index 为基准。",
   "models": [
     {
       "rank": 1,
@@ -15,10 +15,10 @@
         "Exact Index": 59.43,
         "Context Window": "1M",
         "Cost / Task (USD)": "$7.76",
-        "Median Speed": "100 tps",
+        "Median Speed": "83 tps",
         "Price ($ In/Out 1M)": "$4/$20"
       },
-      "notes": "机构: Google | 上下文: 1M | 成本: $7.76 | 速度: 100 tps"
+      "notes": "机构: Google | 上下文: 1M | 成本: $7.76 | 速度: 83 tps"
     },
     {
       "rank": 2,
@@ -31,10 +31,10 @@
         "Exact Index": 58.41,
         "Context Window": "1M",
         "Cost / Task (USD)": "$10.04",
-        "Median Speed": "98 tps",
+        "Median Speed": "97 tps",
         "Price ($ In/Out 1M)": "$4/$20"
       },
-      "notes": "机构: Anthropic | 上下文: 1M | 成本: $10.04 | 速度: 98 tps"
+      "notes": "机构: Anthropic | 上下文: 1M | 成本: $10.04 | 速度: 97 tps"
     },
     {
       "rank": 3,
@@ -63,10 +63,10 @@
         "Exact Index": 56.85,
         "Context Window": "1M",
         "Cost / Task (USD)": "$6.24",
-        "Median Speed": "73 tps",
+        "Median Speed": "79 tps",
         "Price ($ In/Out 1M)": "$10/$50"
       },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $6.24 | 速度: 73 tps"
+      "notes": "机构: OpenAI | 上下文: 1M | 成本: $6.24 | 速度: 79 tps"
     },
     {
       "rank": 5,
@@ -79,10 +79,10 @@
         "Exact Index": 55.26,
         "Context Window": "1M",
         "Cost / Task (USD)": "$3.66",
-        "Median Speed": "63 tps",
+        "Median Speed": "64 tps",
         "Price ($ In/Out 1M)": "$10/$50"
       },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $3.66 | 速度: 63 tps"
+      "notes": "机构: OpenAI | 上下文: 1M | 成本: $3.66 | 速度: 64 tps"
     },
     {
       "rank": 6,
@@ -95,10 +95,10 @@
         "Exact Index": 54.85,
         "Context Window": "1M",
         "Cost / Task (USD)": "$3.24",
-        "Median Speed": "63 tps",
+        "Median Speed": "62 tps",
         "Price ($ In/Out 1M)": "$10/$50"
       },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $3.24 | 速度: 63 tps"
+      "notes": "机构: OpenAI | 上下文: 1M | 成本: $3.24 | 速度: 62 tps"
     },
     {
       "rank": 7,
@@ -111,10 +111,10 @@
         "Exact Index": 54.51,
         "Context Window": "1M",
         "Cost / Task (USD)": "$1.27",
-        "Median Speed": "79 tps",
+        "Median Speed": "81 tps",
         "Price ($ In/Out 1M)": "$2/$10"
       },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $1.27 | 速度: 79 tps"
+      "notes": "机构: OpenAI | 上下文: 1M | 成本: $1.27 | 速度: 81 tps"
     },
     {
       "rank": 8,
@@ -127,10 +127,10 @@
         "Exact Index": 54.24,
         "Context Window": "1M",
         "Cost / Task (USD)": "$10.02",
-        "Median Speed": "137 tps",
+        "Median Speed": "140 tps",
         "Price ($ In/Out 1M)": "$2/$10"
       },
-      "notes": "机构: Anthropic | 上下文: 1M | 成本: $10.02 | 速度: 137 tps"
+      "notes": "机构: Anthropic | 上下文: 1M | 成本: $10.02 | 速度: 140 tps"
     },
     {
       "rank": 9,
@@ -143,10 +143,10 @@
         "Exact Index": 52.31,
         "Context Window": "1M",
         "Cost / Task (USD)": "$0.76",
-        "Median Speed": "71 tps",
+        "Median Speed": "67 tps",
         "Price ($ In/Out 1M)": "$2/$10"
       },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $0.76 | 速度: 71 tps"
+      "notes": "机构: OpenAI | 上下文: 1M | 成本: $0.76 | 速度: 67 tps"
     },
     {
       "rank": 10,
@@ -159,10 +159,10 @@
         "Exact Index": 51.69,
         "Context Window": "1M",
         "Cost / Task (USD)": "$3.46",
-        "Median Speed": "81 tps",
+        "Median Speed": "80 tps",
         "Price ($ In/Out 1M)": "$4/$20"
       },
-      "notes": "机构: Anthropic | 上下文: 1M | 成本: $3.46 | 速度: 81 tps"
+      "notes": "机构: Anthropic | 上下文: 1M | 成本: $3.46 | 速度: 80 tps"
     },
     {
       "rank": 11,
@@ -175,10 +175,10 @@
         "Exact Index": 51.45,
         "Context Window": "1M",
         "Cost / Task (USD)": "$2.73",
-        "Median Speed": "64 tps",
+        "Median Speed": "58 tps",
         "Price ($ In/Out 1M)": "$10/$50"
       },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $2.73 | 速度: 64 tps"
+      "notes": "机构: OpenAI | 上下文: 1M | 成本: $2.73 | 速度: 58 tps"
     },
     {
       "rank": 12,
@@ -207,10 +207,10 @@
         "Exact Index": 50.41,
         "Context Window": "1M",
         "Cost / Task (USD)": "$7.68",
-        "Median Speed": "82 tps",
+        "Median Speed": "83 tps",
         "Price ($ In/Out 1M)": "$4/$20"
       },
-      "notes": "机构: Google | 上下文: 1M | 成本: $7.68 | 速度: 82 tps"
+      "notes": "机构: Google | 上下文: 1M | 成本: $7.68 | 速度: 83 tps"
     },
     {
       "rank": 14,
@@ -223,10 +223,10 @@
         "Exact Index": 50.23,
         "Context Window": "1M",
         "Cost / Task (USD)": "$0.59",
-        "Median Speed": "70 tps",
+        "Median Speed": "65 tps",
         "Price ($ In/Out 1M)": "$2/$10"
       },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $0.59 | 速度: 70 tps"
+      "notes": "机构: OpenAI | 上下文: 1M | 成本: $0.59 | 速度: 65 tps"
     },
     {
       "rank": 15,
