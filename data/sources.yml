@@ -12,7 +12,7 @@
     - 数学
     - 代码
   license_or_terms_url: https://opencompass.org.cn/home
-  last_checked_at: '2026-10-30'
+  last_checked_at: '2026-10-31'
   update_frequency: weekly
   auto_fetch_supported: true
   notes: 国内学术与工业界广泛采纳的权威综合基准，浏览器自动化直连官网提取。
@@ -29,7 +29,7 @@
     - 专业能力
     - 应用能力
   license_or_terms_url: https://www.superclueai.com/
-  last_checked_at: '2026-10-30'
+  last_checked_at: '2026-10-31'
   update_frequency: monthly
   auto_fetch_supported: true
   notes: 定期发布中文大语言模型测评报告与月度榜单快照。
@@ -46,7 +46,7 @@
     - Cost / Task (USD)
     - Median Speed
   license_or_terms_url: https://artificialanalysis.ai/terms
-  last_checked_at: '2026-10-30'
+  last_checked_at: '2026-10-31'
   update_frequency: weekly
   auto_fetch_supported: true
   notes: 工程选型核心参考，包含吞吐延迟与单位成本对照。
@@ -62,7 +62,7 @@
     - Change
     - Author
   license_or_terms_url: https://openrouter.ai/terms
-  last_checked_at: '2026-10-30'
+  last_checked_at: '2026-10-31'
   update_frequency: daily
   auto_fetch_supported: true
   notes: 反应真实生产环境中的开发者实际调用与热度分布。
@@ -82,7 +82,7 @@
     - MuSR
     - MMLU-PRO
   license_or_terms_url: https://huggingface.co/terms-of-service
-  last_checked_at: '2026-10-30'
+  last_checked_at: '2026-10-31'
   update_frequency: weekly
   auto_fetch_supported: true
   notes: 严格防止测试集污染，直连 Hugging Face 官方后端 API。
@@ -98,7 +98,7 @@
     - Factual Consistency Rate
     - Answer Rate
   license_or_terms_url: https://github.com/vectara/hallucination-leaderboard
-  last_checked_at: '2026-10-30'
+  last_checked_at: '2026-10-31'
   update_frequency: weekly
   auto_fetch_supported: true
   notes: 幻觉率越低越优，直连 Vectara 官方开源基准库提取。
@@ -113,7 +113,7 @@
     - Mean Task Score
     - Total Params (B)
   license_or_terms_url: https://huggingface.co/spaces/mteb/leaderboard
-  last_checked_at: '2026-10-30'
+  last_checked_at: '2026-10-31'
   update_frequency: weekly
   auto_fetch_supported: true
   notes: 向量模型选型必备基准，直连 MTEB 官方后端 API。

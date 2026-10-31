@@ -1,6 +1,6 @@
 {
   "source_id": "opencompass-overall",
-  "snapshot_date": "2026-10-30",
+  "snapshot_date": "2026-10-31",
   "source_url": "https://opencompass.org.cn/leaderboard-llm",
   "raw_notes": "通过 Playwright 无头浏览器模拟真实访问 OpenCompass 司南官方评测页面 (https://opencompass.org.cn/leaderboard-llm) 直取当前最新 DOM 表格数据（含知识、推理、数学、代码能力评分）。",
   "models": [
