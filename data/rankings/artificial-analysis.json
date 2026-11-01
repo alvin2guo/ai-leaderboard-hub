@@ -1,6 +1,6 @@
 {
   "source_id": "artificial-analysis",
-  "snapshot_date": "2026-10-31",
+  "snapshot_date": "2026-11-01",
   "source_url": "https://artificialanalysis.ai/leaderboards/models",
   "raw_notes": "直接实时抓取自 Artificial Analysis 官方榜单页面 (https://artificialanalysis.ai/leaderboards/models) 状态流，收录 86 个模型与测试版本。评分以官方 Artificial Analysis Intelligence Index 为基准。",
   "models": [
