@@ -1,8 +1,8 @@
 {
   "source_id": "artificial-analysis",
-  "snapshot_date": "2026-11-04",
+  "snapshot_date": "2026-11-05",
   "source_url": "https://artificialanalysis.ai/leaderboards/models",
-  "raw_notes": "直接实时抓取自 Artificial Analysis 官方榜单页面 (https://artificialanalysis.ai/leaderboards/models) 状态流，收录 91 个模型与测试版本。评分以官方 Artificial Analysis Intelligence Index 为基准。",
+  "raw_notes": "直接实时抓取自 Artificial Analysis 官方榜单页面 (https://artificialanalysis.ai/leaderboards/models) 状态流，收录 96 个模型与测试版本。评分以官方 Artificial Analysis Intelligence Index 为基准。",
   "models": [
     {
       "rank": 1,
@@ -21,8 +21,8 @@
     },
     {
       "rank": 2,
-      "model_name": "Claude Opus 5.5 (max with fallback)",
-      "normalized_model_name": "claude-opus-5.5-max-with-fallback",
+      "model_name": "Claude Opus 5.5 (max)",
+      "normalized_model_name": "claude-opus-5.5-max",
       "organization": "Anthropic",
       "score": 59,
       "metrics": {
@@ -51,8 +51,8 @@
     },
     {
       "rank": 4,
-      "model_name": "Claude Opus 5.5 (xhigh with fallback)",
-      "normalized_model_name": "claude-opus-5.5-xhigh-with-fallback",
+      "model_name": "Claude Opus 5.5 (xhigh)",
+      "normalized_model_name": "claude-opus-5.5-xhigh",
       "organization": "Anthropic",
       "score": 57,
       "metrics": {
@@ -126,8 +126,8 @@
     },
     {
       "rank": 9,
-      "model_name": "Claude Sonnet 5.5 (max with fallback)",
-      "normalized_model_name": "claude-sonnet-5.5-max-with-fallback",
+      "model_name": "Claude Sonnet 5.5 (max)",
+      "normalized_model_name": "claude-sonnet-5.5-max",
       "organization": "Anthropic",
       "score": 55,
       "metrics": {
@@ -171,8 +171,8 @@
     },
     {
       "rank": 12,
-      "model_name": "Claude Opus 5.5 (high with fallback)",
-      "normalized_model_name": "claude-opus-5.5-high-with-fallback",
+      "model_name": "Claude Opus 5.5 (high)",
+      "normalized_model_name": "claude-opus-5.5-high",
       "organization": "Anthropic",
       "score": 52,
       "metrics": {
@@ -224,10 +224,10 @@
         "Intelligence Index": 50,
         "Exact Index": 50.41,
         "Context Window": "1M",
-        "Cost / Task (USD)": "$7.68",
+        "Cost / Task (USD)": "$9.95",
         "Price ($ In/Out 1M)": "$4/$20"
       },
-      "notes": "机构: Google | 上下文: 1M | 成本: $7.68"
+      "notes": "机构: Google | 上下文: 1M | 成本: $9.95"
     }
   ]
 }
