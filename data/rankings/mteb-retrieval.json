@@ -1,8 +1,8 @@
 {
   "source_id": "mteb-retrieval",
-  "snapshot_date": "2026-11-09",
+  "snapshot_date": "2026-11-10",
   "source_url": "https://huggingface.co/spaces/mteb/leaderboard",
-  "raw_notes": "直接实时抓取自 MTEB (Massive Text Embedding Benchmark v2) 官方 Space 后端服务，涵盖 351 个文本向量嵌入与检索模型评测。",
+  "raw_notes": "直接实时抓取自 MTEB (Massive Text Embedding Benchmark v2) 官方 Space 后端服务，涵盖 353 个文本向量嵌入与检索模型评测。",
   "models": [
     {
       "rank": 1,
@@ -126,6 +126,21 @@
     },
     {
       "rank": 9,
+      "model_name": "opensearch-project/opensearch-neural-embed-v1",
+      "normalized_model_name": "opensearch-project-opensearch-neural-embed-v1",
+      "organization": "opensearch-project",
+      "score": 73.77,
+      "metrics": {
+        "Mean Task Score": 73.77,
+        "Total Params": "0.60B",
+        "Retrieval": 63.05,
+        "Classification": 90.4,
+        "STS": 88.45
+      },
+      "notes": "发布时间: 2026-11-06, 机构: opensearch-project, 参数量: 0.60B"
+    },
+    {
+      "rank": 10,
       "model_name": "codefuse-ai/F2LLM-4B",
       "normalized_model_name": "codefuse-ai-f2llm-4b",
       "organization": "codefuse-ai",
@@ -140,7 +155,7 @@
       "notes": "发布时间: 2025-09-18, 机构: codefuse-ai, 参数量: 4.02B"
     },
     {
-      "rank": 10,
+      "rank": 11,
       "model_name": "google/gemini-embedding-001",
       "normalized_model_name": "google-gemini-embedding-001",
       "organization": "google",
@@ -155,7 +170,7 @@
       "notes": "发布时间: 2025-07-14, 机构: google, 参数量: N/A"
     },
     {
-      "rank": 11,
+      "rank": 12,
       "model_name": "codefuse-ai/F2LLM-v2-14B",
       "normalized_model_name": "codefuse-ai-f2llm-v2-14b",
       "organization": "codefuse-ai",
@@ -170,7 +185,7 @@
       "notes": "发布时间: 2026-03-09, 机构: codefuse-ai, 参数量: 13.99B"
     },
     {
-      "rank": 12,
+      "rank": 13,
       "model_name": "codefuse-ai/F2LLM-v2-8B",
       "normalized_model_name": "codefuse-ai-f2llm-v2-8b",
       "organization": "codefuse-ai",
@@ -185,7 +200,7 @@
       "notes": "发布时间: 2026-03-09, 机构: codefuse-ai, 参数量: 7.57B"
     },
     {
-      "rank": 13,
+      "rank": 14,
       "model_name": "codefuse-ai/F2LLM-v2-4B",
       "normalized_model_name": "codefuse-ai-f2llm-v2-4b",
       "organization": "codefuse-ai",
@@ -200,7 +215,7 @@
       "notes": "发布时间: 2026-03-09, 机构: codefuse-ai, 参数量: 4.02B"
     },
     {
-      "rank": 14,
+      "rank": 15,
       "model_name": "ai-sage/Giga-Embeddings-instruct-10B-A1.8B-0826",
       "normalized_model_name": "ai-sage-giga-embeddings-instruct-10b-a1.8b-0826",
       "organization": "ai-sage",
@@ -213,21 +228,6 @@
         "STS": 84.27
       },
       "notes": "发布时间: 2026-08-19, 机构: ai-sage, 参数量: 10.48B"
-    },
-    {
-      "rank": 15,
-      "model_name": "codefuse-ai/F2LLM-1.7B",
-      "normalized_model_name": "codefuse-ai-f2llm-1.7b",
-      "organization": "codefuse-ai",
-      "score": 72.01,
-      "metrics": {
-        "Mean Task Score": 72.01,
-        "Total Params": "1.72B",
-        "Retrieval": 57.83,
-        "Classification": 90.86,
-        "STS": 83.9
-      },
-      "notes": "发布时间: 2025-09-18, 机构: codefuse-ai, 参数量: 1.72B"
     }
   ]
 }

@@ -1,11 +1,56 @@
 {
   "source_id": "artificial-analysis",
-  "snapshot_date": "2026-11-09",
+  "snapshot_date": "2026-11-10",
   "source_url": "https://artificialanalysis.ai/leaderboards/models",
-  "raw_notes": "直接实时抓取自 Artificial Analysis 官方榜单页面 (https://artificialanalysis.ai/leaderboards/models) 状态流，收录 100 个模型与测试版本。评分以官方 Artificial Analysis Intelligence Index 为基准。",
+  "raw_notes": "直接实时抓取自 Artificial Analysis 官方榜单页面 (https://artificialanalysis.ai/leaderboards/models) 状态流，收录 103 个模型与测试版本。评分以官方 Artificial Analysis Intelligence Index 为基准。",
   "models": [
     {
       "rank": 1,
+      "model_name": "Claude Fable 5.2 (max)",
+      "normalized_model_name": "claude-fable-5.2-max",
+      "organization": "Anthropic",
+      "score": 65,
+      "metrics": {
+        "Intelligence Index": 65,
+        "Exact Index": 64.56,
+        "Context Window": "1M",
+        "Cost / Task (USD)": "$26.54",
+        "Price ($ In/Out 1M)": "$8/$40"
+      },
+      "notes": "机构: Anthropic | 上下文: 1M | 成本: $26.54"
+    },
+    {
+      "rank": 2,
+      "model_name": "Claude Fable 5.2 (xhigh)",
+      "normalized_model_name": "claude-fable-5.2-xhigh",
+      "organization": "Anthropic",
+      "score": 62,
+      "metrics": {
+        "Intelligence Index": 62,
+        "Exact Index": 62.22,
+        "Context Window": "1M",
+        "Cost / Task (USD)": "$14.83",
+        "Price ($ In/Out 1M)": "$8/$40"
+      },
+      "notes": "机构: Anthropic | 上下文: 1M | 成本: $14.83"
+    },
+    {
+      "rank": 3,
+      "model_name": "Claude Fable 5.2 (high)",
+      "normalized_model_name": "claude-fable-5.2-high",
+      "organization": "Anthropic",
+      "score": 62,
+      "metrics": {
+        "Intelligence Index": 62,
+        "Exact Index": 61.82,
+        "Context Window": "1M",
+        "Cost / Task (USD)": "$9.08",
+        "Price ($ In/Out 1M)": "$8/$40"
+      },
+      "notes": "机构: Anthropic | 上下文: 1M | 成本: $9.08"
+    },
+    {
+      "rank": 4,
       "model_name": "Gemini 4 Carbon (high)",
       "normalized_model_name": "gemini-4-carbon-high",
       "organization": "Google",
@@ -20,7 +65,7 @@
       "notes": "机构: Google | 上下文: 1M | 成本: $7.76"
     },
     {
-      "rank": 2,
+      "rank": 5,
       "model_name": "Claude Opus 5.5 (max)",
       "normalized_model_name": "claude-opus-5.5-max",
       "organization": "Anthropic",
@@ -35,7 +80,7 @@
       "notes": "机构: Anthropic | 上下文: 1M | 成本: $10.04"
     },
     {
-      "rank": 3,
+      "rank": 6,
       "model_name": "Gemini 4 Carbon (medium)",
       "normalized_model_name": "gemini-4-carbon-medium",
       "organization": "Google",
@@ -50,7 +95,7 @@
       "notes": "机构: Google | 上下文: 1M | 成本: $6.59"
     },
     {
-      "rank": 4,
+      "rank": 7,
       "model_name": "Claude Opus 5.5 (xhigh)",
       "normalized_model_name": "claude-opus-5.5-xhigh",
       "organization": "Anthropic",
@@ -65,7 +110,7 @@
       "notes": "机构: Anthropic | 上下文: 1M | 成本: $6.05"
     },
     {
-      "rank": 5,
+      "rank": 8,
       "model_name": "GPT-6 Astra (max)",
       "normalized_model_name": "gpt-6-astra-max",
       "organization": "OpenAI",
@@ -80,7 +125,22 @@
       "notes": "机构: OpenAI | 上下文: 1M | 成本: $6.24"
     },
     {
-      "rank": 6,
+      "rank": 9,
+      "model_name": "Claude Fable 5.2 (medium)",
+      "normalized_model_name": "claude-fable-5.2-medium",
+      "organization": "Anthropic",
+      "score": 56,
+      "metrics": {
+        "Intelligence Index": 56,
+        "Exact Index": 56.41,
+        "Context Window": "1M",
+        "Cost / Task (USD)": "$3.80",
+        "Price ($ In/Out 1M)": "$8/$40"
+      },
+      "notes": "机构: Anthropic | 上下文: 1M | 成本: $3.80"
+    },
+    {
+      "rank": 10,
       "model_name": "GPT-6 Astra (xhigh)",
       "normalized_model_name": "gpt-6-astra-xhigh",
       "organization": "OpenAI",
@@ -95,7 +155,7 @@
       "notes": "机构: OpenAI | 上下文: 1M | 成本: $3.66"
     },
     {
-      "rank": 7,
+      "rank": 11,
       "model_name": "GPT-6 Astra (high)",
       "normalized_model_name": "gpt-6-astra-high",
       "organization": "OpenAI",
@@ -110,7 +170,7 @@
       "notes": "机构: OpenAI | 上下文: 1M | 成本: $3.24"
     },
     {
-      "rank": 8,
+      "rank": 12,
       "model_name": "GPT-6.1 Sol (max)",
       "normalized_model_name": "gpt-6.1-sol-max",
       "organization": "OpenAI",
@@ -125,7 +185,7 @@
       "notes": "机构: OpenAI | 上下文: 1M | 成本: $1.27"
     },
     {
-      "rank": 9,
+      "rank": 13,
       "model_name": "Claude Sonnet 5.5 (max)",
       "normalized_model_name": "claude-sonnet-5.5-max",
       "organization": "Anthropic",
@@ -140,7 +200,7 @@
       "notes": "机构: Anthropic | 上下文: 1M | 成本: $10.02"
     },
     {
-      "rank": 10,
+      "rank": 14,
       "model_name": "Gemini 4 Carbon (low)",
       "normalized_model_name": "gemini-4-carbon-low",
       "organization": "Google",
@@ -155,79 +215,19 @@
       "notes": "机构: Google | 上下文: 1M | 成本: $7.19"
     },
     {
-      "rank": 11,
-      "model_name": "GPT-6.1 Sol (xhigh)",
-      "normalized_model_name": "gpt-6.1-sol-xhigh",
-      "organization": "OpenAI",
-      "score": 52,
-      "metrics": {
-        "Intelligence Index": 52,
-        "Exact Index": 52.46,
-        "Context Window": "1M",
-        "Cost / Task (USD)": "$0.76",
-        "Price ($ In/Out 1M)": "$2/$10"
-      },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $0.76"
-    },
-    {
-      "rank": 12,
-      "model_name": "Claude Opus 5.5 (high)",
-      "normalized_model_name": "claude-opus-5.5-high",
-      "organization": "Anthropic",
-      "score": 52,
-      "metrics": {
-        "Intelligence Index": 52,
-        "Exact Index": 51.84,
-        "Context Window": "1M",
-        "Cost / Task (USD)": "$3.46",
-        "Price ($ In/Out 1M)": "$4/$20"
-      },
-      "notes": "机构: Anthropic | 上下文: 1M | 成本: $3.46"
-    },
-    {
-      "rank": 13,
-      "model_name": "GPT-6 Astra (medium)",
-      "normalized_model_name": "gpt-6-astra-medium",
-      "organization": "OpenAI",
-      "score": 52,
-      "metrics": {
-        "Intelligence Index": 52,
-        "Exact Index": 51.55,
-        "Context Window": "1M",
-        "Cost / Task (USD)": "$2.73",
-        "Price ($ In/Out 1M)": "$10/$50"
-      },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $2.73"
-    },
-    {
-      "rank": 14,
-      "model_name": "GPT-6.1 Terra (max)",
-      "normalized_model_name": "gpt-6.1-terra-max",
-      "organization": "OpenAI",
-      "score": 51,
-      "metrics": {
-        "Intelligence Index": 51,
-        "Exact Index": 51.33,
-        "Context Window": "1M",
-        "Cost / Task (USD)": "$0.96",
-        "Price ($ In/Out 1M)": "$1/$5"
-      },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $0.96"
-    },
-    {
       "rank": 15,
-      "model_name": "Gemini 4 Argon (high)",
-      "normalized_model_name": "gemini-4-argon-high",
-      "organization": "Google",
-      "score": 50,
+      "model_name": "Claude Fable 5.2 (low)",
+      "normalized_model_name": "claude-fable-5.2-low",
+      "organization": "Anthropic",
+      "score": 54,
       "metrics": {
-        "Intelligence Index": 50,
-        "Exact Index": 50.41,
+        "Intelligence Index": 54,
+        "Exact Index": 53.92,
         "Context Window": "1M",
-        "Cost / Task (USD)": "$9.95",
-        "Price ($ In/Out 1M)": "$4/$20"
+        "Cost / Task (USD)": "$3.10",
+        "Price ($ In/Out 1M)": "$8/$40"
       },
-      "notes": "机构: Google | 上下文: 1M | 成本: $9.95"
+      "notes": "机构: Anthropic | 上下文: 1M | 成本: $3.10"
     }
   ]
 }
