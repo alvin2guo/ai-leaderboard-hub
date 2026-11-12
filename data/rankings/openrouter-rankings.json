@@ -1,6 +1,6 @@
 {
   "source_id": "openrouter-rankings",
-  "snapshot_date": "2026-11-11",
+  "snapshot_date": "2026-11-12",
   "source_url": "https://openrouter.ai/rankings",
   "raw_notes": "通过 Playwright 无头浏览器模拟访问 OpenRouter 官方排行榜 (https://openrouter.ai/rankings) 抓取真实 Token 消耗与开发者调用热度排名。",
   "models": [
@@ -9,112 +9,112 @@
       "model_name": "DeepSeek V4.1 Flash 1017",
       "normalized_model_name": "deepseek-v4.1-flash-1017",
       "organization": "deepseek",
-      "score": 53800,
+      "score": 53200,
       "metrics": {
         "Rank": 1,
-        "Tokens Processed": "53.8T tokens",
-        "Change": "-2%",
+        "Tokens Processed": "53.2T tokens",
+        "Change": "-8%",
         "Author": "deepseek"
       },
-      "notes": "全球开发者调用量排名 #1 | 处理总量: 53.8T tokens | 环比变化: -2%"
+      "notes": "全球开发者调用量排名 #1 | 处理总量: 53.2T tokens | 环比变化: -8%"
     },
     {
       "rank": 2,
       "model_name": "Hy4",
       "normalized_model_name": "hy4",
       "organization": "tencent",
-      "score": 18800,
+      "score": 20200,
       "metrics": {
         "Rank": 2,
-        "Tokens Processed": "18.8T tokens",
-        "Change": "new",
+        "Tokens Processed": "20.2T tokens",
+        "Change": ">999%",
         "Author": "tencent"
       },
-      "notes": "全球开发者调用量排名 #2 | 处理总量: 18.8T tokens | 环比变化: new"
+      "notes": "全球开发者调用量排名 #2 | 处理总量: 20.2T tokens | 环比变化: >999%"
     },
     {
       "rank": 3,
       "model_name": "DeepSeek V4.1 Flash",
       "normalized_model_name": "deepseek-v4.1-flash",
       "organization": "deepseek",
-      "score": 16900,
+      "score": 16300,
       "metrics": {
         "Rank": 3,
-        "Tokens Processed": "16.9T tokens",
-        "Change": "+8%",
+        "Tokens Processed": "16.3T tokens",
+        "Change": "+1%",
         "Author": "deepseek"
       },
-      "notes": "全球开发者调用量排名 #3 | 处理总量: 16.9T tokens | 环比变化: +8%"
+      "notes": "全球开发者调用量排名 #3 | 处理总量: 16.3T tokens | 环比变化: +1%"
     },
     {
       "rank": 4,
       "model_name": "GLM 5.3 Flash",
       "normalized_model_name": "glm-5.3-flash",
       "organization": "z-ai",
-      "score": 11300,
+      "score": 12000,
       "metrics": {
         "Rank": 4,
-        "Tokens Processed": "11.3T tokens",
-        "Change": "-31%",
+        "Tokens Processed": "12T tokens",
+        "Change": "-25%",
         "Author": "z-ai"
       },
-      "notes": "全球开发者调用量排名 #4 | 处理总量: 11.3T tokens | 环比变化: -31%"
+      "notes": "全球开发者调用量排名 #4 | 处理总量: 12T tokens | 环比变化: -25%"
     },
     {
       "rank": 5,
       "model_name": "GPT-6 Luna",
       "normalized_model_name": "gpt-6-luna",
       "organization": "openai",
-      "score": 7040,
+      "score": 7160,
       "metrics": {
         "Rank": 5,
-        "Tokens Processed": "7.04T tokens",
-        "Change": "-24%",
+        "Tokens Processed": "7.16T tokens",
+        "Change": "-20%",
         "Author": "openai"
       },
-      "notes": "全球开发者调用量排名 #5 | 处理总量: 7.04T tokens | 环比变化: -24%"
+      "notes": "全球开发者调用量排名 #5 | 处理总量: 7.16T tokens | 环比变化: -20%"
     },
     {
       "rank": 6,
       "model_name": "Step 5 Preview",
       "normalized_model_name": "step-5-preview",
       "organization": "stepfun",
-      "score": 6940,
+      "score": 6880,
       "metrics": {
         "Rank": 6,
-        "Tokens Processed": "6.94T tokens",
-        "Change": "+4%",
+        "Tokens Processed": "6.88T tokens",
+        "Change": "+2%",
         "Author": "stepfun"
       },
-      "notes": "全球开发者调用量排名 #6 | 处理总量: 6.94T tokens | 环比变化: +4%"
+      "notes": "全球开发者调用量排名 #6 | 处理总量: 6.88T tokens | 环比变化: +2%"
     },
     {
       "rank": 7,
       "model_name": "Claude Opus 5.5",
       "normalized_model_name": "claude-opus-5.5",
       "organization": "anthropic",
-      "score": 6760,
+      "score": 6650,
       "metrics": {
         "Rank": 7,
-        "Tokens Processed": "6.76T tokens",
-        "Change": "+1%",
+        "Tokens Processed": "6.65T tokens",
+        "Change": "-2%",
         "Author": "anthropic"
       },
-      "notes": "全球开发者调用量排名 #7 | 处理总量: 6.76T tokens | 环比变化: +1%"
+      "notes": "全球开发者调用量排名 #7 | 处理总量: 6.65T tokens | 环比变化: -2%"
     },
     {
       "rank": 8,
       "model_name": "Crouton Alpha",
       "normalized_model_name": "crouton-alpha",
       "organization": "stealth",
-      "score": 5070,
+      "score": 4500,
       "metrics": {
         "Rank": 8,
-        "Tokens Processed": "5.07T tokens",
-        "Change": ">999%",
+        "Tokens Processed": "4.5T tokens",
+        "Change": "+657%",
         "Author": "stealth"
       },
-      "notes": "全球开发者调用量排名 #8 | 处理总量: 5.07T tokens | 环比变化: >999%"
+      "notes": "全球开发者调用量排名 #8 | 处理总量: 4.5T tokens | 环比变化: +657%"
     },
     {
       "rank": 9,
@@ -125,94 +125,94 @@
       "metrics": {
         "Rank": 9,
         "Tokens Processed": "4.42T tokens",
-        "Change": "+46%",
+        "Change": "+32%",
         "Author": "moonshotai"
       },
-      "notes": "全球开发者调用量排名 #9 | 处理总量: 4.42T tokens | 环比变化: +46%"
+      "notes": "全球开发者调用量排名 #9 | 处理总量: 4.42T tokens | 环比变化: +32%"
     },
     {
       "rank": 10,
-      "model_name": "MiniMax M3.1 Flash",
-      "normalized_model_name": "minimax-m3.1-flash",
-      "organization": "minimax",
-      "score": 4330,
+      "model_name": "GPT-6.1 Sol",
+      "normalized_model_name": "gpt-6.1-sol",
+      "organization": "openai",
+      "score": 4140,
       "metrics": {
         "Rank": 10,
-        "Tokens Processed": "4.33T tokens",
-        "Change": "-33%",
-        "Author": "minimax"
+        "Tokens Processed": "4.14T tokens",
+        "Change": "+1%",
+        "Author": "openai"
       },
-      "notes": "全球开发者调用量排名 #10 | 处理总量: 4.33T tokens | 环比变化: -33%"
+      "notes": "全球开发者调用量排名 #10 | 处理总量: 4.14T tokens | 环比变化: +1%"
     },
     {
       "rank": 1,
       "model_name": "DeepSeek V4.1 Flash 1017",
       "normalized_model_name": "deepseek-v4.1-flash-1017",
       "organization": "deepseek",
-      "score": 8650,
+      "score": 9620,
       "metrics": {
         "Rank": 1,
-        "Tokens Processed": "8.65T",
-        "Change": "+20%",
+        "Tokens Processed": "9.62T",
+        "Change": "+11%",
         "Author": "deepseek"
       },
-      "notes": "全球开发者调用量排名 #1 | 处理总量: 8.65T | 环比变化: +20%"
+      "notes": "全球开发者调用量排名 #1 | 处理总量: 9.62T | 环比变化: +11%"
     },
     {
       "rank": 2,
       "model_name": "Hy4",
       "normalized_model_name": "hy4",
       "organization": "tencent",
-      "score": 2830,
+      "score": 2710,
       "metrics": {
         "Rank": 2,
-        "Tokens Processed": "2.83T",
-        "Change": "-11%",
+        "Tokens Processed": "2.71T",
+        "Change": "-4%",
         "Author": "tencent"
       },
-      "notes": "全球开发者调用量排名 #2 | 处理总量: 2.83T | 环比变化: -11%"
+      "notes": "全球开发者调用量排名 #2 | 处理总量: 2.71T | 环比变化: -4%"
     },
     {
       "rank": 3,
-      "model_name": "DeepSeek V4.1 Flash",
-      "normalized_model_name": "deepseek-v4.1-flash",
-      "organization": "deepseek",
-      "score": 2270,
-      "metrics": {
-        "Rank": 3,
-        "Tokens Processed": "2.27T",
-        "Change": "-3%",
-        "Author": "deepseek"
-      },
-      "notes": "全球开发者调用量排名 #3 | 处理总量: 2.27T | 环比变化: -3%"
-    },
-    {
-      "rank": 4,
       "model_name": "GLM 5.3 Flash",
       "normalized_model_name": "glm-5.3-flash",
       "organization": "z-ai",
-      "score": 2100,
+      "score": 2610,
       "metrics": {
-        "Rank": 4,
-        "Tokens Processed": "2.1T",
-        "Change": "+40%",
+        "Rank": 3,
+        "Tokens Processed": "2.61T",
+        "Change": "+24%",
         "Author": "z-ai"
       },
-      "notes": "全球开发者调用量排名 #4 | 处理总量: 2.1T | 环比变化: +40%"
+      "notes": "全球开发者调用量排名 #3 | 处理总量: 2.61T | 环比变化: +24%"
+    },
+    {
+      "rank": 4,
+      "model_name": "DeepSeek V4.1 Flash",
+      "normalized_model_name": "deepseek-v4.1-flash",
+      "organization": "deepseek",
+      "score": 2400,
+      "metrics": {
+        "Rank": 4,
+        "Tokens Processed": "2.4T",
+        "Change": "+6%",
+        "Author": "deepseek"
+      },
+      "notes": "全球开发者调用量排名 #4 | 处理总量: 2.4T | 环比变化: +6%"
     },
     {
       "rank": 5,
-      "model_name": "Claude Opus 5.5",
-      "normalized_model_name": "claude-opus-5.5",
-      "organization": "anthropic",
-      "score": 1110,
+      "model_name": "GPT-6 Luna",
+      "normalized_model_name": "gpt-6-luna",
+      "organization": "openai",
+      "score": 1250,
       "metrics": {
         "Rank": 5,
-        "Tokens Processed": "1.11T",
+        "Tokens Processed": "1.25T",
         "Change": "+17%",
-        "Author": "anthropic"
+        "Author": "openai"
       },
-      "notes": "全球开发者调用量排名 #5 | 处理总量: 1.11T | 环比变化: +17%"
+      "notes": "全球开发者调用量排名 #5 | 处理总量: 1.25T | 环比变化: +17%"
     }
   ]
 }
