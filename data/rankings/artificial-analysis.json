@@ -1,8 +1,8 @@
 {
   "source_id": "artificial-analysis",
-  "snapshot_date": "2026-11-12",
+  "snapshot_date": "2026-11-13",
   "source_url": "https://artificialanalysis.ai/leaderboards/models",
-  "raw_notes": "直接实时抓取自 Artificial Analysis 官方榜单页面 (https://artificialanalysis.ai/leaderboards/models) 状态流，收录 107 个模型与测试版本。评分以官方 Artificial Analysis Intelligence Index 为基准。",
+  "raw_notes": "直接实时抓取自 Artificial Analysis 官方榜单页面 (https://artificialanalysis.ai/leaderboards/models) 状态流，收录 111 个模型与测试版本。评分以官方 Artificial Analysis Intelligence Index 为基准。",
   "models": [
     {
       "rank": 1,
@@ -59,10 +59,10 @@
         "Intelligence Index": 60,
         "Exact Index": 60.03,
         "Context Window": "1M",
-        "Cost / Task (USD)": "$7.76",
-        "Price ($ In/Out 1M)": "$4/$20"
+        "Cost / Task (USD)": "$5.48",
+        "Price ($ In/Out 1M)": "$2/$10"
       },
-      "notes": "机构: Google | 上下文: 1M | 成本: $7.76"
+      "notes": "机构: Google | 上下文: 1M | 成本: $5.48"
     },
     {
       "rank": 5,
@@ -89,10 +89,10 @@
         "Intelligence Index": 58,
         "Exact Index": 58.26,
         "Context Window": "1M",
-        "Cost / Task (USD)": "$6.59",
-        "Price ($ In/Out 1M)": "$4/$20"
+        "Cost / Task (USD)": "$4.68",
+        "Price ($ In/Out 1M)": "$2/$10"
       },
-      "notes": "机构: Google | 上下文: 1M | 成本: $6.59"
+      "notes": "机构: Google | 上下文: 1M | 成本: $4.68"
     },
     {
       "rank": 7,
@@ -209,10 +209,10 @@
         "Intelligence Index": 54,
         "Exact Index": 54.22,
         "Context Window": "1M",
-        "Cost / Task (USD)": "$7.19",
-        "Price ($ In/Out 1M)": "$4/$20"
+        "Cost / Task (USD)": "$5.22",
+        "Price ($ In/Out 1M)": "$2/$10"
       },
-      "notes": "机构: Google | 上下文: 1M | 成本: $7.19"
+      "notes": "机构: Google | 上下文: 1M | 成本: $5.22"
     },
     {
       "rank": 15,
