@@ -1304,7 +1304,7 @@
           {
             "rank": 1,
             "name": "Claude Fable 5.2 (max)",
-            "normalized_name": "claude-fable-5-2-max",
+            "normalized_name": "claude-fable-5.2-max",
             "org": "Anthropic",
             "orgType": "anthropic",
             "score": 64.6,
@@ -1313,7 +1313,7 @@
           {
             "rank": 2,
             "name": "GPT-6.2 Astra (max)",
-            "normalized_name": "gpt-6-2-astra-max",
+            "normalized_name": "gpt-6.2-astra-max",
             "org": "OpenAI",
             "orgType": "openai",
             "score": 62.1,
@@ -1340,7 +1340,7 @@
           {
             "rank": 5,
             "name": "Claude Opus 5.5 (max)",
-            "normalized_name": "claude-opus-5-5-max",
+            "normalized_name": "claude-opus-5.5-max",
             "org": "Anthropic",
             "orgType": "anthropic",
             "score": 59.1,
@@ -1349,7 +1349,7 @@
           {
             "rank": 6,
             "name": "GPT-6.2 Sol (max)",
-            "normalized_name": "gpt-6-2-sol-max",
+            "normalized_name": "gpt-6.2-sol-max",
             "org": "OpenAI",
             "orgType": "openai",
             "score": 57.3,
@@ -1358,7 +1358,7 @@
           {
             "rank": 7,
             "name": "Claude Sonnet 5.5 (max)",
-            "normalized_name": "claude-sonnet-5-5-max",
+            "normalized_name": "claude-sonnet-5.5-max",
             "org": "Anthropic",
             "orgType": "anthropic",
             "score": 54.5,
@@ -1376,7 +1376,7 @@
           {
             "rank": 9,
             "name": "GPT-6.1 Terra (max)",
-            "normalized_name": "gpt-6-1-terra-max",
+            "normalized_name": "gpt-6.1-terra-max",
             "org": "OpenAI",
             "orgType": "openai",
             "score": 51.3,
@@ -1394,7 +1394,7 @@
           {
             "rank": 11,
             "name": "Kimi K3.1 Pro",
-            "normalized_name": "kimi-k3-1-pro",
+            "normalized_name": "kimi-k3.1-pro",
             "org": "Kimi",
             "orgType": "kimi",
             "score": 46.5,
@@ -1402,12 +1402,12 @@
           },
           {
             "rank": 12,
-            "name": "Qwen4 Max",
-            "normalized_name": "qwen4-max",
-            "org": "Alibaba",
-            "orgType": "alibaba",
-            "score": 42.9,
-            "scoreDisplay": "42.9"
+            "name": "Muse Wonder (max)",
+            "normalized_name": "muse-wonder-max",
+            "org": "Meta",
+            "orgType": "meta",
+            "score": 43.6,
+            "scoreDisplay": "43.6"
           }
         ]
       }
