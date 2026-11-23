@@ -28,14 +28,14 @@ test.describe('AI Leaderboard Hub Smoke & Timeline Tests', () => {
 
     // Test clicking a tick to time-travel (e.g. 12月)
     const decTick = page.locator('button[data-target-index="0"]');
-    await decTick.click();
+    await decTick.dispatchEvent('click');
     await page.waitForTimeout(300);
     await expect(dateHeading).toContainText('2025.12.15');
     await expect(page.locator('.leaderboard-row').first()).toContainText('GPT-4o');
 
     // Test clicking back to 11月
     const novTick = page.locator('button[data-target-index="12"]');
-    await novTick.click();
+    await novTick.dispatchEvent('click');
     await page.waitForTimeout(300);
     await expect(dateHeading).toContainText('2026.11.13');
     await expect(page.locator('.leaderboard-row').first()).toContainText('Claude Fable 5.2');

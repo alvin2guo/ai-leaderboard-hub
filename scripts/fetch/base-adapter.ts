@@ -22,6 +22,8 @@ export abstract class BaseAdapter {
     const targetFile = path.resolve(process.cwd(), 'data', 'rankings', `${this.sourceId}.json`);
     console.log(`[Adapter: ${this.sourceId}] Starting snapshot update...`);
 
+    const prevContent = fs.existsSync(targetFile) ? fs.readFileSync(targetFile, 'utf8') : null;
+
     try {
       const snapshot = await this.fetchSnapshot();
 
@@ -47,6 +49,13 @@ export abstract class BaseAdapter {
         message: `Successfully updated ${snapshot.models.length} models for ${this.sourceId}`,
       };
     } catch (err: any) {
+      if (prevContent !== null) {
+        try {
+          fs.writeFileSync(targetFile, prevContent, 'utf8');
+        } catch {
+          // ignore rollback error
+        }
+      }
       console.warn(`[Adapter: ${this.sourceId}] Update failed: ${err.message}. Retaining existing snapshot.`);
       return {
         success: false,

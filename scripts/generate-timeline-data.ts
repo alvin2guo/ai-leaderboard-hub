@@ -391,6 +391,68 @@ const openrouterPoints: TimelinePoint[] = [
   },
 ];
 
+function getOrgType(org: string, name: string): TimelineModel['orgType'] {
+  const o = (org || '').toLowerCase();
+  const n = (name || '').toLowerCase();
+  if (o.includes('anthropic') || n.includes('claude')) return 'anthropic';
+  if (o.includes('google') || n.includes('gemini')) return 'google';
+  if (o.includes('openai') || n.includes('gpt') || n.includes('o1') || n.includes('o3')) return 'openai';
+  if (o.includes('meta') || n.includes('llama') || n.includes('muse')) return 'meta';
+  if (o.includes('moonshot') || o.includes('kimi') || n.includes('kimi')) return 'kimi';
+  if (o.includes('deepseek') || n.includes('deepseek')) return 'deepseek';
+  if (o.includes('alibaba') || o.includes('qwen') || n.includes('qwen')) return 'alibaba';
+  return 'other';
+}
+
+function syncLatestSnapshots() {
+  const aaPath = path.resolve(process.cwd(), 'data', 'rankings', 'artificial-analysis.json');
+  if (fs.existsSync(aaPath)) {
+    try {
+      const aaSnapshot = JSON.parse(fs.readFileSync(aaPath, 'utf8'));
+      if (aaSnapshot && Array.isArray(aaSnapshot.models) && aaSnapshot.models.length > 0) {
+        const topModels: TimelineModel[] = aaSnapshot.models.slice(0, 12).map((m: any) => {
+          const scoreExact = m.metrics?.['Exact Index'] ?? m.score;
+          const scoreDisplay = typeof scoreExact === 'number' ? scoreExact.toFixed(1) : String(scoreExact);
+          return {
+            rank: m.rank,
+            name: m.model_name,
+            normalized_name: m.normalized_model_name,
+            org: m.organization,
+            orgType: getOrgType(m.organization, m.model_name),
+            score: typeof scoreExact === 'number' ? parseFloat(scoreExact.toFixed(1)) : m.score,
+            scoreDisplay,
+          };
+        });
+
+        const date = aaSnapshot.snapshot_date || new Date().toISOString().split('T')[0];
+        const dateDisplay = date.replace(/-/g, '.');
+        const monthKey = date.slice(0, 7);
+
+        const pointData: TimelinePoint = {
+          id: date,
+          dateDisplay,
+          monthKey,
+          label: '最新',
+          isKeyTick: false,
+          models: topModels,
+        };
+
+        const existingIdx = aaPoints.findIndex((p) => p.id === date);
+        if (existingIdx >= 0) {
+          aaPoints[existingIdx] = pointData;
+        } else {
+          aaPoints.push(pointData);
+        }
+        console.log(`[Timeline] Synced latest artificial-analysis snapshot (${date}) with ${topModels.length} models into timeline.`);
+      }
+    } catch (e: any) {
+      console.warn('Failed to dynamically sync artificial-analysis snapshot into timeline:', e.message);
+    }
+  }
+}
+
+syncLatestSnapshots();
+
 const benchmarks: Record<string, BenchmarkTimeline> = {
   'artificial-analysis': {
     id: 'artificial-analysis',
