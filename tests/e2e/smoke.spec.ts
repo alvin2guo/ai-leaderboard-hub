@@ -1,19 +1,44 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('AI Leaderboard Hub Smoke Tests', () => {
-  test('Home page renders successfully with leaderboards and stats', async ({ page }) => {
+test.describe('AI Leaderboard Hub Smoke & Timeline Tests', () => {
+  test('Home page renders timeline hero and interactive scrubber', async ({ page }) => {
     await page.goto('/');
 
     // Check title
     await expect(page).toHaveTitle(/AI Leaderboard Hub/);
 
-    // Check heading
-    const heading = page.locator('h1');
-    await expect(heading).toBeVisible();
-    await expect(heading).toContainText('聚合主流 AI 评测榜单');
+    // Check date display header (reference image match)
+    const dateHeading = page.locator('#timeline-date-display');
+    await expect(dateHeading).toBeVisible();
+    await expect(dateHeading).toContainText('2026.11.13');
 
-    // Check stats are rendered
-    await expect(page.locator('text=收录权威榜单')).toBeVisible();
+    // Check benchmark title
+    await expect(page.locator('#benchmark-title')).toContainText('AA 智能指数');
+
+    // Check top model is Claude Fable 5.2 with score 64.6 on 2026.11.13
+    const topModelRow = page.locator('.leaderboard-row').first();
+    await expect(topModelRow).toBeVisible();
+    await expect(topModelRow.locator('.model-bar-pill')).toContainText('Claude Fable 5.2');
+    await expect(topModelRow.locator('.score-display')).toContainText('64.6');
+
+    // Check month ticks are present
+    const monthTicks = page.locator('.month-tick-btn');
+    const tickCount = await monthTicks.count();
+    expect(tickCount).toBe(12);
+
+    // Test clicking a tick to time-travel (e.g. 12月)
+    const decTick = page.locator('button[data-target-index="0"]');
+    await decTick.click();
+    await page.waitForTimeout(300);
+    await expect(dateHeading).toContainText('2025.12.15');
+    await expect(page.locator('.leaderboard-row').first()).toContainText('GPT-4o');
+
+    // Test clicking back to 11月
+    const novTick = page.locator('button[data-target-index="12"]');
+    await novTick.click();
+    await page.waitForTimeout(300);
+    await expect(dateHeading).toContainText('2026.11.13');
+    await expect(page.locator('.leaderboard-row').first()).toContainText('Claude Fable 5.2');
 
     // Check sources grid cards are rendered
     const cards = page.locator('#sources-grid > div');

@@ -27,33 +27,34 @@ const clientSources = sources.map((s) => ({
   title="AI 大模型跨榜表现对照 | AI Leaderboard Hub"
   description="客观对比主流 AI 模型（GPT-4o, Claude 3.5, Gemini 1.5, Qwen 2.5, Llama 3.1 等）在不同权威榜单中的位置与分值快照。"
 >
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8">
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-xs text-slate-500 mb-6" aria-label="Breadcrumb">
-      <a href={`${baseUrl}/`} class="hover:text-slate-800 dark:hover:text-slate-200">首页</a>
+      <a href={`${baseUrl}/`} class="hover:text-slate-800 dark:hover:text-slate-200">首页时间线</a>
       <span>/</span>
       <span class="text-slate-800 dark:text-slate-200 font-medium">模型跨榜对照</span>
     </nav>
 
-    <!-- Header & Compliance Warning -->
+    <!-- Header & Compliance Warning in Clean Minimalist Style -->
     <div class="space-y-4">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
-            模型跨榜表现客观对照
-          </h1>
-          <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">
-            横向查看同一模型在人类盲测偏好、综合基准、中文评测及专项幻觉/检索榜中的名次快照。
-          </p>
+      <div>
+        <div class="inline-flex items-center gap-1.5 rounded-full bg-orange-50 dark:bg-orange-950/40 border border-orange-200 dark:border-orange-900/60 px-3 py-1 text-xs font-semibold text-orange-700 dark:text-orange-300 mb-2">
+          <span>跨榜单客观对照</span>
         </div>
+        <h1 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
+          模型跨榜表现客观对照
+        </h1>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+          横向查看同一模型在人类偏好盲测、综合基准、中文评测及专项榜中的名次与分数快照。
+        </p>
       </div>
 
       <!-- Compliance alert banner -->
-      <div class="rounded-xl border border-rose-200 dark:border-rose-900/60 bg-rose-50/70 dark:bg-rose-950/30 p-4 text-xs text-rose-900 dark:text-rose-200">
+      <div class="rounded-2xl border border-orange-200 dark:border-orange-900/60 bg-orange-50/60 dark:bg-orange-950/20 p-4 text-xs text-orange-950 dark:text-orange-200">
         <div class="flex items-start gap-2.5">
           <span class="text-base shrink-0">⚠️</span>
           <div class="space-y-1">
-            <h2 class="font-bold text-rose-950 dark:text-rose-100">
+            <h2 class="font-bold text-orange-950 dark:text-orange-100">
               重要声明：跨榜单不可直接比较分值或计算加权总分
             </h2>
             <p class="leading-relaxed">
@@ -64,16 +65,16 @@ const clientSources = sources.map((s) => ({
       </div>
     </div>
 
-    <!-- Model Selector Bar -->
-    <div class="mt-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-xs">
+    <!-- Model Selector Bar in Capsule Style -->
+    <div class="mt-8 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-xs">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
         <div>
           <h2 class="text-sm font-bold text-slate-900 dark:text-white">
             选择要对比的模型（最多 4 款）
           </h2>
-          <p class="text-xs text-slate-500">点击下方标签添加或移除模型：</p>
+          <p class="text-xs text-slate-500">点击下方胶囊标签添加或移除模型：</p>
         </div>
-        <div id="selected-badge-count" class="text-xs font-semibold text-sky-600 dark:text-sky-400">
+        <div id="selected-badge-count" class="text-xs font-semibold text-orange-600 dark:text-orange-400">
           已选择 3 款模型
         </div>
       </div>
@@ -84,7 +85,7 @@ const clientSources = sources.map((s) => ({
           <button
             type="button"
             data-model-id={m.normalized_model_name}
-            class="model-chip inline-flex items-center gap-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-300 transition-all hover:border-sky-400 hover:bg-sky-50 dark:hover:bg-slate-700 cursor-pointer"
+            class="model-chip inline-flex items-center gap-1.5 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 px-3.5 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-300 transition-all hover:border-orange-400 hover:bg-orange-50 dark:hover:bg-slate-700 cursor-pointer"
           >
             <span class="font-semibold">{m.normalized_model_name}</span>
             <span class="text-[10px] text-slate-400">({m.organization})</span>
@@ -94,7 +95,7 @@ const clientSources = sources.map((s) => ({
     </div>
 
     <!-- Comparison Matrix Display -->
-    <div class="mt-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-xs">
+    <div class="mt-8 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-xs">
       <h2 class="text-base font-bold text-slate-900 dark:text-white mb-4">
         各权威榜单排名与分值横向对照表
       </h2>
@@ -106,11 +107,9 @@ const clientSources = sources.map((s) => ({
               <th scope="col" class="py-3 px-4 w-60">评测榜单来源</th>
               <th scope="col" class="py-3 px-4 w-28">评测机制</th>
               <th scope="col" class="py-3 px-4 w-36">核心指标口径</th>
-              <!-- Dynamically populated model header cells -->
             </tr>
           </thead>
           <tbody id="table-body-rows" class="divide-y divide-slate-100 dark:divide-slate-800/60 text-slate-600 dark:text-slate-300">
-            <!-- Dynamically populated rows per source -->
           </tbody>
         </table>
       </div>
@@ -123,11 +122,8 @@ const clientSources = sources.map((s) => ({
 </Layout>
 
 <script define:vars={{ clientModels, clientSources, baseUrl }}>
-  // Interactive client-side comparison logic
-  // Dynamic default selected models from available cross-ranked models
   const defaultSelected = clientModels.slice(0, 3).map(m => m.id);
 
-  // Check URL params
   const urlParams = new URLSearchParams(window.location.search);
   const paramModel = urlParams.get('model');
   let selectedModels = [...defaultSelected];
@@ -148,10 +144,10 @@ const clientSources = sources.map((s) => ({
     chips.forEach(chip => {
       const id = chip.dataset.modelId;
       if (selectedModels.includes(id)) {
-        chip.classList.add('bg-sky-600', 'text-white', 'border-sky-600', 'dark:bg-sky-600', 'dark:text-white');
+        chip.classList.add('bg-orange-600', 'text-white', 'border-orange-600', 'dark:bg-orange-600', 'dark:text-white');
         chip.classList.remove('bg-slate-50', 'text-slate-700', 'border-slate-200', 'dark:bg-slate-800/80', 'dark:text-slate-300', 'dark:border-slate-700');
       } else {
-        chip.classList.remove('bg-sky-600', 'text-white', 'border-sky-600', 'dark:bg-sky-600', 'dark:text-white');
+        chip.classList.remove('bg-orange-600', 'text-white', 'border-orange-600', 'dark:bg-orange-600', 'dark:text-white');
         chip.classList.add('bg-slate-50', 'text-slate-700', 'border-slate-200', 'dark:bg-slate-800/80', 'dark:text-slate-300', 'dark:border-slate-700');
       }
     });
@@ -171,7 +167,6 @@ const clientSources = sources.map((s) => ({
     }
     if (emptyNotice) emptyNotice.classList.add('hidden');
 
-    // Rebuild header
     tableHeaderRow.innerHTML = `
       <th scope="col" class="py-3 px-4 w-60">评测榜单来源</th>
       <th scope="col" class="py-3 px-4 w-28">评测机制</th>
@@ -189,7 +184,6 @@ const clientSources = sources.map((s) => ({
       tableHeaderRow.appendChild(th);
     });
 
-    // Rebuild body per source
     tableBody.innerHTML = '';
     clientSources.forEach(source => {
       const tr = document.createElement('tr');
@@ -199,13 +193,13 @@ const clientSources = sources.map((s) => ({
 
       let rowHtml = `
         <td class="py-3 px-4 font-medium text-slate-900 dark:text-white">
-          <a href="${baseUrl}/sources/${source.id}" class="hover:text-sky-600 dark:hover:text-sky-400 flex items-center gap-1">
+          <a href="${baseUrl}/sources/${source.id}" class="hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 font-semibold">
             <span>${source.name}</span>
             <span class="text-slate-400 text-[10px]">&rarr;</span>
           </a>
         </td>
         <td class="py-3 px-4">
-          <span class="inline-block rounded bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 text-[10px] font-mono">
+          <span class="inline-block rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[10px] font-mono">
             ${source.ranking_type}
           </span>
         </td>
@@ -221,10 +215,10 @@ const clientSources = sources.map((s) => ({
         if (appearance) {
           rowHtml += `
             <td class="py-3 px-4 text-center border-l border-slate-100 dark:border-slate-800">
-              <span class="inline-flex items-center gap-1 rounded bg-sky-50 dark:bg-sky-950/60 px-2 py-0.5 text-xs font-bold text-sky-700 dark:text-sky-300">
+              <span class="inline-flex items-center gap-1 rounded-full bg-orange-50 dark:bg-orange-950/60 px-2.5 py-0.5 text-xs font-bold text-orange-700 dark:text-orange-300">
                 #${appearance.rank}
               </span>
-              <div class="text-[11px] font-mono text-slate-600 dark:text-slate-400 mt-0.5">
+              <div class="text-[11px] font-mono font-bold text-slate-700 dark:text-slate-300 mt-0.5">
                 ${appearance.score}
               </div>
             </td>
@@ -243,7 +237,6 @@ const clientSources = sources.map((s) => ({
     });
   }
 
-  // Handle chips clicks
   chips.forEach(chip => {
     chip.addEventListener('click', () => {
       const id = chip.dataset.modelId;
@@ -251,7 +244,7 @@ const clientSources = sources.map((s) => ({
         selectedModels = selectedModels.filter(m => m !== id);
       } else {
         if (selectedModels.length >= 4) {
-          selectedModels.shift(); // remove oldest if exceeding limit
+          selectedModels.shift();
         }
         selectedModels.push(id);
       }
@@ -260,7 +253,6 @@ const clientSources = sources.map((s) => ({
     });
   });
 
-  // Initial render
   updateChipsState();
   renderTable();
 </script>
