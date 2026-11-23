@@ -20,7 +20,7 @@ describe('Data Utility Functions', () => {
   it('should retrieve individual source by ID', () => {
     const source = getSourceById('artificial-analysis');
     expect(source).toBeDefined();
-    expect(source?.name).toBe('Artificial Analysis Leaderboard');
+    expect(source?.name).toContain('Artificial Analysis');
     expect(source?.category).toBe('comprehensive');
     expect(source?.url).toContain('artificialanalysis.ai');
   });

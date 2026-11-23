@@ -1,8 +1,8 @@
 {
   "source_id": "artificial-analysis",
-  "snapshot_date": "2026-11-22",
-  "source_url": "https://artificialanalysis.ai/leaderboards/models",
-  "raw_notes": "直接实时抓取自 Artificial Analysis 官方榜单页面 (https://artificialanalysis.ai/leaderboards/models) 状态流，收录 126 个模型与测试版本。评分以官方 Artificial Analysis Intelligence Index 为基准。",
+  "snapshot_date": "2026-11-23",
+  "source_url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
+  "raw_notes": "直接实时提取自 Artificial Analysis 官方 Intelligence Index v5.0.1 评测基准页 (https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index)，涵盖知识、代码、科学与通用知识 9 大项评测套件，收录 28 款模型。",
   "models": [
     {
       "rank": 1,
@@ -13,29 +13,17 @@
       "metrics": {
         "Intelligence Index": 65,
         "Exact Index": 64.56,
-        "Context Window": "1M",
-        "Cost / Task (USD)": "$26.54",
-        "Price ($ In/Out 1M)": "$8/$40"
+        "Reasoning Effort": "max",
+        "Speed (t/s)": 110.1,
+        "Price ($ In/Out 1M)": "$8/$40",
+        "HLE-Diamond": 80.2,
+        "Terminal-Bench 4.0": 59.6,
+        "FrontierCode 2.0": 48.8
       },
-      "notes": "机构: Anthropic | 上下文: 1M | 成本: $26.54"
+      "notes": "机构: Anthropic | 评级: Max, Default Fallback | 准确分: 64.56"
     },
     {
       "rank": 2,
-      "model_name": "Claude Fable 5.2 (xhigh)",
-      "normalized_model_name": "claude-fable-5.2-xhigh",
-      "organization": "Anthropic",
-      "score": 62,
-      "metrics": {
-        "Intelligence Index": 62,
-        "Exact Index": 62.22,
-        "Context Window": "1M",
-        "Cost / Task (USD)": "$14.83",
-        "Price ($ In/Out 1M)": "$8/$40"
-      },
-      "notes": "机构: Anthropic | 上下文: 1M | 成本: $14.83"
-    },
-    {
-      "rank": 3,
       "model_name": "GPT-6.2 Astra (max)",
       "normalized_model_name": "gpt-6.2-astra-max",
       "organization": "OpenAI",
@@ -43,44 +31,17 @@
       "metrics": {
         "Intelligence Index": 62,
         "Exact Index": 62.14,
-        "Context Window": "1M",
-        "Cost / Task (USD)": "$4.00",
-        "Price ($ In/Out 1M)": "$8/$40"
+        "Reasoning Effort": "max",
+        "Speed (t/s)": 48.3,
+        "Price ($ In/Out 1M)": "$8/$40",
+        "HLE-Diamond": 72.2,
+        "Terminal-Bench 4.0": 64.1,
+        "FrontierCode 2.0": 45.4
       },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $4.00"
+      "notes": "机构: OpenAI | 评级: Max | 准确分: 62.14"
     },
     {
-      "rank": 4,
-      "model_name": "Claude Fable 5.2 (high)",
-      "normalized_model_name": "claude-fable-5.2-high",
-      "organization": "Anthropic",
-      "score": 62,
-      "metrics": {
-        "Intelligence Index": 62,
-        "Exact Index": 61.82,
-        "Context Window": "1M",
-        "Cost / Task (USD)": "$9.08",
-        "Price ($ In/Out 1M)": "$8/$40"
-      },
-      "notes": "机构: Anthropic | 上下文: 1M | 成本: $9.08"
-    },
-    {
-      "rank": 5,
-      "model_name": "GPT-6.2 Astra (xhigh)",
-      "normalized_model_name": "gpt-6.2-astra-xhigh",
-      "organization": "OpenAI",
-      "score": 62,
-      "metrics": {
-        "Intelligence Index": 62,
-        "Exact Index": 61.56,
-        "Context Window": "1M",
-        "Cost / Task (USD)": "$2.52",
-        "Price ($ In/Out 1M)": "$8/$40"
-      },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $2.52"
-    },
-    {
-      "rank": 6,
+      "rank": 3,
       "model_name": "Gemini 4 Neon (xhigh)",
       "normalized_model_name": "gemini-4-neon-xhigh",
       "organization": "Google",
@@ -88,29 +49,17 @@
       "metrics": {
         "Intelligence Index": 61,
         "Exact Index": 61.4,
-        "Context Window": "1M",
-        "Cost / Task (USD)": "$6.44",
-        "Price ($ In/Out 1M)": "$3/$15"
+        "Reasoning Effort": "xhigh",
+        "Speed (t/s)": 99.9,
+        "Price ($ In/Out 1M)": "$3/$15",
+        "HLE-Diamond": 71.3,
+        "Terminal-Bench 4.0": 63.6,
+        "FrontierCode 2.0": 44.4
       },
-      "notes": "机构: Google | 上下文: 1M | 成本: $6.44"
+      "notes": "机构: Google | 评级: Xhigh | 准确分: 61.4"
     },
     {
-      "rank": 7,
-      "model_name": "GPT-6.2 Astra (high)",
-      "normalized_model_name": "gpt-6.2-astra-high",
-      "organization": "OpenAI",
-      "score": 60,
-      "metrics": {
-        "Intelligence Index": 60,
-        "Exact Index": 60.09,
-        "Context Window": "1M",
-        "Cost / Task (USD)": "$2.07",
-        "Price ($ In/Out 1M)": "$8/$40"
-      },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $2.07"
-    },
-    {
-      "rank": 8,
+      "rank": 4,
       "model_name": "Gemini 4 Carbon (high)",
       "normalized_model_name": "gemini-4-carbon-high",
       "organization": "Google",
@@ -118,29 +67,17 @@
       "metrics": {
         "Intelligence Index": 60,
         "Exact Index": 60.03,
-        "Context Window": "1M",
-        "Cost / Task (USD)": "$7.76",
-        "Price ($ In/Out 1M)": "$4/$20"
+        "Reasoning Effort": "high",
+        "Speed (t/s)": 62.4,
+        "Price ($ In/Out 1M)": "$4/$20",
+        "HLE-Diamond": 69.1,
+        "Terminal-Bench 4.0": 65.2,
+        "FrontierCode 2.0": 40.6
       },
-      "notes": "机构: Google | 上下文: 1M | 成本: $7.76"
+      "notes": "机构: Google | 评级: High | 准确分: 60.03"
     },
     {
-      "rank": 9,
-      "model_name": "Gemini 4 Neon (high)",
-      "normalized_model_name": "gemini-4-neon-high",
-      "organization": "Google",
-      "score": 60,
-      "metrics": {
-        "Intelligence Index": 60,
-        "Exact Index": 59.62,
-        "Context Window": "1M",
-        "Cost / Task (USD)": "$3.74",
-        "Price ($ In/Out 1M)": "$3/$15"
-      },
-      "notes": "机构: Google | 上下文: 1M | 成本: $3.74"
-    },
-    {
-      "rank": 10,
+      "rank": 5,
       "model_name": "Claude Opus 5.5 (max)",
       "normalized_model_name": "claude-opus-5.5-max",
       "organization": "Anthropic",
@@ -148,44 +85,17 @@
       "metrics": {
         "Intelligence Index": 59,
         "Exact Index": 59.11,
-        "Context Window": "1M",
-        "Cost / Task (USD)": "$10.04",
-        "Price ($ In/Out 1M)": "$4/$20"
+        "Reasoning Effort": "max",
+        "Speed (t/s)": 114.5,
+        "Price ($ In/Out 1M)": "$4/$20",
+        "HLE-Diamond": 67.9,
+        "Terminal-Bench 4.0": 59.6,
+        "FrontierCode 2.0": 46.4
       },
-      "notes": "机构: Anthropic | 上下文: 1M | 成本: $10.04"
+      "notes": "机构: Anthropic | 评级: Max, Default Fallback | 准确分: 59.11"
     },
     {
-      "rank": 11,
-      "model_name": "Gemini 4 Carbon (medium)",
-      "normalized_model_name": "gemini-4-carbon-medium",
-      "organization": "Google",
-      "score": 58,
-      "metrics": {
-        "Intelligence Index": 58,
-        "Exact Index": 58.26,
-        "Context Window": "1M",
-        "Cost / Task (USD)": "$6.59",
-        "Price ($ In/Out 1M)": "$4/$20"
-      },
-      "notes": "机构: Google | 上下文: 1M | 成本: $6.59"
-    },
-    {
-      "rank": 12,
-      "model_name": "Claude Opus 5.5 (xhigh)",
-      "normalized_model_name": "claude-opus-5.5-xhigh",
-      "organization": "Anthropic",
-      "score": 57,
-      "metrics": {
-        "Intelligence Index": 57,
-        "Exact Index": 57.44,
-        "Context Window": "1M",
-        "Cost / Task (USD)": "$6.05",
-        "Price ($ In/Out 1M)": "$4/$20"
-      },
-      "notes": "机构: Anthropic | 上下文: 1M | 成本: $6.05"
-    },
-    {
-      "rank": 13,
+      "rank": 6,
       "model_name": "GPT-6.2 Sol (max)",
       "normalized_model_name": "gpt-6.2-sol-max",
       "organization": "OpenAI",
@@ -193,41 +103,402 @@
       "metrics": {
         "Intelligence Index": 57,
         "Exact Index": 57.26,
-        "Context Window": "1M",
-        "Cost / Task (USD)": "$1.01",
-        "Price ($ In/Out 1M)": "$2/$10"
+        "Reasoning Effort": "max",
+        "Speed (t/s)": 67.2,
+        "Price ($ In/Out 1M)": "$2/$10",
+        "HLE-Diamond": 64,
+        "Terminal-Bench 4.0": 60.1,
+        "FrontierCode 2.0": 44.4
       },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $1.01"
+      "notes": "机构: OpenAI | 评级: Max | 准确分: 57.26"
+    },
+    {
+      "rank": 7,
+      "model_name": "Claude Sonnet 5.5 (max)",
+      "normalized_model_name": "claude-sonnet-5.5-max",
+      "organization": "Anthropic",
+      "score": 55,
+      "metrics": {
+        "Intelligence Index": 55,
+        "Exact Index": 54.54,
+        "Reasoning Effort": "max",
+        "Speed (t/s)": 151.6,
+        "Price ($ In/Out 1M)": "$2/$10",
+        "HLE-Diamond": 53.3,
+        "Terminal-Bench 4.0": 63.6,
+        "FrontierCode 2.0": 41.7
+      },
+      "notes": "机构: Anthropic | 评级: Max, Default Fallback | 准确分: 54.54"
+    },
+    {
+      "rank": 8,
+      "model_name": "Gemini 4 Hydrogen (xhigh)",
+      "normalized_model_name": "gemini-4-hydrogen-xhigh",
+      "organization": "Google",
+      "score": 54,
+      "metrics": {
+        "Intelligence Index": 54,
+        "Exact Index": 53.92,
+        "Reasoning Effort": "xhigh",
+        "Speed (t/s)": 157.2,
+        "Price ($ In/Out 1M)": "$1.5/$7.5",
+        "HLE-Diamond": 58.8,
+        "Terminal-Bench 4.0": 53.5,
+        "FrontierCode 2.0": 39
+      },
+      "notes": "机构: Google | 评级: Xhigh | 准确分: 53.92"
+    },
+    {
+      "rank": 9,
+      "model_name": "GPT-6.1 Terra (max)",
+      "normalized_model_name": "gpt-6.1-terra-max",
+      "organization": "OpenAI",
+      "score": 51,
+      "metrics": {
+        "Intelligence Index": 51,
+        "Exact Index": 51.33,
+        "Reasoning Effort": "max",
+        "Speed (t/s)": 70.6,
+        "Price ($ In/Out 1M)": "$1/$5",
+        "HLE-Diamond": 47.3,
+        "Terminal-Bench 4.0": 55.6,
+        "FrontierCode 2.0": 42.3
+      },
+      "notes": "机构: OpenAI | 评级: Max | 准确分: 51.33"
+    },
+    {
+      "rank": 10,
+      "model_name": "Muse Wonder Full (max)",
+      "normalized_model_name": "muse-wonder-full-max",
+      "organization": "Meta",
+      "score": 50,
+      "metrics": {
+        "Intelligence Index": 50,
+        "Exact Index": 50.08,
+        "Reasoning Effort": "max",
+        "HLE-Diamond": 48.5,
+        "Terminal-Bench 4.0": 57.1,
+        "FrontierCode 2.0": 37.8
+      },
+      "notes": "机构: Meta | 评级: Max | 准确分: 50.08"
+    },
+    {
+      "rank": 11,
+      "model_name": "Kimi K3.1 Pro",
+      "normalized_model_name": "kimi-k3.1-pro",
+      "organization": "Kimi",
+      "score": 46,
+      "metrics": {
+        "Intelligence Index": 46,
+        "Exact Index": 46.45,
+        "Reasoning Effort": "max",
+        "Speed (t/s)": 32.5,
+        "Price ($ In/Out 1M)": "$2/$10",
+        "HLE-Diamond": 37.3,
+        "Terminal-Bench 4.0": 67.2,
+        "FrontierCode 2.0": 25.5
+      },
+      "notes": "机构: Kimi | 评级: max | 准确分: 46.45"
+    },
+    {
+      "rank": 12,
+      "model_name": "Muse Wonder (max)",
+      "normalized_model_name": "muse-wonder-max",
+      "organization": "Meta",
+      "score": 44,
+      "metrics": {
+        "Intelligence Index": 44,
+        "Exact Index": 43.57,
+        "Reasoning Effort": "max",
+        "Speed (t/s)": 109.5,
+        "Price ($ In/Out 1M)": "$4/$20",
+        "HLE-Diamond": 39,
+        "Terminal-Bench 4.0": 52,
+        "FrontierCode 2.0": 27.9
+      },
+      "notes": "机构: Meta | 评级: Max | 准确分: 43.57"
+    },
+    {
+      "rank": 13,
+      "model_name": "Qwen4 Max",
+      "normalized_model_name": "qwen4-max",
+      "organization": "Alibaba",
+      "score": 43,
+      "metrics": {
+        "Intelligence Index": 43,
+        "Exact Index": 42.89,
+        "Reasoning Effort": "xhigh",
+        "Speed (t/s)": 63.9,
+        "Price ($ In/Out 1M)": "$1.5/$4.5",
+        "HLE-Diamond": 44.9,
+        "Terminal-Bench 4.0": 48.5,
+        "FrontierCode 2.0": 26.5
+      },
+      "notes": "机构: Alibaba | 评级: xhigh | 准确分: 42.89"
     },
     {
       "rank": 14,
-      "model_name": "GPT-6.2 Astra (medium)",
-      "normalized_model_name": "gpt-6.2-astra-medium",
-      "organization": "OpenAI",
-      "score": 57,
+      "model_name": "Claude Haiku 5.5 (max)",
+      "normalized_model_name": "claude-haiku-5.5-max",
+      "organization": "Anthropic",
+      "score": 36,
       "metrics": {
-        "Intelligence Index": 57,
-        "Exact Index": 57,
-        "Context Window": "1M",
-        "Cost / Task (USD)": "$1.62",
-        "Price ($ In/Out 1M)": "$8/$40"
+        "Intelligence Index": 36,
+        "Exact Index": 36.48,
+        "Reasoning Effort": "max",
+        "Speed (t/s)": 256.9,
+        "Price ($ In/Out 1M)": "$0.1/$0.5",
+        "HLE-Diamond": 29.6,
+        "Terminal-Bench 4.0": 32.8,
+        "FrontierCode 2.0": 34.9
       },
-      "notes": "机构: OpenAI | 上下文: 1M | 成本: $1.62"
+      "notes": "机构: Anthropic | 评级: Max | 准确分: 36.48"
     },
     {
       "rank": 15,
-      "model_name": "Claude Fable 5.2 (medium)",
-      "normalized_model_name": "claude-fable-5.2-medium",
-      "organization": "Anthropic",
-      "score": 56,
+      "model_name": "Muse Ember (max)",
+      "normalized_model_name": "muse-ember-max",
+      "organization": "Meta",
+      "score": 36,
       "metrics": {
-        "Intelligence Index": 56,
-        "Exact Index": 56.41,
-        "Context Window": "1M",
-        "Cost / Task (USD)": "$3.80",
-        "Price ($ In/Out 1M)": "$8/$40"
+        "Intelligence Index": 36,
+        "Exact Index": 36.02,
+        "Reasoning Effort": "max",
+        "Speed (t/s)": 443.4,
+        "Price ($ In/Out 1M)": "$0.1/$0.5",
+        "HLE-Diamond": 25.1,
+        "Terminal-Bench 4.0": 40.9,
+        "FrontierCode 2.0": 27.2
       },
-      "notes": "机构: Anthropic | 上下文: 1M | 成本: $3.80"
+      "notes": "机构: Meta | 评级: Max | 准确分: 36.02"
+    },
+    {
+      "rank": 16,
+      "model_name": "Grok 4.7 (xhigh)",
+      "normalized_model_name": "grok-4.7-xhigh",
+      "organization": "SpaceXAI",
+      "score": 35,
+      "metrics": {
+        "Intelligence Index": 35,
+        "Exact Index": 35.49,
+        "Reasoning Effort": "xhigh",
+        "Speed (t/s)": 74.9,
+        "Price ($ In/Out 1M)": "$2/$6",
+        "HLE-Diamond": 23.2,
+        "Terminal-Bench 4.0": 25.8,
+        "FrontierCode 2.0": 28.7
+      },
+      "notes": "机构: SpaceXAI | 评级: Xhigh | 准确分: 35.49"
+    },
+    {
+      "rank": 17,
+      "model_name": "Tencent Hy4",
+      "normalized_model_name": "tencent-hy4",
+      "organization": "Tencent",
+      "score": 35,
+      "metrics": {
+        "Intelligence Index": 35,
+        "Exact Index": 34.56,
+        "Speed (t/s)": 92.4,
+        "Price ($ In/Out 1M)": "$0.834/$2.501",
+        "HLE-Diamond": 32.7,
+        "Terminal-Bench 4.0": 37.4,
+        "FrontierCode 2.0": 31.4
+      },
+      "notes": "机构: Tencent | 评级: standard | 准确分: 34.56"
+    },
+    {
+      "rank": 18,
+      "model_name": "DeepSeek V4.1 Flash 1017 (max)",
+      "normalized_model_name": "deepseek-v4.1-flash-1017-max",
+      "organization": "DeepSeek",
+      "score": 33,
+      "metrics": {
+        "Intelligence Index": 33,
+        "Exact Index": 32.59,
+        "Reasoning Effort": "max",
+        "Speed (t/s)": 166,
+        "Price ($ In/Out 1M)": "$0.3/$1.2",
+        "HLE-Diamond": 25.3,
+        "Terminal-Bench 4.0": 33.8,
+        "FrontierCode 2.0": 28.5
+      },
+      "notes": "机构: DeepSeek | 评级: Max | 准确分: 32.59"
+    },
+    {
+      "rank": 19,
+      "model_name": "GLM-5.3 (max)",
+      "normalized_model_name": "glm-5.3-max",
+      "organization": "Z AI",
+      "score": 32,
+      "metrics": {
+        "Intelligence Index": 32,
+        "Exact Index": 31.65,
+        "Reasoning Effort": "max",
+        "Speed (t/s)": 66.5,
+        "Price ($ In/Out 1M)": "$1.4/$4.4",
+        "HLE-Diamond": 17.9,
+        "Terminal-Bench 4.0": 41.9,
+        "FrontierCode 2.0": 21.6
+      },
+      "notes": "机构: Z AI | 评级: Max | 准确分: 31.65"
+    },
+    {
+      "rank": 20,
+      "model_name": "Inkling 2 Small",
+      "normalized_model_name": "inkling-2-small",
+      "organization": "Thinking Machines",
+      "score": 31,
+      "metrics": {
+        "Intelligence Index": 31,
+        "Exact Index": 30.63,
+        "Speed (t/s)": 105.4,
+        "Price ($ In/Out 1M)": "$0.3/$1",
+        "HLE-Diamond": 28.7,
+        "Terminal-Bench 4.0": 13.1,
+        "FrontierCode 2.0": 25.4
+      },
+      "notes": "机构: Thinking Machines | 评级: standard | 准确分: 30.63"
+    },
+    {
+      "rank": 21,
+      "model_name": "MiMo-V2.6-Pro",
+      "normalized_model_name": "mimo-v2.6-pro",
+      "organization": "Xiaomi",
+      "score": 30,
+      "metrics": {
+        "Intelligence Index": 30,
+        "Exact Index": 29.89,
+        "Speed (t/s)": 46.1,
+        "Price ($ In/Out 1M)": "$0.435/$0.87",
+        "HLE-Diamond": 15.2,
+        "Terminal-Bench 4.0": 34.8,
+        "FrontierCode 2.0": 24
+      },
+      "notes": "机构: Xiaomi | 评级: standard | 准确分: 29.89"
+    },
+    {
+      "rank": 22,
+      "model_name": "Ling 3.1 Flash 1019",
+      "normalized_model_name": "ling-3.1-flash-1019",
+      "organization": "InclusionAI",
+      "score": 30,
+      "metrics": {
+        "Intelligence Index": 30,
+        "Exact Index": 29.57,
+        "Price ($ In/Out 1M)": "$0.3/$0.9",
+        "HLE-Diamond": 17.2,
+        "Terminal-Bench 4.0": 32.8,
+        "FrontierCode 2.0": 17
+      },
+      "notes": "机构: InclusionAI | 评级: standard | 准确分: 29.57"
+    },
+    {
+      "rank": 23,
+      "model_name": "GPT-6 Luna (max)",
+      "normalized_model_name": "gpt-6-luna-max",
+      "organization": "OpenAI",
+      "score": 28,
+      "metrics": {
+        "Intelligence Index": 28,
+        "Exact Index": 27.86,
+        "Reasoning Effort": "max",
+        "Speed (t/s)": 109.4,
+        "Price ($ In/Out 1M)": "$0.1/$0.5",
+        "HLE-Diamond": 22.2,
+        "Terminal-Bench 4.0": 12.6,
+        "FrontierCode 2.0": 25.2
+      },
+      "notes": "机构: OpenAI | 评级: Max | 准确分: 27.86"
+    },
+    {
+      "rank": 24,
+      "model_name": "Mistral Large 4 (high)",
+      "normalized_model_name": "mistral-large-4-high",
+      "organization": "Mistral",
+      "score": 26,
+      "metrics": {
+        "Intelligence Index": 26,
+        "Exact Index": 26.12,
+        "Reasoning Effort": "high",
+        "Speed (t/s)": 73.9,
+        "Price ($ In/Out 1M)": "$0.7/$2.1",
+        "HLE-Diamond": 17.3,
+        "Terminal-Bench 4.0": 24.7,
+        "FrontierCode 2.0": 15
+      },
+      "notes": "机构: Mistral | 评级: High | 准确分: 26.12"
+    },
+    {
+      "rank": 25,
+      "model_name": "Qwen3.8 27B (xhigh)",
+      "normalized_model_name": "qwen3.8-27b-xhigh",
+      "organization": "Alibaba",
+      "score": 20,
+      "metrics": {
+        "Intelligence Index": 20,
+        "Exact Index": 20.11,
+        "Reasoning Effort": "xhigh",
+        "Speed (t/s)": 66.9,
+        "Price ($ In/Out 1M)": "$0.5/$3",
+        "HLE-Diamond": 15.3,
+        "Terminal-Bench 4.0": 5.6,
+        "FrontierCode 2.0": 14.9
+      },
+      "notes": "机构: Alibaba | 评级: Xhigh | 准确分: 20.11"
+    },
+    {
+      "rank": 26,
+      "model_name": "K2 Horizon 375B A23B",
+      "normalized_model_name": "k2-horizon-375b-a23b",
+      "organization": "Institute of Foundation Models",
+      "score": 18,
+      "metrics": {
+        "Intelligence Index": 18,
+        "Exact Index": 17.82,
+        "Reasoning Effort": "high",
+        "Speed (t/s)": 272,
+        "Price ($ In/Out 1M)": "$0/$0",
+        "HLE-Diamond": 10.2,
+        "Terminal-Bench 4.0": 1.5,
+        "FrontierCode 2.0": 11.8
+      },
+      "notes": "机构: Institute of Foundation Models | 评级: high | 准确分: 17.82"
+    },
+    {
+      "rank": 27,
+      "model_name": "Beam 1.0",
+      "normalized_model_name": "beam-1.0",
+      "organization": "Reflection",
+      "score": 18,
+      "metrics": {
+        "Intelligence Index": 18,
+        "Exact Index": 17.73,
+        "Speed (t/s)": 300.7,
+        "Price ($ In/Out 1M)": "$0.4/$1.2",
+        "HLE-Diamond": 12.8,
+        "Terminal-Bench 4.0": 3,
+        "FrontierCode 2.0": 5.5
+      },
+      "notes": "机构: Reflection | 评级: standard | 准确分: 17.73"
+    },
+    {
+      "rank": 28,
+      "model_name": "Nemotron 3.5 Super VL",
+      "normalized_model_name": "nemotron-3.5-super-vl",
+      "organization": "NVIDIA",
+      "score": 14,
+      "metrics": {
+        "Intelligence Index": 14,
+        "Exact Index": 13.62,
+        "Reasoning Effort": "high",
+        "Speed (t/s)": 328.5,
+        "Price ($ In/Out 1M)": "$0.15/$0.5",
+        "HLE-Diamond": 8.8,
+        "Terminal-Bench 4.0": 0,
+        "FrontierCode 2.0": 6.1
+      },
+      "notes": "机构: NVIDIA | 评级: high | 准确分: 13.62"
     }
   ]
 }

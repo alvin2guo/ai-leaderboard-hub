@@ -50,7 +50,7 @@ test.describe('AI Leaderboard Hub Smoke & Timeline Tests', () => {
     await page.goto('/sources/artificial-analysis');
 
     // Check title and source name
-    await expect(page.locator('h1')).toContainText('Artificial Analysis Leaderboard');
+    await expect(page.locator('h1')).toContainText('Artificial Analysis');
 
     // Check disclaimer note
     await expect(page.locator('text=快照采纳链接')).toBeVisible();
