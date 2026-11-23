@@ -2,13 +2,17 @@ import { execSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 
-function runStep(name: string, command: string) {
+function runStep(name: string, command: string, customEnv?: NodeJS.ProcessEnv) {
   console.log(`\n======================================================`);
   console.log(`▶ [STEP] ${name}`);
   console.log(`  $ ${command}`);
   console.log(`======================================================`);
   try {
-    execSync(command, { stdio: 'inherit', cwd: process.cwd() });
+    execSync(command, {
+      stdio: 'inherit',
+      cwd: process.cwd(),
+      env: customEnv || process.env,
+    });
     console.log(`✔ [PASS] ${name}`);
   } catch (err: any) {
     console.error(`✖ [FAIL] ${name}:`, err.message);
@@ -22,8 +26,8 @@ async function main() {
   const cwd = process.cwd();
 
   try {
-    // 1. Scrape live benchmark data and sync timeline
-    runStep('1. Live Benchmarks Scraping & Timeline Sync', 'npx tsx scripts/fetch/run-adapters.ts');
+    // 1. Scrape live benchmark data and sync timeline (give Node 4GB heap space)
+    runStep('1. Live Benchmarks Scraping & Timeline Sync', 'node --max-old-space-size=4096 --import tsx/esm scripts/fetch/run-adapters.ts');
 
     // 2. Explicit timeline data generation check
     runStep('2. Verify Timeline Data Compilation', 'npx tsx scripts/generate-timeline-data.ts');
@@ -36,6 +40,9 @@ async function main() {
 
     // 5. Static production build
     runStep('5. Production Build', 'npm run build');
+
+    // Small pause to allow file handles and preview ports to settle on Windows
+    await new Promise((resolve) => setTimeout(resolve, 2500));
 
     // 6. End-to-end browser tests
     runStep('6. Playwright E2E Tests', 'npx playwright test --workers=1');

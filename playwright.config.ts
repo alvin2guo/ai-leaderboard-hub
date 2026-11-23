@@ -20,10 +20,11 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
   ],
+  timeout: 60000,
   webServer: {
     command: 'npm run preview -- --port 4321 --host 127.0.0.1',
     url: 'http://127.0.0.1:4321',
     reuseExistingServer: false,
-    timeout: 30000,
+    timeout: 60000,
   },
 });
