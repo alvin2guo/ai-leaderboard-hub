@@ -1944,6 +1944,15 @@
           },
           {
             "rank": 2,
+            "name": "Hy4 flash *",
+            "normalized_name": "hy4-flash",
+            "org": "tencent",
+            "orgType": "other",
+            "score": 18100,
+            "scoreDisplay": "18100"
+          },
+          {
+            "rank": 3,
             "name": "DeepSeek V4.1 Flash",
             "normalized_name": "deepseek-v4.1-flash",
             "org": "deepseek",
@@ -1952,22 +1961,13 @@
             "scoreDisplay": "15400"
           },
           {
-            "rank": 3,
+            "rank": 4,
             "name": "GLM 5.3 Flash",
             "normalized_name": "glm-5.3-flash",
             "org": "z-ai",
             "orgType": "other",
             "score": 12200,
             "scoreDisplay": "12200"
-          },
-          {
-            "rank": 4,
-            "name": "Hy4 flash *",
-            "normalized_name": "hy4-flash",
-            "org": "tencent",
-            "orgType": "other",
-            "score": 10200,
-            "scoreDisplay": "10200"
           },
           {
             "rank": 5,
@@ -2016,12 +2016,12 @@
           },
           {
             "rank": 10,
-            "name": "MiMo-V2.6-Flash",
-            "normalized_name": "mimo-v2.6-flash",
-            "org": "xiaomi",
+            "name": "ERNIE-5.5-Flash-Preview (free)",
+            "normalized_name": "ernie-5.5-flash-preview-free",
+            "org": "baidu",
             "orgType": "other",
-            "score": 3700,
-            "scoreDisplay": "3700"
+            "score": 3470,
+            "scoreDisplay": "3470"
           }
         ]
       }
