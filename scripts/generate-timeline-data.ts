@@ -405,6 +405,7 @@ function getOrgType(org: string, name: string): TimelineModel['orgType'] {
 }
 
 function syncLatestSnapshots() {
+  // 1. Sync Artificial Analysis
   const aaPath = path.resolve(process.cwd(), 'data', 'rankings', 'artificial-analysis.json');
   if (fs.existsSync(aaPath)) {
     try {
@@ -443,47 +444,137 @@ function syncLatestSnapshots() {
         } else {
           aaPoints.push(pointData);
         }
+        aaPoints.sort((a, b) => a.id.localeCompare(b.id));
         console.log(`[Timeline] Synced latest artificial-analysis snapshot (${date}) with ${topModels.length} models into timeline.`);
       }
     } catch (e: any) {
       console.warn('Failed to dynamically sync artificial-analysis snapshot into timeline:', e.message);
     }
   }
+
+  // 2. Sync OpenCompass
+  const ocPath = path.resolve(process.cwd(), 'data', 'rankings', 'opencompass-overall.json');
+  if (fs.existsSync(ocPath)) {
+    try {
+      const ocSnapshot = JSON.parse(fs.readFileSync(ocPath, 'utf8'));
+      if (ocSnapshot && Array.isArray(ocSnapshot.models) && ocSnapshot.models.length > 0) {
+        const topModels: TimelineModel[] = ocSnapshot.models.slice(0, 10).map((m: any) => {
+          const scoreVal = typeof m.score === 'number' ? m.score : parseFloat(m.score);
+          return {
+            rank: m.rank,
+            name: m.model_name,
+            normalized_name: m.normalized_model_name,
+            org: m.organization,
+            orgType: getOrgType(m.organization, m.model_name),
+            score: scoreVal,
+            scoreDisplay: scoreVal.toFixed(1),
+          };
+        });
+
+        const date = ocSnapshot.snapshot_date || new Date().toISOString().split('T')[0];
+        const pointData: TimelinePoint = {
+          id: date,
+          dateDisplay: date.replace(/-/g, '.'),
+          monthKey: date.slice(0, 7),
+          label: '最新',
+          isKeyTick: false,
+          models: topModels,
+        };
+
+        const existingIdx = opencompassPoints.findIndex((p) => p.id === date);
+        if (existingIdx >= 0) {
+          opencompassPoints[existingIdx] = pointData;
+        } else {
+          opencompassPoints.push(pointData);
+        }
+        opencompassPoints.sort((a, b) => a.id.localeCompare(b.id));
+      }
+    } catch (e: any) {
+      console.warn('Failed to dynamically sync opencompass snapshot into timeline:', e.message);
+    }
+  }
+
+  // 3. Sync OpenRouter
+  const orPath = path.resolve(process.cwd(), 'data', 'rankings', 'openrouter-rankings.json');
+  if (fs.existsSync(orPath)) {
+    try {
+      const orSnapshot = JSON.parse(fs.readFileSync(orPath, 'utf8'));
+      if (orSnapshot && Array.isArray(orSnapshot.models) && orSnapshot.models.length > 0) {
+        const topModels: TimelineModel[] = orSnapshot.models.slice(0, 10).map((m: any) => {
+          const scoreVal = typeof m.score === 'number' ? m.score : parseFloat(m.score);
+          return {
+            rank: m.rank,
+            name: m.model_name,
+            normalized_name: m.normalized_model_name,
+            org: m.organization,
+            orgType: getOrgType(m.organization, m.model_name),
+            score: scoreVal,
+            scoreDisplay: String(scoreVal),
+          };
+        });
+
+        const date = orSnapshot.snapshot_date || new Date().toISOString().split('T')[0];
+        const pointData: TimelinePoint = {
+          id: date,
+          dateDisplay: date.replace(/-/g, '.'),
+          monthKey: date.slice(0, 7),
+          label: '最新',
+          isKeyTick: false,
+          models: topModels,
+        };
+
+        const existingIdx = openrouterPoints.findIndex((p) => p.id === date);
+        if (existingIdx >= 0) {
+          openrouterPoints[existingIdx] = pointData;
+        } else {
+          openrouterPoints.push(pointData);
+        }
+        openrouterPoints.sort((a, b) => a.id.localeCompare(b.id));
+      }
+    } catch (e: any) {
+      console.warn('Failed to dynamically sync openrouter snapshot into timeline:', e.message);
+    }
+  }
 }
 
-syncLatestSnapshots();
+export function generateTimelineData(): Record<string, BenchmarkTimeline> {
+  syncLatestSnapshots();
 
-const benchmarks: Record<string, BenchmarkTimeline> = {
-  'artificial-analysis': {
-    id: 'artificial-analysis',
-    name: 'AA 智能指数',
-    subtitle: 'Intelligence Index v5.0.1 官方评测 · 9项严苛能力综合',
-    sourceUrl: 'https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index',
-    maxScoreRef: 75.0, // used for bar width percentage calculation
-    unit: 'Index',
-    points: aaPoints,
-  },
-  'opencompass-overall': {
-    id: 'opencompass-overall',
-    name: 'OpenCompass 司南大模型',
-    subtitle: '上海人工智能实验室评测 · 知识/推理/代码综合',
-    sourceUrl: 'https://opencompass.org.cn/leaderboard-llm',
-    maxScoreRef: 100.0,
-    unit: '分',
-    points: opencompassPoints,
-  },
-  'openrouter-rankings': {
-    id: 'openrouter-rankings',
-    name: 'OpenRouter 真实调用与质量',
-    subtitle: '全球开发者百万次 API 真实调用热度与质量',
-    sourceUrl: 'https://openrouter.ai/rankings',
-    maxScoreRef: 100.0,
-    unit: '指数',
-    points: openrouterPoints,
-  },
-};
+  const benchmarks: Record<string, BenchmarkTimeline> = {
+    'artificial-analysis': {
+      id: 'artificial-analysis',
+      name: 'AA 智能指数',
+      subtitle: '数值越高越聪明 · 10/29 起为 v5',
+      sourceUrl: 'https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index',
+      maxScoreRef: 75.0, // used for bar width percentage calculation
+      unit: 'Index',
+      points: aaPoints,
+    },
+    'opencompass-overall': {
+      id: 'opencompass-overall',
+      name: 'OpenCompass 司南大模型',
+      subtitle: '上海人工智能实验室评测 · 知识/推理/代码综合',
+      sourceUrl: 'https://opencompass.org.cn/leaderboard-llm',
+      maxScoreRef: 100.0,
+      unit: '分',
+      points: opencompassPoints,
+    },
+    'openrouter-rankings': {
+      id: 'openrouter-rankings',
+      name: 'OpenRouter 真实调用与质量',
+      subtitle: '全球开发者百万次 API 真实调用热度与质量',
+      sourceUrl: 'https://openrouter.ai/rankings',
+      maxScoreRef: 100.0,
+      unit: '指数',
+      points: openrouterPoints,
+    },
+  };
 
-const outPath = path.resolve(process.cwd(), 'src/data/timeline-data.json');
-fs.mkdirSync(path.dirname(outPath), { recursive: true });
-fs.writeFileSync(outPath, JSON.stringify(benchmarks, null, 2), 'utf-8');
-console.log(`Generated timeline data with benchmarks: ${Object.keys(benchmarks).join(', ')}`);
+  const outPath = path.resolve(process.cwd(), 'src/data/timeline-data.json');
+  fs.mkdirSync(path.dirname(outPath), { recursive: true });
+  fs.writeFileSync(outPath, JSON.stringify(benchmarks, null, 2), 'utf-8');
+  console.log(`Generated timeline data with benchmarks: ${Object.keys(benchmarks).join(', ')}`);
+  return benchmarks;
+}
+
+generateTimelineData();

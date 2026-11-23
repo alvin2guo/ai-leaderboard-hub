@@ -2,8 +2,9 @@
 import timelineData from '../data/timeline-data.json';
 
 const defaultBenchmark = timelineData['artificial-analysis'];
-const initialPointIndex = 12; // 2026-11-13
-const initialPoint = defaultBenchmark.points[initialPointIndex] || defaultBenchmark.points[defaultBenchmark.points.length - 1];
+const initialPointIndex = Math.max(0, defaultBenchmark.points.length - 1); // Always default to the latest snapshot
+const initialPoint = defaultBenchmark.points[initialPointIndex];
+const lastIdx = initialPointIndex;
 
 const monthTicks = [
   { label: '12月', targetIndex: 0 },
@@ -17,7 +18,7 @@ const monthTicks = [
   { label: '8月', targetIndex: 8 },
   { label: '9月', targetIndex: 9 },
   { label: '10月', targetIndex: 10 },
-  { label: '11月', targetIndex: 12 },
+  { label: '11月', targetIndex: lastIdx },
 ];
 
 const orgColors: Record<string, string> = {
@@ -114,13 +115,14 @@ const maxInInitial = Math.max(...initialPoint.models.map((m) => m.score));
           type="range"
           id="timeline-range"
           min="0"
-          max={defaultBenchmark.points.length - 1}
+          max={lastIdx}
           step="1"
           value={initialPointIndex}
           aria-valuemin="0"
-          aria-valuemax={defaultBenchmark.points.length - 1}
+          aria-valuemax={lastIdx}
           aria-valuenow={initialPointIndex}
           aria-valuetext={initialPoint.dateDisplay}
+          style={`--attr-min: 0; --attr-max: ${lastIdx}; --control-value: ${initialPointIndex};`}
           class="timeline-slider w-full"
         />
       </div>
@@ -261,11 +263,11 @@ const maxInInitial = Math.max(...initialPoint.models.map((m) => m.score));
     --slider-direction: to right;
 
     --attr-min: 0;
-    --attr-max: 13;
-    --control-value: 12;
+    --attr-max: 1;
+    --control-value: 1;
     --slider-progress: calc(
       (var(--control-value) - var(--attr-min)) /
-      (var(--attr-max) - var(--attr-min)) * 100%
+      max(1, (var(--attr-max) - var(--attr-min))) * 100%
     );
 
     appearance: none;
@@ -364,7 +366,10 @@ const maxInInitial = Math.max(...initialPoint.models.map((m) => m.score));
     const tickBtns = document.querySelectorAll('.month-tick-btn');
 
     let currentBenchmarkKey = 'artificial-analysis';
-    let currentPointIndex = parseInt(slider.value, 10) || 12;
+    let currentPointIndex = parseInt(slider?.value || '', 10);
+    if (isNaN(currentPointIndex) || currentPointIndex < 0) {
+      currentPointIndex = getCurrentBenchmark().points.length - 1;
+    }
     let isPlaying = false;
     let playInterval = null;
     let playbackSpeed = 1; // 1x or 2x
@@ -534,6 +539,12 @@ const maxInInitial = Math.max(...initialPoint.models.map((m) => m.score));
     tickBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
         pausePlayback();
+        const benchmark = getCurrentBenchmark();
+        const label = btn.textContent?.trim();
+        if (label === '11月') {
+          updateToPoint(benchmark.points.length - 1);
+          return;
+        }
         const targetIdx = parseInt(btn.getAttribute('data-target-index') || '0', 10);
         updateToPoint(targetIdx);
       });

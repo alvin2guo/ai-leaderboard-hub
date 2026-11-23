@@ -7,15 +7,15 @@ test.describe('AI Leaderboard Hub Smoke & Timeline Tests', () => {
     // Check title
     await expect(page).toHaveTitle(/AI Leaderboard Hub/);
 
-    // Check date display header (reference image match)
+    // Check date display header defaults to latest snapshot
     const dateHeading = page.locator('#timeline-date-display');
     await expect(dateHeading).toBeVisible();
-    await expect(dateHeading).toContainText('2026.11.13');
+    await expect(dateHeading).toContainText('2026.11.23');
 
     // Check benchmark title
     await expect(page.locator('#benchmark-title')).toContainText('AA 智能指数');
 
-    // Check top model is Claude Fable 5.2 with score 64.6 on 2026.11.13
+    // Check top model is Claude Fable 5.2 with score 64.6
     const topModelRow = page.locator('.leaderboard-row').first();
     await expect(topModelRow).toBeVisible();
     await expect(topModelRow.locator('.model-bar-pill')).toContainText('Claude Fable 5.2');
@@ -33,11 +33,11 @@ test.describe('AI Leaderboard Hub Smoke & Timeline Tests', () => {
     await expect(dateHeading).toContainText('2025.12.15');
     await expect(page.locator('.leaderboard-row').first()).toContainText('GPT-4o');
 
-    // Test clicking back to 11月
-    const novTick = page.locator('button[data-target-index="12"]');
+    // Test clicking back to 11月 (should return to latest 2026.11.23)
+    const novTick = page.locator('button', { hasText: '11月' });
     await novTick.dispatchEvent('click');
     await page.waitForTimeout(300);
-    await expect(dateHeading).toContainText('2026.11.13');
+    await expect(dateHeading).toContainText('2026.11.23');
     await expect(page.locator('.leaderboard-row').first()).toContainText('Claude Fable 5.2');
 
     // Check sources grid cards are rendered

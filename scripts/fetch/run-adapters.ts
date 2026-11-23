@@ -8,6 +8,7 @@ import { HuggingFaceLeaderboardAdapter } from './huggingface-adapter';
 import { OpenRouterAdapter } from './openrouter-adapter';
 import { VectaraAdapter } from './vectara-adapter';
 import { MTEBAdapter } from './mteb-adapter';
+import { generateTimelineData } from '../generate-timeline-data';
 import type { Source } from '../../src/utils/types';
 
 async function main() {
@@ -63,6 +64,15 @@ async function main() {
     }
   } catch (err: any) {
     console.error('Failed to update data/sources.yml:', err.message);
+  }
+
+  // Automatically synchronize newly scraped snapshots into the timeline data
+  try {
+    console.log('\n⏳ Synchronizing newly updated snapshots into timeline data...');
+    generateTimelineData();
+    console.log('✓ Timeline data successfully synchronized with latest snapshots.');
+  } catch (err: any) {
+    console.error('Failed to generate timeline data:', err.message);
   }
 
   console.log(`\n🏁 Scraping pipeline complete: ${successCount} successful, ${failCount} warnings.`);

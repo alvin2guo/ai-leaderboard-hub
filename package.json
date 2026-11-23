@@ -11,7 +11,8 @@
     "generate:timeline": "tsx scripts/generate-timeline-data.ts",
     "validate:data": "tsx scripts/validate-data.ts",
     "test": "vitest run",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "update:daily": "tsx scripts/daily-update.ts"
   },
   "keywords": [
     "ai",
