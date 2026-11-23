@@ -26,6 +26,13 @@ async function main() {
   const cwd = process.cwd();
 
   try {
+    // 0. Synchronize with remote before starting pipeline
+    try {
+      execSync('git pull --rebase origin main', { cwd, stdio: 'inherit' });
+    } catch (pullErr: any) {
+      console.warn('⚠️ [Pre-sync] Notice: Unable to git pull from origin/main:', pullErr.message);
+    }
+
     // 1. Scrape live benchmark data and sync timeline (give Node 4GB heap space)
     runStep('1. Live Benchmarks Scraping & Timeline Sync', 'node --max-old-space-size=4096 --import tsx/esm scripts/fetch/run-adapters.ts');
 
@@ -51,23 +58,23 @@ async function main() {
     console.log(`\n======================================================`);
     console.log(`▶ [STEP] 7. Git Status & Deployment Push`);
     console.log(`======================================================`);
-    const statusOutput = execSync('git status --porcelain', { cwd, encoding: 'utf8' }).trim();
+    execSync('git add data/ src/data/timeline-data.json', { cwd, stdio: 'inherit' });
+    const stagedOutput = execSync('git diff --cached --name-only', { cwd, encoding: 'utf8' }).trim();
 
-    if (statusOutput.length > 0) {
-      console.log('Detected modified files:\n' + statusOutput);
-      execSync('git add data/ src/data/timeline-data.json', { cwd, stdio: 'inherit' });
-      const stagedOutput = execSync('git diff --cached --name-only', { cwd, encoding: 'utf8' }).trim();
-      if (stagedOutput.length > 0) {
-        const commitMsg = `chore(data): auto-update leaderboard snapshots (${new Date().toISOString().split('T')[0]}) [skip ci]`;
-        execSync(`git commit -m "${commitMsg}"`, { cwd, stdio: 'inherit' });
-        console.log(`✔ Created commit: ${commitMsg}`);
-        execSync('git push origin main', { cwd, stdio: 'inherit' });
-        console.log('✔ Pushed to GitHub main branch. GitHub Actions deployment triggered.');
-      } else {
-        console.log('No data files staged for commit.');
+    if (stagedOutput.length > 0) {
+      console.log('Detected staged data files for deployment:\n' + stagedOutput);
+      const commitMsg = `chore(data): auto-update leaderboard snapshots (${new Date().toISOString().split('T')[0]}) [skip ci]`;
+      execSync(`git commit -m "${commitMsg}"`, { cwd, stdio: 'inherit' });
+      console.log(`✔ Created commit: ${commitMsg}`);
+      try {
+        execSync('git pull --rebase origin main', { cwd, stdio: 'inherit' });
+      } catch (pullErr: any) {
+        console.warn('⚠️ git pull --rebase warning:', pullErr.message);
       }
+      execSync('git push origin main', { cwd, stdio: 'inherit' });
+      console.log('✔ Pushed to GitHub main branch. GitHub Actions deployment triggered.');
     } else {
-      console.log('No repository changes detected. All leaderboard data is already up to date.');
+      console.log('No data changes detected. All leaderboard data is already up to date.');
     }
 
     const elapsedSec = ((Date.now() - startTime) / 1000).toFixed(1);
