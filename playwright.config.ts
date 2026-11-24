@@ -10,6 +10,7 @@ export default defineConfig({
   use: {
     baseURL: 'http://127.0.0.1:4321',
     trace: 'off',
+    reducedMotion: 'reduce',
     launchOptions: {
       args: ['--disable-gpu', '--disable-dev-shm-usage', '--no-sandbox'],
     },

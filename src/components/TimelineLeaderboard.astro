@@ -439,7 +439,8 @@ const maxInInitial = Math.max(...initialPoint.models.map((m) => m.score));
     }
 
     function applyUpdateWithViewTransition(callback) {
-      if (document.startViewTransition) {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (document.startViewTransition && !reduceMotion) {
         document.startViewTransition(callback);
       } else {
         callback();

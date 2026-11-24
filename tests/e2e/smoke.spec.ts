@@ -1,4 +1,12 @@
 import { test, expect } from '@playwright/test';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const timelinePath = path.resolve(process.cwd(), 'src/data/timeline-data.json');
+const timelineData = JSON.parse(fs.readFileSync(timelinePath, 'utf8'));
+const aaPoints = timelineData['artificial-analysis'].points;
+const latestPoint = aaPoints[aaPoints.length - 1];
+const latestTopModel = latestPoint.models[0];
 
 test.describe('AI Leaderboard Hub Smoke & Timeline Tests', () => {
   test('Home page renders timeline hero and interactive scrubber', async ({ page }) => {
@@ -10,16 +18,16 @@ test.describe('AI Leaderboard Hub Smoke & Timeline Tests', () => {
     // Check date display header defaults to latest snapshot
     const dateHeading = page.locator('#timeline-date-display');
     await expect(dateHeading).toBeVisible();
-    await expect(dateHeading).toContainText('2026.11.23');
+    await expect(dateHeading).toContainText(latestPoint.dateDisplay);
 
     // Check benchmark title
     await expect(page.locator('#benchmark-title')).toContainText('AA 智能指数');
 
-    // Check top model is Claude Fable 5.2 with score 64.6
+    // Check top model matches latest snapshot
     const topModelRow = page.locator('.leaderboard-row').first();
     await expect(topModelRow).toBeVisible();
-    await expect(topModelRow.locator('.model-bar-pill')).toContainText('Claude Fable 5.2');
-    await expect(topModelRow.locator('.score-display')).toContainText('64.6');
+    await expect(topModelRow.locator('.model-bar-pill')).toContainText(latestTopModel.name);
+    await expect(topModelRow.locator('.score-display')).toContainText(latestTopModel.scoreDisplay);
 
     // Check month ticks are present
     const monthTicks = page.locator('.month-tick-btn');
@@ -33,12 +41,12 @@ test.describe('AI Leaderboard Hub Smoke & Timeline Tests', () => {
     await expect(dateHeading).toContainText('2025.12.15');
     await expect(page.locator('.leaderboard-row').first()).toContainText('GPT-4o');
 
-    // Test clicking back to 11月 (should return to latest 2026.11.23)
+    // Test clicking back to 11月 (should return to latest snapshot)
     const novTick = page.locator('button', { hasText: '11月' });
     await novTick.dispatchEvent('click');
     await page.waitForTimeout(300);
-    await expect(dateHeading).toContainText('2026.11.23');
-    await expect(page.locator('.leaderboard-row').first()).toContainText('Claude Fable 5.2');
+    await expect(dateHeading).toContainText(latestPoint.dateDisplay);
+    await expect(page.locator('.leaderboard-row').first()).toContainText(latestTopModel.name);
 
     // Check sources grid cards are rendered
     const cards = page.locator('#sources-grid > div');

@@ -52,7 +52,10 @@ async function main() {
     await new Promise((resolve) => setTimeout(resolve, 2500));
 
     // 6. End-to-end browser tests
-    runStep('6. Playwright E2E Tests', 'npx playwright test --workers=1');
+    runStep('6. Playwright E2E Tests', 'npx playwright test --workers=1', {
+      ...process.env,
+      NODE_OPTIONS: process.env.NODE_OPTIONS || '--max-old-space-size=256',
+    });
 
     // 7. Git status check & deploy commit
     console.log(`\n======================================================`);
