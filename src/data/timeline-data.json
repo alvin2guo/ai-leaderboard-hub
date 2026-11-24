@@ -1304,7 +1304,7 @@
           {
             "rank": 1,
             "name": "Claude Fable 5.2 (max)",
-            "normalized_name": "claude-fable-5.2-max",
+            "normalized_name": "claude-fable-5-2-max",
             "org": "Anthropic",
             "orgType": "anthropic",
             "score": 64.6,
@@ -1313,7 +1313,7 @@
           {
             "rank": 2,
             "name": "GPT-6.2 Astra (max)",
-            "normalized_name": "gpt-6.2-astra-max",
+            "normalized_name": "gpt-6-2-astra-max",
             "org": "OpenAI",
             "orgType": "openai",
             "score": 62.1,
@@ -1340,6 +1340,123 @@
           {
             "rank": 5,
             "name": "Claude Opus 5.5 (max)",
+            "normalized_name": "claude-opus-5-5-max",
+            "org": "Anthropic",
+            "orgType": "anthropic",
+            "score": 59.1,
+            "scoreDisplay": "59.1"
+          },
+          {
+            "rank": 6,
+            "name": "GPT-6.2 Sol (max)",
+            "normalized_name": "gpt-6-2-sol-max",
+            "org": "OpenAI",
+            "orgType": "openai",
+            "score": 57.3,
+            "scoreDisplay": "57.3"
+          },
+          {
+            "rank": 7,
+            "name": "Claude Sonnet 5.5 (max)",
+            "normalized_name": "claude-sonnet-5-5-max",
+            "org": "Anthropic",
+            "orgType": "anthropic",
+            "score": 54.5,
+            "scoreDisplay": "54.5"
+          },
+          {
+            "rank": 8,
+            "name": "Gemini 4 Hydrogen (xhigh)",
+            "normalized_name": "gemini-4-hydrogen-xhigh",
+            "org": "Google",
+            "orgType": "google",
+            "score": 53.9,
+            "scoreDisplay": "53.9"
+          },
+          {
+            "rank": 9,
+            "name": "GPT-6.1 Terra (max)",
+            "normalized_name": "gpt-6-1-terra-max",
+            "org": "OpenAI",
+            "orgType": "openai",
+            "score": 51.3,
+            "scoreDisplay": "51.3"
+          },
+          {
+            "rank": 10,
+            "name": "Muse Wonder Full (max)",
+            "normalized_name": "muse-wonder-full-max",
+            "org": "Meta",
+            "orgType": "meta",
+            "score": 50.1,
+            "scoreDisplay": "50.1"
+          },
+          {
+            "rank": 11,
+            "name": "Kimi K3.1 Pro",
+            "normalized_name": "kimi-k3-1-pro",
+            "org": "Kimi",
+            "orgType": "kimi",
+            "score": 46.5,
+            "scoreDisplay": "46.5"
+          },
+          {
+            "rank": 12,
+            "name": "Qwen4 Max",
+            "normalized_name": "qwen4-max",
+            "org": "Alibaba",
+            "orgType": "alibaba",
+            "score": 42.9,
+            "scoreDisplay": "42.9"
+          }
+        ]
+      },
+      {
+        "id": "2026-11-24",
+        "dateDisplay": "2026.11.24",
+        "monthKey": "2026-11",
+        "label": "最新",
+        "isKeyTick": false,
+        "models": [
+          {
+            "rank": 1,
+            "name": "Claude Fable 5.2 (max)",
+            "normalized_name": "claude-fable-5.2-max",
+            "org": "Anthropic",
+            "orgType": "anthropic",
+            "score": 64.8,
+            "scoreDisplay": "64.8"
+          },
+          {
+            "rank": 2,
+            "name": "GPT-6.2 Astra (max)",
+            "normalized_name": "gpt-6.2-astra-max",
+            "org": "OpenAI",
+            "orgType": "openai",
+            "score": 62.2,
+            "scoreDisplay": "62.2"
+          },
+          {
+            "rank": 3,
+            "name": "Gemini 4 Neon (xhigh)",
+            "normalized_name": "gemini-4-neon-xhigh",
+            "org": "Google",
+            "orgType": "google",
+            "score": 61.5,
+            "scoreDisplay": "61.5"
+          },
+          {
+            "rank": 4,
+            "name": "Gemini 4 Carbon (high)",
+            "normalized_name": "gemini-4-carbon-high",
+            "org": "Google",
+            "orgType": "google",
+            "score": 60.1,
+            "scoreDisplay": "60.1"
+          },
+          {
+            "rank": 5,
+            "name": "Claude Opus 5.5 (max)",
             "normalized_name": "claude-opus-5.5-max",
             "org": "Anthropic",
             "orgType": "anthropic",
@@ -1361,8 +1478,8 @@
             "normalized_name": "claude-sonnet-5.5-max",
             "org": "Anthropic",
             "orgType": "anthropic",
-            "score": 54.5,
-            "scoreDisplay": "54.5"
+            "score": 54.7,
+            "scoreDisplay": "54.7"
           },
           {
             "rank": 8,
@@ -1370,8 +1487,8 @@
             "normalized_name": "gemini-4-hydrogen-xhigh",
             "org": "Google",
             "orgType": "google",
-            "score": 53.9,
-            "scoreDisplay": "53.9"
+            "score": 54.1,
+            "scoreDisplay": "54.1"
           },
           {
             "rank": 9,
@@ -1379,8 +1496,8 @@
             "normalized_name": "gpt-6.1-terra-max",
             "org": "OpenAI",
             "orgType": "openai",
-            "score": 51.3,
-            "scoreDisplay": "51.3"
+            "score": 51.4,
+            "scoreDisplay": "51.4"
           },
           {
             "rank": 10,
@@ -1388,8 +1505,8 @@
             "normalized_name": "muse-wonder-full-max",
             "org": "Meta",
             "orgType": "meta",
-            "score": 50.1,
-            "scoreDisplay": "50.1"
+            "score": 49.9,
+            "scoreDisplay": "49.9"
           },
           {
             "rank": 11,
@@ -1406,8 +1523,8 @@
             "normalized_name": "muse-wonder-max",
             "org": "Meta",
             "orgType": "meta",
-            "score": 43.6,
-            "scoreDisplay": "43.6"
+            "score": 43.7,
+            "scoreDisplay": "43.7"
           }
         ]
       }
@@ -1719,8 +1836,8 @@
         ]
       },
       {
-        "id": "2026-11-23",
-        "dateDisplay": "2026.11.23",
+        "id": "2026-11-24",
+        "dateDisplay": "2026.11.24",
         "monthKey": "2026-11",
         "label": "最新",
         "isKeyTick": false,
@@ -1927,8 +2044,8 @@
         ]
       },
       {
-        "id": "2026-11-23",
-        "dateDisplay": "2026.11.23",
+        "id": "2026-11-24",
+        "dateDisplay": "2026.11.24",
         "monthKey": "2026-11",
         "label": "最新",
         "isKeyTick": false,
@@ -1939,8 +2056,8 @@
             "normalized_name": "deepseek-v4.1-flash-1017",
             "org": "deepseek",
             "orgType": "deepseek",
-            "score": 65000,
-            "scoreDisplay": "65000"
+            "score": 66800,
+            "scoreDisplay": "66800"
           },
           {
             "rank": 2,
@@ -1948,8 +2065,8 @@
             "normalized_name": "hy4-flash",
             "org": "tencent",
             "orgType": "other",
-            "score": 18100,
-            "scoreDisplay": "18100"
+            "score": 23500,
+            "scoreDisplay": "23500"
           },
           {
             "rank": 3,
@@ -1957,8 +2074,8 @@
             "normalized_name": "deepseek-v4.1-flash",
             "org": "deepseek",
             "orgType": "deepseek",
-            "score": 15400,
-            "scoreDisplay": "15400"
+            "score": 15500,
+            "scoreDisplay": "15500"
           },
           {
             "rank": 4,
@@ -1966,8 +2083,8 @@
             "normalized_name": "glm-5.3-flash",
             "org": "z-ai",
             "orgType": "other",
-            "score": 12200,
-            "scoreDisplay": "12200"
+            "score": 12900,
+            "scoreDisplay": "12900"
           },
           {
             "rank": 5,
@@ -1975,8 +2092,8 @@
             "normalized_name": "gpt-6-luna",
             "org": "openai",
             "orgType": "openai",
-            "score": 8310,
-            "scoreDisplay": "8310"
+            "score": 8340,
+            "scoreDisplay": "8340"
           },
           {
             "rank": 6,
@@ -1984,8 +2101,8 @@
             "normalized_name": "claude-opus-5.5",
             "org": "anthropic",
             "orgType": "anthropic",
-            "score": 6970,
-            "scoreDisplay": "6970"
+            "score": 6610,
+            "scoreDisplay": "6610"
           },
           {
             "rank": 7,
@@ -1993,8 +2110,8 @@
             "normalized_name": "minimax-m3.1-flash",
             "org": "minimax",
             "orgType": "other",
-            "score": 4290,
-            "scoreDisplay": "4290"
+            "score": 4450,
+            "scoreDisplay": "4450"
           },
           {
             "rank": 8,
@@ -2011,17 +2128,17 @@
             "normalized_name": "nemotron-3-ultra-free",
             "org": "nvidia",
             "orgType": "other",
-            "score": 3930,
-            "scoreDisplay": "3930"
+            "score": 4000,
+            "scoreDisplay": "4000"
           },
           {
             "rank": 10,
-            "name": "ERNIE-5.5-Flash-Preview (free)",
-            "normalized_name": "ernie-5.5-flash-preview-free",
-            "org": "baidu",
+            "name": "GLM 5.3",
+            "normalized_name": "glm-5.3",
+            "org": "z-ai",
             "orgType": "other",
-            "score": 3470,
-            "scoreDisplay": "3470"
+            "score": 3590,
+            "scoreDisplay": "3590"
           }
         ]
       }
