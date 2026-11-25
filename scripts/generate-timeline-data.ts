@@ -432,16 +432,15 @@ function syncLatestSnapshots() {
       const aaSnapshot = JSON.parse(fs.readFileSync(aaPath, 'utf8'));
       if (aaSnapshot && Array.isArray(aaSnapshot.models) && aaSnapshot.models.length > 0) {
         const topModels: TimelineModel[] = aaSnapshot.models.map((m: any) => {
-          const scoreExact = m.metrics?.['Exact Index'] ?? m.score;
-          const scoreDisplay = typeof scoreExact === 'number' ? scoreExact.toFixed(1) : String(scoreExact);
+          const scoreVal = typeof m.score === 'number' ? Math.round(m.score) : Math.round(Number(m.score));
           return {
             rank: m.rank,
             name: m.model_name,
             normalized_name: m.normalized_model_name,
             org: m.organization,
             orgType: getOrgType(m.organization, m.model_name),
-            score: typeof scoreExact === 'number' ? parseFloat(scoreExact.toFixed(1)) : m.score,
-            scoreDisplay,
+            score: scoreVal,
+            scoreDisplay: String(scoreVal),
           };
         });
 

@@ -34,6 +34,7 @@ test.describe('AI Leaderboard Hub Smoke & Timeline Tests', () => {
     await expect(topModelRow.locator('.score-display')).toContainText(latestTopModel.scoreDisplay);
     const lastModel = latestPoint.models[latestPoint.models.length - 1];
     await expect(modelRows.last().locator('.model-bar-pill')).toContainText(lastModel.name);
+    await expect(modelRows.last().locator('.score-display')).toContainText(lastModel.scoreDisplay);
 
     // Check month ticks are present
     const monthTicks = page.locator('.month-tick-btn');

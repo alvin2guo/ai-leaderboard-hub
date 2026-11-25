@@ -1424,8 +1424,8 @@
             "normalized_name": "claude-fable-5.2-max",
             "org": "Anthropic",
             "orgType": "anthropic",
-            "score": 64.8,
-            "scoreDisplay": "64.8"
+            "score": 65,
+            "scoreDisplay": "65"
           },
           {
             "rank": 2,
@@ -1433,8 +1433,8 @@
             "normalized_name": "gpt-6.2-astra-max",
             "org": "OpenAI",
             "orgType": "openai",
-            "score": 62.2,
-            "scoreDisplay": "62.2"
+            "score": 62,
+            "scoreDisplay": "62"
           },
           {
             "rank": 3,
@@ -1442,8 +1442,8 @@
             "normalized_name": "gemini-4-neon-xhigh",
             "org": "Google",
             "orgType": "google",
-            "score": 61.5,
-            "scoreDisplay": "61.5"
+            "score": 62,
+            "scoreDisplay": "62"
           },
           {
             "rank": 4,
@@ -1451,8 +1451,8 @@
             "normalized_name": "gemini-4-carbon-high",
             "org": "Google",
             "orgType": "google",
-            "score": 60.1,
-            "scoreDisplay": "60.1"
+            "score": 60,
+            "scoreDisplay": "60"
           },
           {
             "rank": 5,
@@ -1460,8 +1460,8 @@
             "normalized_name": "claude-opus-5.5-max",
             "org": "Anthropic",
             "orgType": "anthropic",
-            "score": 59.1,
-            "scoreDisplay": "59.1"
+            "score": 59,
+            "scoreDisplay": "59"
           },
           {
             "rank": 6,
@@ -1469,8 +1469,8 @@
             "normalized_name": "gpt-6.2-sol-max",
             "org": "OpenAI",
             "orgType": "openai",
-            "score": 57.3,
-            "scoreDisplay": "57.3"
+            "score": 57,
+            "scoreDisplay": "57"
           },
           {
             "rank": 7,
@@ -1478,8 +1478,8 @@
             "normalized_name": "claude-sonnet-5.5-max",
             "org": "Anthropic",
             "orgType": "anthropic",
-            "score": 54.7,
-            "scoreDisplay": "54.7"
+            "score": 55,
+            "scoreDisplay": "55"
           },
           {
             "rank": 8,
@@ -1487,8 +1487,8 @@
             "normalized_name": "gemini-4-hydrogen-xhigh",
             "org": "Google",
             "orgType": "google",
-            "score": 54.1,
-            "scoreDisplay": "54.1"
+            "score": 54,
+            "scoreDisplay": "54"
           },
           {
             "rank": 9,
@@ -1496,8 +1496,8 @@
             "normalized_name": "gpt-6.1-terra-max",
             "org": "OpenAI",
             "orgType": "openai",
-            "score": 51.4,
-            "scoreDisplay": "51.4"
+            "score": 51,
+            "scoreDisplay": "51"
           },
           {
             "rank": 10,
@@ -1505,8 +1505,8 @@
             "normalized_name": "muse-wonder-full-max",
             "org": "Meta",
             "orgType": "meta",
-            "score": 49.9,
-            "scoreDisplay": "49.9"
+            "score": 50,
+            "scoreDisplay": "50"
           },
           {
             "rank": 11,
@@ -1514,8 +1514,8 @@
             "normalized_name": "kimi-k3.1-pro",
             "org": "Kimi",
             "orgType": "kimi",
-            "score": 46.5,
-            "scoreDisplay": "46.5"
+            "score": 47,
+            "scoreDisplay": "47"
           },
           {
             "rank": 12,
@@ -1523,8 +1523,8 @@
             "normalized_name": "muse-wonder-max",
             "org": "Meta",
             "orgType": "meta",
-            "score": 43.7,
-            "scoreDisplay": "43.7"
+            "score": 44,
+            "scoreDisplay": "44"
           },
           {
             "rank": 13,
@@ -1532,8 +1532,8 @@
             "normalized_name": "qwen4-max",
             "org": "Alibaba",
             "orgType": "alibaba",
-            "score": 42.8,
-            "scoreDisplay": "42.8"
+            "score": 43,
+            "scoreDisplay": "43"
           },
           {
             "rank": 14,
@@ -1541,8 +1541,8 @@
             "normalized_name": "claude-haiku-5.5-max",
             "org": "Anthropic",
             "orgType": "anthropic",
-            "score": 36.5,
-            "scoreDisplay": "36.5"
+            "score": 37,
+            "scoreDisplay": "37"
           },
           {
             "rank": 15,
@@ -1550,8 +1550,8 @@
             "normalized_name": "muse-ember-max",
             "org": "Meta",
             "orgType": "meta",
-            "score": 36.1,
-            "scoreDisplay": "36.1"
+            "score": 36,
+            "scoreDisplay": "36"
           },
           {
             "rank": 16,
@@ -1559,8 +1559,8 @@
             "normalized_name": "grok-4.7-xhigh",
             "org": "SpaceXAI",
             "orgType": "xai",
-            "score": 35.4,
-            "scoreDisplay": "35.4"
+            "score": 35,
+            "scoreDisplay": "35"
           },
           {
             "rank": 17,
@@ -1568,8 +1568,8 @@
             "normalized_name": "tencent-hy4",
             "org": "Tencent",
             "orgType": "tencent",
-            "score": 34.6,
-            "scoreDisplay": "34.6"
+            "score": 35,
+            "scoreDisplay": "35"
           },
           {
             "rank": 18,
@@ -1577,8 +1577,8 @@
             "normalized_name": "deepseek-v4.1-flash-1017-max",
             "org": "DeepSeek",
             "orgType": "deepseek",
-            "score": 32.4,
-            "scoreDisplay": "32.4"
+            "score": 32,
+            "scoreDisplay": "32"
           },
           {
             "rank": 19,
@@ -1586,8 +1586,8 @@
             "normalized_name": "glm-5.3-max",
             "org": "Z AI",
             "orgType": "zhipu",
-            "score": 31.6,
-            "scoreDisplay": "31.6"
+            "score": 32,
+            "scoreDisplay": "32"
           },
           {
             "rank": 20,
@@ -1595,8 +1595,8 @@
             "normalized_name": "inkling-2-small",
             "org": "Thinking Machines",
             "orgType": "other",
-            "score": 30.7,
-            "scoreDisplay": "30.7"
+            "score": 31,
+            "scoreDisplay": "31"
           },
           {
             "rank": 21,
@@ -1604,8 +1604,8 @@
             "normalized_name": "mimo-v2.6-pro",
             "org": "Xiaomi",
             "orgType": "xiaomi",
-            "score": 29.9,
-            "scoreDisplay": "29.9"
+            "score": 30,
+            "scoreDisplay": "30"
           },
           {
             "rank": 22,
@@ -1613,8 +1613,8 @@
             "normalized_name": "ling-3.1-flash-1019",
             "org": "InclusionAI",
             "orgType": "other",
-            "score": 29.6,
-            "scoreDisplay": "29.6"
+            "score": 30,
+            "scoreDisplay": "30"
           },
           {
             "rank": 23,
@@ -1622,8 +1622,8 @@
             "normalized_name": "gpt-6-luna-max",
             "org": "OpenAI",
             "orgType": "openai",
-            "score": 27.9,
-            "scoreDisplay": "27.9"
+            "score": 28,
+            "scoreDisplay": "28"
           },
           {
             "rank": 24,
@@ -1631,8 +1631,8 @@
             "normalized_name": "mistral-large-4-high",
             "org": "Mistral",
             "orgType": "mistral",
-            "score": 26.1,
-            "scoreDisplay": "26.1"
+            "score": 26,
+            "scoreDisplay": "26"
           },
           {
             "rank": 25,
@@ -1640,8 +1640,8 @@
             "normalized_name": "qwen3.8-27b-xhigh",
             "org": "Alibaba",
             "orgType": "alibaba",
-            "score": 20.1,
-            "scoreDisplay": "20.1"
+            "score": 20,
+            "scoreDisplay": "20"
           },
           {
             "rank": 26,
@@ -1649,8 +1649,8 @@
             "normalized_name": "k2-horizon-375b-a23b",
             "org": "Institute of Foundation Models",
             "orgType": "other",
-            "score": 17.8,
-            "scoreDisplay": "17.8"
+            "score": 18,
+            "scoreDisplay": "18"
           },
           {
             "rank": 27,
@@ -1658,8 +1658,8 @@
             "normalized_name": "beam-1.0",
             "org": "Reflection",
             "orgType": "other",
-            "score": 17.7,
-            "scoreDisplay": "17.7"
+            "score": 18,
+            "scoreDisplay": "18"
           },
           {
             "rank": 28,
@@ -1667,8 +1667,8 @@
             "normalized_name": "nemotron-3.5-super-vl",
             "org": "NVIDIA",
             "orgType": "nvidia",
-            "score": 13.6,
-            "scoreDisplay": "13.6"
+            "score": 14,
+            "scoreDisplay": "14"
           }
         ]
       }
