@@ -23,11 +23,17 @@ test.describe('AI Leaderboard Hub Smoke & Timeline Tests', () => {
     // Check benchmark title
     await expect(page.locator('#benchmark-title')).toContainText('AA 智能指数');
 
-    // Check top model matches latest snapshot
-    const topModelRow = page.locator('.leaderboard-row').first();
+    // Check full snapshot model list is rendered (e.g. all 28 AA models)
+    const modelRows = page.locator('.leaderboard-row');
+    await expect(modelRows).toHaveCount(latestPoint.models.length);
+
+    // Check top and last models match latest snapshot
+    const topModelRow = modelRows.first();
     await expect(topModelRow).toBeVisible();
     await expect(topModelRow.locator('.model-bar-pill')).toContainText(latestTopModel.name);
     await expect(topModelRow.locator('.score-display')).toContainText(latestTopModel.scoreDisplay);
+    const lastModel = latestPoint.models[latestPoint.models.length - 1];
+    await expect(modelRows.last().locator('.model-bar-pill')).toContainText(lastModel.name);
 
     // Check month ticks are present
     const monthTicks = page.locator('.month-tick-btn');

@@ -6,7 +6,21 @@ export interface TimelineModel {
   name: string;
   normalized_name: string;
   org: string;
-  orgType: 'anthropic' | 'google' | 'openai' | 'meta' | 'kimi' | 'deepseek' | 'alibaba' | 'other';
+  orgType:
+    | 'anthropic'
+    | 'google'
+    | 'openai'
+    | 'meta'
+    | 'kimi'
+    | 'deepseek'
+    | 'alibaba'
+    | 'xai'
+    | 'tencent'
+    | 'zhipu'
+    | 'xiaomi'
+    | 'mistral'
+    | 'nvidia'
+    | 'other';
   score: number;
   scoreDisplay: string;
 }
@@ -401,17 +415,23 @@ function getOrgType(org: string, name: string): TimelineModel['orgType'] {
   if (o.includes('moonshot') || o.includes('kimi') || n.includes('kimi')) return 'kimi';
   if (o.includes('deepseek') || n.includes('deepseek')) return 'deepseek';
   if (o.includes('alibaba') || o.includes('qwen') || n.includes('qwen')) return 'alibaba';
+  if (o.includes('spacexai') || o.includes('xai') || n.includes('grok')) return 'xai';
+  if (o.includes('tencent') || n.includes('tencent') || n.includes('hunyuan')) return 'tencent';
+  if (o.includes('zhipu') || o.includes('z ai') || o.includes('z-ai') || n.includes('glm')) return 'zhipu';
+  if (o.includes('xiaomi') || n.includes('mimo')) return 'xiaomi';
+  if (o.includes('mistral') || n.includes('mistral')) return 'mistral';
+  if (o.includes('nvidia') || n.includes('nemotron')) return 'nvidia';
   return 'other';
 }
 
 function syncLatestSnapshots() {
-  // 1. Sync Artificial Analysis
+  // 1. Sync Artificial Analysis (preserve full snapshot list, e.g. all 28 default AA models)
   const aaPath = path.resolve(process.cwd(), 'data', 'rankings', 'artificial-analysis.json');
   if (fs.existsSync(aaPath)) {
     try {
       const aaSnapshot = JSON.parse(fs.readFileSync(aaPath, 'utf8'));
       if (aaSnapshot && Array.isArray(aaSnapshot.models) && aaSnapshot.models.length > 0) {
-        const topModels: TimelineModel[] = aaSnapshot.models.slice(0, 12).map((m: any) => {
+        const topModels: TimelineModel[] = aaSnapshot.models.map((m: any) => {
           const scoreExact = m.metrics?.['Exact Index'] ?? m.score;
           const scoreDisplay = typeof scoreExact === 'number' ? scoreExact.toFixed(1) : String(scoreExact);
           return {
@@ -458,7 +478,7 @@ function syncLatestSnapshots() {
     try {
       const ocSnapshot = JSON.parse(fs.readFileSync(ocPath, 'utf8'));
       if (ocSnapshot && Array.isArray(ocSnapshot.models) && ocSnapshot.models.length > 0) {
-        const topModels: TimelineModel[] = ocSnapshot.models.slice(0, 10).map((m: any) => {
+        const topModels: TimelineModel[] = ocSnapshot.models.map((m: any) => {
           const scoreVal = typeof m.score === 'number' ? m.score : parseFloat(m.score);
           return {
             rank: m.rank,
@@ -500,7 +520,7 @@ function syncLatestSnapshots() {
     try {
       const orSnapshot = JSON.parse(fs.readFileSync(orPath, 'utf8'));
       if (orSnapshot && Array.isArray(orSnapshot.models) && orSnapshot.models.length > 0) {
-        const topModels: TimelineModel[] = orSnapshot.models.slice(0, 10).map((m: any) => {
+        const topModels: TimelineModel[] = orSnapshot.models.map((m: any) => {
           const scoreVal = typeof m.score === 'number' ? m.score : parseFloat(m.score);
           return {
             rank: m.rank,

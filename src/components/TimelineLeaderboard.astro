@@ -29,6 +29,12 @@ const orgColors: Record<string, string> = {
   kimi: '#2563eb',
   deepseek: '#0284c7',
   alibaba: '#7c3aed',
+  xai: '#6d5dfc',
+  tencent: '#0ea5e9',
+  zhipu: '#1d4ed8',
+  xiaomi: '#ea580c',
+  mistral: '#dc2626',
+  nvidia: '#65a30d',
   other: '#475569',
 };
 
@@ -164,7 +170,7 @@ const maxInInitial = Math.max(...initialPoint.models.map((m) => m.score));
             <li
               class="leaderboard-row flex items-center gap-3 sm:gap-4 transition-all duration-300"
               data-model={model.normalized_name}
-              style={`view-transition-name: model-${model.normalized_name}`}
+              style={`view-transition-name: model-${model.normalized_name.replace(/[^a-zA-Z0-9_-]/g, '-')}`}
             >
               <!-- Rank Number (1, 2, 3...) -->
               <span class="rank-badge w-6 sm:w-8 text-center text-xl sm:text-2xl font-black text-slate-800 dark:text-slate-100 flex-shrink-0">
@@ -410,7 +416,7 @@ const maxInInitial = Math.max(...initialPoint.models.map((m) => m.score));
             <li
               class="leaderboard-row flex items-center gap-3 sm:gap-4 transition-all duration-300"
               data-model="${model.normalized_name}"
-              style="view-transition-name: model-${model.normalized_name}"
+              style="view-transition-name: model-${model.normalized_name.replace(/[^a-zA-Z0-9_-]/g, '-')}"
             >
               <span class="rank-badge w-6 sm:w-8 text-center text-xl sm:text-2xl font-black text-slate-800 dark:text-slate-100 flex-shrink-0">
                 ${model.rank}

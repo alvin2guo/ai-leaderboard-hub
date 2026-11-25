@@ -1525,6 +1525,150 @@
             "orgType": "meta",
             "score": 43.7,
             "scoreDisplay": "43.7"
+          },
+          {
+            "rank": 13,
+            "name": "Qwen4 Max",
+            "normalized_name": "qwen4-max",
+            "org": "Alibaba",
+            "orgType": "alibaba",
+            "score": 42.8,
+            "scoreDisplay": "42.8"
+          },
+          {
+            "rank": 14,
+            "name": "Claude Haiku 5.5 (max)",
+            "normalized_name": "claude-haiku-5.5-max",
+            "org": "Anthropic",
+            "orgType": "anthropic",
+            "score": 36.5,
+            "scoreDisplay": "36.5"
+          },
+          {
+            "rank": 15,
+            "name": "Muse Ember (max)",
+            "normalized_name": "muse-ember-max",
+            "org": "Meta",
+            "orgType": "meta",
+            "score": 36.1,
+            "scoreDisplay": "36.1"
+          },
+          {
+            "rank": 16,
+            "name": "Grok 4.7 (xhigh)",
+            "normalized_name": "grok-4.7-xhigh",
+            "org": "SpaceXAI",
+            "orgType": "xai",
+            "score": 35.4,
+            "scoreDisplay": "35.4"
+          },
+          {
+            "rank": 17,
+            "name": "Tencent Hy4",
+            "normalized_name": "tencent-hy4",
+            "org": "Tencent",
+            "orgType": "tencent",
+            "score": 34.6,
+            "scoreDisplay": "34.6"
+          },
+          {
+            "rank": 18,
+            "name": "DeepSeek V4.1 Flash 1017 (max)",
+            "normalized_name": "deepseek-v4.1-flash-1017-max",
+            "org": "DeepSeek",
+            "orgType": "deepseek",
+            "score": 32.4,
+            "scoreDisplay": "32.4"
+          },
+          {
+            "rank": 19,
+            "name": "GLM-5.3 (max)",
+            "normalized_name": "glm-5.3-max",
+            "org": "Z AI",
+            "orgType": "zhipu",
+            "score": 31.6,
+            "scoreDisplay": "31.6"
+          },
+          {
+            "rank": 20,
+            "name": "Inkling 2 Small",
+            "normalized_name": "inkling-2-small",
+            "org": "Thinking Machines",
+            "orgType": "other",
+            "score": 30.7,
+            "scoreDisplay": "30.7"
+          },
+          {
+            "rank": 21,
+            "name": "MiMo-V2.6-Pro",
+            "normalized_name": "mimo-v2.6-pro",
+            "org": "Xiaomi",
+            "orgType": "xiaomi",
+            "score": 29.9,
+            "scoreDisplay": "29.9"
+          },
+          {
+            "rank": 22,
+            "name": "Ling 3.1 Flash 1019",
+            "normalized_name": "ling-3.1-flash-1019",
+            "org": "InclusionAI",
+            "orgType": "other",
+            "score": 29.6,
+            "scoreDisplay": "29.6"
+          },
+          {
+            "rank": 23,
+            "name": "GPT-6 Luna (max)",
+            "normalized_name": "gpt-6-luna-max",
+            "org": "OpenAI",
+            "orgType": "openai",
+            "score": 27.9,
+            "scoreDisplay": "27.9"
+          },
+          {
+            "rank": 24,
+            "name": "Mistral Large 4 (high)",
+            "normalized_name": "mistral-large-4-high",
+            "org": "Mistral",
+            "orgType": "mistral",
+            "score": 26.1,
+            "scoreDisplay": "26.1"
+          },
+          {
+            "rank": 25,
+            "name": "Qwen3.8 27B (xhigh)",
+            "normalized_name": "qwen3.8-27b-xhigh",
+            "org": "Alibaba",
+            "orgType": "alibaba",
+            "score": 20.1,
+            "scoreDisplay": "20.1"
+          },
+          {
+            "rank": 26,
+            "name": "K2 Horizon 375B A23B",
+            "normalized_name": "k2-horizon-375b-a23b",
+            "org": "Institute of Foundation Models",
+            "orgType": "other",
+            "score": 17.8,
+            "scoreDisplay": "17.8"
+          },
+          {
+            "rank": 27,
+            "name": "Beam 1.0",
+            "normalized_name": "beam-1.0",
+            "org": "Reflection",
+            "orgType": "other",
+            "score": 17.7,
+            "scoreDisplay": "17.7"
+          },
+          {
+            "rank": 28,
+            "name": "Nemotron 3.5 Super VL",
+            "normalized_name": "nemotron-3.5-super-vl",
+            "org": "NVIDIA",
+            "orgType": "nvidia",
+            "score": 13.6,
+            "scoreDisplay": "13.6"
           }
         ]
       }
@@ -1910,7 +2054,7 @@
             "name": "Grok-4.6 (high)",
             "normalized_name": "grok-4.6-high",
             "org": "xAI",
-            "orgType": "other",
+            "orgType": "xai",
             "score": 78,
             "scoreDisplay": "78.0"
           },
@@ -1931,6 +2075,51 @@
             "orgType": "kimi",
             "score": 75.7,
             "scoreDisplay": "75.7"
+          },
+          {
+            "rank": 11,
+            "name": "Claude Opus 4.8 (high)",
+            "normalized_name": "claude-opus-4.8-high",
+            "org": "Anthropic",
+            "orgType": "anthropic",
+            "score": 75.1,
+            "scoreDisplay": "75.1"
+          },
+          {
+            "rank": 12,
+            "name": "GLM-5.3",
+            "normalized_name": "glm-5.3",
+            "org": "Zhipu AI",
+            "orgType": "zhipu",
+            "score": 74.4,
+            "scoreDisplay": "74.4"
+          },
+          {
+            "rank": 13,
+            "name": "DeepSeek-V4-Flash",
+            "normalized_name": "deepseek-v4-flash",
+            "org": "DeepSeek",
+            "orgType": "deepseek",
+            "score": 73.7,
+            "scoreDisplay": "73.7"
+          },
+          {
+            "rank": 14,
+            "name": "Hy3-preview (high)",
+            "normalized_name": "hy3-preview-high",
+            "org": "Tencent",
+            "orgType": "tencent",
+            "score": 73.6,
+            "scoreDisplay": "73.6"
+          },
+          {
+            "rank": 15,
+            "name": "MiniMax-M3",
+            "normalized_name": "minimax-m3",
+            "org": "MiniMax",
+            "orgType": "other",
+            "score": 69,
+            "scoreDisplay": "69.0"
           }
         ]
       }
@@ -2064,7 +2253,7 @@
             "name": "Hy4 flash *",
             "normalized_name": "hy4-flash",
             "org": "tencent",
-            "orgType": "other",
+            "orgType": "tencent",
             "score": 23500,
             "scoreDisplay": "23500"
           },
@@ -2082,7 +2271,7 @@
             "name": "GLM 5.3 Flash",
             "normalized_name": "glm-5.3-flash",
             "org": "z-ai",
-            "orgType": "other",
+            "orgType": "zhipu",
             "score": 12900,
             "scoreDisplay": "12900"
           },
@@ -2127,7 +2316,7 @@
             "name": "Nemotron 3 Ultra (free)",
             "normalized_name": "nemotron-3-ultra-free",
             "org": "nvidia",
-            "orgType": "other",
+            "orgType": "nvidia",
             "score": 4000,
             "scoreDisplay": "4000"
           },
@@ -2136,9 +2325,54 @@
             "name": "GLM 5.3",
             "normalized_name": "glm-5.3",
             "org": "z-ai",
-            "orgType": "other",
+            "orgType": "zhipu",
             "score": 3590,
             "scoreDisplay": "3590"
+          },
+          {
+            "rank": 1,
+            "name": "DeepSeek V4.1 Flash 1017",
+            "normalized_name": "deepseek-v4.1-flash-1017",
+            "org": "deepseek",
+            "orgType": "deepseek",
+            "score": 11800,
+            "scoreDisplay": "11800"
+          },
+          {
+            "rank": 2,
+            "name": "Hy4 flash",
+            "normalized_name": "hy4-flash",
+            "org": "tencent",
+            "orgType": "tencent",
+            "score": 5780,
+            "scoreDisplay": "5780"
+          },
+          {
+            "rank": 3,
+            "name": "GLM 5.3 Flash",
+            "normalized_name": "glm-5.3-flash",
+            "org": "z-ai",
+            "orgType": "zhipu",
+            "score": 2260,
+            "scoreDisplay": "2260"
+          },
+          {
+            "rank": 4,
+            "name": "DeepSeek V4.1 Flash",
+            "normalized_name": "deepseek-v4.1-flash",
+            "org": "deepseek",
+            "orgType": "deepseek",
+            "score": 2170,
+            "scoreDisplay": "2170"
+          },
+          {
+            "rank": 5,
+            "name": "GPT-6 Luna",
+            "normalized_name": "gpt-6-luna",
+            "org": "openai",
+            "orgType": "openai",
+            "score": 1210,
+            "scoreDisplay": "1210"
           }
         ]
       }
