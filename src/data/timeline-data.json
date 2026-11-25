@@ -1412,8 +1412,8 @@
         ]
       },
       {
-        "id": "2026-11-24",
-        "dateDisplay": "2026.11.24",
+        "id": "2026-11-25",
+        "dateDisplay": "2026.11.25",
         "monthKey": "2026-11",
         "label": "最新",
         "isKeyTick": false,
@@ -1980,8 +1980,8 @@
         ]
       },
       {
-        "id": "2026-11-24",
-        "dateDisplay": "2026.11.24",
+        "id": "2026-11-25",
+        "dateDisplay": "2026.11.25",
         "monthKey": "2026-11",
         "label": "最新",
         "isKeyTick": false,
@@ -2233,8 +2233,8 @@
         ]
       },
       {
-        "id": "2026-11-24",
-        "dateDisplay": "2026.11.24",
+        "id": "2026-11-25",
+        "dateDisplay": "2026.11.25",
         "monthKey": "2026-11",
         "label": "最新",
         "isKeyTick": false,
@@ -2245,8 +2245,8 @@
             "normalized_name": "deepseek-v4.1-flash-1017",
             "org": "deepseek",
             "orgType": "deepseek",
-            "score": 66800,
-            "scoreDisplay": "66800"
+            "score": 70000,
+            "scoreDisplay": "70000"
           },
           {
             "rank": 2,
@@ -2254,8 +2254,8 @@
             "normalized_name": "hy4-flash",
             "org": "tencent",
             "orgType": "tencent",
-            "score": 23500,
-            "scoreDisplay": "23500"
+            "score": 28800,
+            "scoreDisplay": "28800"
           },
           {
             "rank": 3,
@@ -2263,8 +2263,8 @@
             "normalized_name": "deepseek-v4.1-flash",
             "org": "deepseek",
             "orgType": "deepseek",
-            "score": 15500,
-            "scoreDisplay": "15500"
+            "score": 15000,
+            "scoreDisplay": "15000"
           },
           {
             "rank": 4,
@@ -2272,8 +2272,8 @@
             "normalized_name": "glm-5.3-flash",
             "org": "z-ai",
             "orgType": "zhipu",
-            "score": 12900,
-            "scoreDisplay": "12900"
+            "score": 13200,
+            "scoreDisplay": "13200"
           },
           {
             "rank": 5,
@@ -2281,8 +2281,8 @@
             "normalized_name": "gpt-6-luna",
             "org": "openai",
             "orgType": "openai",
-            "score": 8340,
-            "scoreDisplay": "8340"
+            "score": 8140,
+            "scoreDisplay": "8140"
           },
           {
             "rank": 6,
@@ -2290,8 +2290,8 @@
             "normalized_name": "claude-opus-5.5",
             "org": "anthropic",
             "orgType": "anthropic",
-            "score": 6610,
-            "scoreDisplay": "6610"
+            "score": 6440,
+            "scoreDisplay": "6440"
           },
           {
             "rank": 7,
@@ -2299,8 +2299,8 @@
             "normalized_name": "minimax-m3.1-flash",
             "org": "minimax",
             "orgType": "other",
-            "score": 4450,
-            "scoreDisplay": "4450"
+            "score": 4570,
+            "scoreDisplay": "4570"
           },
           {
             "rank": 8,
@@ -2308,8 +2308,8 @@
             "normalized_name": "kimi-k3.1-pro",
             "org": "moonshotai",
             "orgType": "kimi",
-            "score": 4070,
-            "scoreDisplay": "4070"
+            "score": 4390,
+            "scoreDisplay": "4390"
           },
           {
             "rank": 9,
@@ -2317,8 +2317,8 @@
             "normalized_name": "nemotron-3-ultra-free",
             "org": "nvidia",
             "orgType": "nvidia",
-            "score": 4000,
-            "scoreDisplay": "4000"
+            "score": 4170,
+            "scoreDisplay": "4170"
           },
           {
             "rank": 10,
@@ -2326,8 +2326,8 @@
             "normalized_name": "glm-5.3",
             "org": "z-ai",
             "orgType": "zhipu",
-            "score": 3590,
-            "scoreDisplay": "3590"
+            "score": 3780,
+            "scoreDisplay": "3780"
           },
           {
             "rank": 1,
@@ -2335,8 +2335,8 @@
             "normalized_name": "deepseek-v4.1-flash-1017",
             "org": "deepseek",
             "orgType": "deepseek",
-            "score": 11800,
-            "scoreDisplay": "11800"
+            "score": 14200,
+            "scoreDisplay": "14200"
           },
           {
             "rank": 2,
@@ -2344,35 +2344,35 @@
             "normalized_name": "hy4-flash",
             "org": "tencent",
             "orgType": "tencent",
-            "score": 5780,
-            "scoreDisplay": "5780"
+            "score": 3480,
+            "scoreDisplay": "3480"
           },
           {
             "rank": 3,
-            "name": "GLM 5.3 Flash",
-            "normalized_name": "glm-5.3-flash",
-            "org": "z-ai",
-            "orgType": "zhipu",
-            "score": 2260,
-            "scoreDisplay": "2260"
-          },
-          {
-            "rank": 4,
             "name": "DeepSeek V4.1 Flash",
             "normalized_name": "deepseek-v4.1-flash",
             "org": "deepseek",
             "orgType": "deepseek",
-            "score": 2170,
-            "scoreDisplay": "2170"
+            "score": 2030,
+            "scoreDisplay": "2030"
+          },
+          {
+            "rank": 4,
+            "name": "GLM 5.3 Flash",
+            "normalized_name": "glm-5.3-flash",
+            "org": "z-ai",
+            "orgType": "zhipu",
+            "score": 1720,
+            "scoreDisplay": "1720"
           },
           {
             "rank": 5,
-            "name": "GPT-6 Luna",
-            "normalized_name": "gpt-6-luna",
-            "org": "openai",
-            "orgType": "openai",
-            "score": 1210,
-            "scoreDisplay": "1210"
+            "name": "Claude Opus 5.5",
+            "normalized_name": "claude-opus-5.5",
+            "org": "anthropic",
+            "orgType": "anthropic",
+            "score": 1200,
+            "scoreDisplay": "1200"
           }
         ]
       }
