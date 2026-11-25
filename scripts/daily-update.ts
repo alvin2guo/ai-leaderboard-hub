@@ -66,7 +66,7 @@ async function main() {
 
     if (stagedOutput.length > 0) {
       console.log('Detected staged data files for deployment:\n' + stagedOutput);
-      const commitMsg = `chore(data): auto-update leaderboard snapshots (${new Date().toISOString().split('T')[0]}) [skip ci]`;
+      const commitMsg = `chore(data): auto-update leaderboard snapshots (${new Date().toISOString().split('T')[0]})`;
       execSync(`git commit -m "${commitMsg}"`, { cwd, stdio: 'inherit' });
       console.log(`✔ Created commit: ${commitMsg}`);
       try {
